@@ -3,21 +3,1142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redirecting to Aramane Sweets...</title>
-    <script>
-        // Smart redirect for GitHub Pages subdirectory (aramane_sweets)
-        var path = window.location.pathname;
-        if (path.includes('/aramane_sweets/')) {
-            // GitHub Pages subdirectory
-            window.location.href = '/aramane_sweets/pages/index.html';
-        } else {
-            // Local or root domain
-            window.location.href = './pages/index.html';
+    <title>Aramane Sweets | Premium Heritage Indian Mithai & Gifting</title>
+    <meta name="description" content="Authentic traditional and modern Indian sweets, dry fruits mithai, and premium gift collections. Heritage quality from Aramane Sweets across 4 locations.">
+    
+    <style>
+        :root {
+            --primary: #570013;
+            --primary-light: #8b2c3f;
+            --secondary: #c9944d;
+            --secondary-light: #e6c695;
+            --accent-gold: #d4af37;
+            --accent-pista: #9db580;
+            --bg-light: #faf8f3;
+            --bg-lighter: #fcfbf8;
+            --bg-dark: #0f0b08;
+            --bg-dark-secondary: #1a1612;
+            --text-light: #1a1410;
+            --text-light-secondary: #6b6461;
+            --text-dark: #faf8f3;
+            --text-dark-secondary: #c9c3ba;
+            --border-light: #e8e3d9;
+            --border-dark: #2a261f;
+            --shadow: 0 8px 24px rgba(0,0,0,0.08);
+            --shadow-hover: 0 12px 32px rgba(0,0,0,0.12);
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 1.5rem;
+            --spacing-lg: 2rem;
+            --spacing-xl: 3rem;
+            --spacing-2xl: 4rem;
+            --radius-sm: 0.5rem;
+            --radius-md: 1rem;
+            --radius-lg: 1.5rem;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-    </script>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-light);
+            line-height: 1.6;
+            transition: var(--transition);
+        }
+
+        body.dark-mode {
+            background-color: var(--bg-dark);
+            color: var(--text-dark);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 600;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+        }
+
+        h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
+        h2 { font-size: clamp(1.75rem, 4vw, 2.5rem); }
+        h3 { font-size: clamp(1.5rem, 3.5vw, 2rem); }
+
+        p {
+            color: var(--text-light-secondary);
+            transition: var(--transition);
+        }
+
+        body.dark-mode p {
+            color: var(--text-dark-secondary);
+        }
+
+        a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        a:hover {
+            color: var(--secondary);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-lg);
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 0 var(--spacing-md); }
+        }
+
+        .grid {
+            display: grid;
+            gap: var(--spacing-lg);
+        }
+
+        .grid-cols-2 { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+        .grid-cols-3 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+        .grid-cols-4 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+
+        @media (max-width: 768px) {
+            .grid-cols-4, .grid-cols-3 { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--spacing-sm) var(--spacing-md);
+            border: none;
+            border-radius: var(--radius-md);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            user-select: none;
+            text-decoration: none;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+            box-shadow: var(--shadow);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-light);
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary);
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background-color: #b8833c;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            background-color: transparent;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .btn-sm { padding: 0.5rem 1rem; font-size: 0.875rem; }
+        .btn-lg { padding: 1rem 2rem; font-size: 1.125rem; }
+
+        .announcement-bar {
+            background: linear-gradient(90deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            text-align: center;
+            padding: var(--spacing-xs) var(--spacing-md);
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background-color: var(--bg-light);
+            border-bottom: 1px solid var(--border-light);
+            transition: var(--transition);
+        }
+
+        body.dark-mode header {
+            background-color: var(--bg-dark-secondary);
+            border-bottom-color: var(--border-dark);
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: var(--spacing-md) 0;
+            gap: var(--spacing-lg);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        nav {
+            display: flex;
+            gap: var(--spacing-lg);
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--text-light);
+            font-weight: 500;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        body.dark-mode nav a {
+            color: var(--text-dark);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--secondary);
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: var(--spacing-md);
+            align-items: center;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .theme-toggle:hover {
+            transform: rotate(20deg);
+        }
+
+        .whatsapp-btn {
+            background-color: #25d366;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-md);
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition);
+        }
+
+        .whatsapp-btn:hover {
+            background-color: #20ba5a;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        @media (max-width: 768px) {
+            nav { display: none; }
+            .whatsapp-btn span:last-child { display: none; }
+        }
+
+        .hero {
+            background: linear-gradient(135deg, rgba(87, 0, 19, 0.95) 0%, rgba(139, 44, 63, 0.95) 100%);
+            color: white;
+            padding: var(--spacing-2xl) var(--spacing-lg);
+            border-radius: var(--radius-lg);
+            margin: var(--spacing-lg) 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 600px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            margin-bottom: var(--spacing-md);
+            line-height: 1.1;
+        }
+
+        .hero p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.125rem;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: var(--spacing-md);
+            flex-wrap: wrap;
+        }
+
+        section {
+            padding: var(--spacing-2xl) 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: var(--spacing-2xl);
+        }
+
+        .section-header h2 {
+            margin-bottom: var(--spacing-md);
+            color: var(--primary);
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .category-card {
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            aspect-ratio: 1;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            background: linear-gradient(135deg, var(--bg-lighter) 0%, var(--bg-light) 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: var(--spacing-lg);
+        }
+
+        body.dark-mode .category-card {
+            background: linear-gradient(135deg, var(--bg-dark-secondary) 0%, var(--bg-dark) 100%);
+        }
+
+        .category-card:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-8px);
+        }
+
+        .category-card-icon {
+            font-size: 3rem;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .category-card h3 {
+            color: var(--primary);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .category-card p {
+            font-size: 0.875rem;
+            opacity: 0.8;
+        }
+
+        .product-card {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            background: var(--bg-lighter);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        body.dark-mode .product-card {
+            background: var(--bg-dark-secondary);
+        }
+
+        .product-card:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-8px);
+        }
+
+        .product-image {
+            width: 100%;
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, var(--secondary-light) 0%, var(--accent-pista) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-image::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        .product-badge {
+            position: absolute;
+            top: var(--spacing-md);
+            right: var(--spacing-md);
+            background-color: var(--primary);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            z-index: 2;
+        }
+
+        .product-info {
+            padding: var(--spacing-lg);
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        body.dark-mode .product-name {
+            color: var(--secondary-light);
+        }
+
+        .product-description {
+            font-size: 0.875rem;
+            color: var(--text-light-secondary);
+            margin-bottom: var(--spacing-md);
+            flex: 1;
+        }
+
+        body.dark-mode .product-description {
+            color: var(--text-dark-secondary);
+        }
+
+        .product-price {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .select-btn {
+            width: 100%;
+        }
+
+        .enquiry-drawer {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            z-index: 50;
+            background: white;
+            box-shadow: -2px -2px 16px rgba(0,0,0,0.1);
+            max-width: 400px;
+            width: 100%;
+            max-height: 80vh;
+            overflow-y: auto;
+            transition: transform 0.3s ease;
+            transform: translateX(400px);
+            border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+        }
+
+        body.dark-mode .enquiry-drawer {
+            background: var(--bg-dark-secondary);
+        }
+
+        .enquiry-drawer.open {
+            transform: translateX(0);
+        }
+
+        .enquiry-header {
+            padding: var(--spacing-lg);
+            border-bottom: 1px solid var(--border-light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            background: inherit;
+        }
+
+        body.dark-mode .enquiry-header {
+            border-bottom-color: var(--border-dark);
+        }
+
+        .enquiry-content {
+            padding: var(--spacing-lg);
+        }
+
+        .selected-items {
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .selected-item {
+            background: var(--bg-light);
+            padding: var(--spacing-md);
+            border-radius: var(--radius-md);
+            margin-bottom: var(--spacing-md);
+            border-left: 4px solid var(--secondary);
+        }
+
+        body.dark-mode .selected-item {
+            background: var(--bg-dark);
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .item-name {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .item-remove {
+            background: none;
+            border: none;
+            color: #e74c3c;
+            cursor: pointer;
+            font-size: 1.25rem;
+        }
+
+        .qty-control {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .qty-btn {
+            width: 28px;
+            height: 28px;
+            border: 1px solid var(--border-light);
+            background: transparent;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: var(--transition);
+        }
+
+        body.dark-mode .qty-btn {
+            border-color: var(--border-dark);
+        }
+
+        .qty-btn:hover {
+            background-color: var(--secondary);
+            color: white;
+            border-color: var(--secondary);
+        }
+
+        .item-note {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-sm);
+            font-size: 0.875rem;
+            font-family: inherit;
+            margin-top: var(--spacing-sm);
+        }
+
+        body.dark-mode .item-note {
+            background: var(--bg-dark);
+            border-color: var(--border-dark);
+            color: var(--text-dark);
+        }
+
+        .enquiry-form {
+            border-top: 1px solid var(--border-light);
+            padding-top: var(--spacing-lg);
+        }
+
+        body.dark-mode .enquiry-form {
+            border-top-color: var(--border-dark);
+        }
+
+        .form-group {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            font-size: 0.875rem;
+        }
+
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            font-family: inherit;
+            font-size: 0.875rem;
+            transition: var(--transition);
+        }
+
+        body.dark-mode .form-group input, body.dark-mode .form-group textarea, body.dark-mode .form-group select {
+            background: var(--bg-dark);
+            border-color: var(--border-dark);
+            color: var(--text-dark);
+        }
+
+        .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+            outline: none;
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 3px rgba(201, 148, 77, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            margin-top: var(--spacing-lg);
+        }
+
+        .empty-message {
+            text-align: center;
+            padding: var(--spacing-lg);
+            color: var(--text-light-secondary);
+        }
+
+        body.dark-mode .empty-message {
+            color: var(--text-dark-secondary);
+        }
+
+        .store-card {
+            background: var(--bg-lighter);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        body.dark-mode .store-card {
+            background: var(--bg-dark-secondary);
+        }
+
+        .store-card:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-4px);
+        }
+
+        .store-name {
+            color: var(--primary);
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .store-info {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .store-info-item {
+            display: flex;
+            gap: var(--spacing-md);
+            font-size: 0.95rem;
+        }
+
+        .store-icon {
+            color: var(--secondary);
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+
+        .store-actions {
+            display: flex;
+            gap: var(--spacing-sm);
+        }
+
+        .store-actions button {
+            flex: 1;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border-light);
+            padding: var(--spacing-lg) 0;
+            cursor: pointer;
+        }
+
+        body.dark-mode .faq-item {
+            border-bottom-color: var(--border-dark);
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .faq-toggle {
+            font-size: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .faq-toggle.open {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-answer.open {
+            max-height: 500px;
+        }
+
+        footer {
+            background: var(--primary);
+            color: white;
+            padding: var(--spacing-2xl) 0 var(--spacing-lg);
+            margin-top: var(--spacing-2xl);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-2xl);
+            margin-bottom: var(--spacing-2xl);
+        }
+
+        .footer-section h3 {
+            color: white;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            display: block;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .footer-section a:hover {
+            color: var(--secondary-light);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: var(--spacing-lg);
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.875rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero { padding: var(--spacing-xl) var(--spacing-md); }
+            section { padding: var(--spacing-xl) 0; }
+            .grid-cols-4 { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
+            .footer-content { grid-template-columns: 1fr; }
+            .enquiry-drawer {
+                transform: translateY(100%);
+            }
+            .enquiry-drawer.open {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .product-card {
+            animation: fadeIn 0.6s ease forwards;
+        }
+    </style>
 </head>
 <body>
-    <p>Redirecting to Aramane Sweets website...</p>
-    <p><a href="./pages/index.html">Click here if you are not redirected automatically</a></p>
+
+<div class="announcement-bar">🎉 Free Delivery on Orders Above ₹1000 | Code: ARAMANE10 for 10% Off</div>
+
+<header>
+    <div class="container">
+        <div class="header-content">
+            <a href="#" class="logo"><div class="logo-icon">🍯</div>Aramane Sweets</a>
+            <nav>
+                <a href="#categories">Categories</a>
+                <a href="#bestsellers">Bestsellers</a>
+                <a href="#build">Build Selection</a>
+                <a href="#gifting">Gifting</a>
+                <a href="#stores">Stores</a>
+                <a href="#faq">FAQ</a>
+            </nav>
+            <div class="header-actions">
+                <button class="theme-toggle" id="themeToggle">🌙</button>
+                <button class="whatsapp-btn" onclick="openDirectChat()"><span>💬</span><span>WhatsApp</span></button>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Heritage Indian Mithai, Reimagined</h1>
+            <p>Authentic sweets crafted with premium ingredients, time-tested recipes, and modern elegance.</p>
+            <div class="hero-cta">
+                <button class="btn btn-primary btn-lg" onclick="scrollToSection('bestsellers')">Explore Collection</button>
+                <button class="btn btn-outline btn-lg" onclick="openDirectChat()">Order on WhatsApp</button>
+            </div>
+        </div>
+    </section>
+</div>
+
+<section id="categories" class="container">
+    <div class="section-header">
+        <h2>Our Collections</h2>
+        <p>Discover our curated selections</p>
+    </div>
+    <div class="grid grid-cols-4">
+        <div class="category-card"><div class="category-card-icon">🍬</div><h3>Traditional Sweets</h3><p>Heritage recipes</p></div>
+        <div class="category-card"><div class="category-card-icon">🌿</div><h3>Healthy Sweets</h3><p>Jaggery & natural</p></div>
+        <div class="category-card"><div class="category-card-icon">✨</div><h3>Sugar-Free</h3><p>Guilt-free treats</p></div>
+        <div class="category-card"><div class="category-card-icon">💎</div><h3>Dry Fruit Mithai</h3><p>Premium selection</p></div>
+    </div>
+</section>
+
+<section id="bestsellers" class="container">
+    <div class="section-header">
+        <h2>Bestsellers & Favorites</h2>
+    </div>
+    <div class="grid grid-cols-4" id="bestsellersGrid"></div>
+</section>
+
+<section id="build" class="container">
+    <div class="section-header">
+        <h2>Build Your Selection</h2>
+    </div>
+    <div class="grid grid-cols-4" id="buildGrid"></div>
+</section>
+
+<section id="heritage" class="container" style="background: linear-gradient(135deg, rgba(87, 0, 19, 0.05) 0%, rgba(201, 148, 77, 0.05) 100%); padding: var(--spacing-2xl); border-radius: var(--radius-lg); margin: var(--spacing-2xl) 0;">
+    <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+        <h2 style="color: var(--primary); margin-bottom: var(--spacing-lg);">Our Heritage & Quality Promise</h2>
+        <p style="font-size: 1.1rem; line-height: 1.8;">For generations, Aramane Sweets has stood for authenticity and excellence. Each sweet is crafted using traditional recipes and premium natural ingredients.</p>
+    </div>
+</section>
+
+<section id="gifting" class="container">
+    <div class="section-header">
+        <h2>Festival & Occasion Gifting</h2>
+    </div>
+    <div class="grid grid-cols-3" id="giftingGrid"></div>
+</section>
+
+<section id="stores" class="container">
+    <div class="section-header">
+        <h2>Visit Our Premium Stores</h2>
+    </div>
+    <div class="grid grid-cols-4" id="storesGrid"></div>
+</section>
+
+<section id="faq" class="container">
+    <div class="section-header">
+        <h2>Frequently Asked Questions</h2>
+    </div>
+    <div style="max-width: 800px; margin: 0 auto;" id="faqContainer"></div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Aramane Sweets</h3>
+                <p>Premium heritage Indian sweets crafted with passion across Karnataka.</p>
+                <div style="margin-top: var(--spacing-lg);">
+                    <div>📞 +91 95354 55770</div>
+                    <div>💬 WhatsApp: +91 95354 55770</div>
+                    <div>📧 concierge@aramanesweets.com</div>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="#categories">Categories</a>
+                <a href="#bestsellers">Bestsellers</a>
+                <a href="#build">Build Selection</a>
+                <a href="#gifting">Gifting</a>
+            </div>
+            <div class="footer-section">
+                <h3>Locations</h3>
+                <a href="javascript:void(0)">Bengaluru</a>
+                <a href="javascript:void(0)">Davangere</a>
+                <a href="javascript:void(0)">Chitradurga</a>
+                <a href="javascript:void(0)">Hospet</a>
+            </div>
+            <div class="footer-section">
+                <h3>Information</h3>
+                <a href="javascript:void(0)">About Quality</a>
+                <a href="javascript:void(0)">Delivery Info</a>
+                <a href="javascript:void(0)">Contact Us</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Aramane Sweets. Premium Heritage Indian Mithai.</p>
+        </div>
+    </div>
+</footer>
+
+<div class="enquiry-drawer" id="enquiryDrawer">
+    <div class="enquiry-header">
+        <h3>Your Selection</h3>
+        <button onclick="closeEnquiryDrawer()" style="background: none; border: none; font-size: 1.5rem; cursor: pointer;">✕</button>
+    </div>
+    <div class="enquiry-content">
+        <div id="selectedItems" class="selected-items"></div>
+        <form class="enquiry-form" id="enquiryForm" onsubmit="submitEnquiry(event)">
+            <div class="form-group"><label for="name">Your Name *</label><input type="text" id="name" placeholder="Full Name" required></div>
+            <div class="form-group"><label for="phone">Phone Number *</label><input type="tel" id="phone" placeholder="+91 XXXXX XXXXX" required></div>
+            <div class="form-group"><label for="city">City</label><input type="text" id="city" placeholder="Your City"></div>
+            <div class="form-group"><label for="occasion">Occasion</label><select id="occasion"><option>Select occasion</option><option value="Wedding">Wedding</option><option value="Diwali">Diwali</option><option value="Birthday">Birthday</option><option value="Corporate">Corporate</option></select></div>
+            <div class="form-group"><label for="contactTime">Contact Time</label><select id="contactTime"><option>Select time</option><option value="Morning">Morning (9AM-12PM)</option><option value="Afternoon">Afternoon (12PM-5PM)</option><option value="Evening">Evening (5PM-9PM)</option></select></div>
+            <div class="form-group"><label for="notes">Special Requests</label><textarea id="notes" placeholder="Your preferences..."></textarea></div>
+            <button type="submit" class="btn btn-primary submit-btn">Send on WhatsApp</button>
+        </form>
+    </div>
+</div>
+
+<script>
+const CONFIG = {
+    businessName: 'Aramane Sweets',
+    whatsappNumber: '919535455770',
+    stores: [
+        { name: 'Bengaluru', address: 'Heritage Square, 100 Feet Rd, Indiranagar', city: 'Bengaluru, KA 560038', hours: '10:00 AM - 11:00 PM', phone: '+91 98765 43210' },
+        { name: 'Davangere', address: 'Palace Cross, Old Court Rd', city: 'Davangere, KA 577001', hours: '9:00 AM - 10:00 PM', phone: '+91 98765 43211' },
+        { name: 'Chitradurga', address: 'Fort Road, Near Chitradurga Fort', city: 'Chitradurga, KA 577501', hours: '8:30 AM - 9:30 PM', phone: '+91 98765 43212' },
+        { name: 'Hospet', address: 'Main Road, Near Hampi Circle', city: 'Hospet, KA 583201', hours: '9:00 AM - 10:00 PM', phone: '+91 98765 43213' }
+    ]
+};
+
+const products = [
+    { id: 1, name: 'Kaju Katli', description: 'Smooth cashew fudge with saffron', price: 450, weight: '500g', icon: '🎁', tags: ['Bestseller'] },
+    { id: 2, name: 'Mysore Pak', description: 'Rich gram flour and ghee delicacy', price: 380, weight: '400g', icon: '✨', tags: ['Bestseller'] },
+    { id: 3, name: 'Dry Fruit Laddu', description: 'Premium dried fruit balls', price: 520, weight: '500g', icon: '💎', tags: ['Premium'] },
+    { id: 4, name: 'Pista Burfi', description: 'Green pistachio with cardamom', price: 480, weight: '400g', icon: '🌿', tags: ['Premium'] },
+    { id: 5, name: 'Motichur Laddu', description: 'Fine gram flour pearls', price: 350, weight: '400g', icon: '💫', tags: [] },
+    { id: 6, name: 'Jaggery Kaju Katli', description: 'Organic jaggery with cashews', price: 500, weight: '500g', icon: '🍯', tags: ['Natural'] },
+    { id: 7, name: 'Sugar-Free Anjeer Burfi', description: 'Fig and almond, no sugar', price: 420, weight: '300g', icon: '🌟', tags: ['Sugar-Free'] },
+    { id: 8, name: 'Coconut Mithai', description: 'Fresh coconut delight', price: 320, weight: '350g', icon: '🥥', tags: [] },
+    { id: 9, name: 'Bombay Halwa', description: 'Carrot and semolina halwa', price: 280, weight: '400g', icon: '🥕', tags: [] },
+    { id: 10, name: 'Balushahi', description: 'Crispy milk-soaked pastry', price: 360, weight: '300g', icon: '🍪', tags: ['Bestseller'] },
+    { id: 11, name: 'Assorted Gift Box', description: '5 varieties, premium packaging', price: 1200, weight: '2kg', icon: '🎀', tags: ['Gift Box'] },
+    { id: 12, name: 'Dry Fruit Bites', description: 'Almond, cashew, date bites', price: 550, weight: '400g', icon: '🍇', tags: ['Premium'] }
+];
+
+const giftingProducts = [
+    { id: 101, name: 'Festival Special Box', description: '6 varieties, elegant packaging', price: 1500, weight: '2.5kg', icon: '🎊' },
+    { id: 102, name: 'Wedding Celebration Pack', description: '8 premium varieties', price: 2500, weight: '3kg', icon: '💍' },
+    { id: 103, name: 'Corporate Gift Hamper', description: 'Premium luxury packaging', price: 3000, weight: '3.5kg', icon: '🏢' },
+    { id: 104, name: 'Birthday Delight Combo', description: 'Sweet selection', price: 1800, weight: '2.5kg', icon: '🎂' }
+];
+
+const faqData = [
+    { q: 'What makes Aramane Sweets special?', a: 'We combine heritage recipes with premium ingredients and modern quality standards. Each sweet is freshly made with attention to detail.' },
+    { q: 'Do you accept custom orders?', a: 'Yes! Use "Build Your Selection" or contact us via WhatsApp for bulk and special orders.' },
+    { q: 'What delivery options are available?', a: 'Local delivery in Bengaluru, Davangere, Chitradurga, and Hospet. Free delivery on orders above ₹1000.' },
+    { q: 'Do you have sugar-free options?', a: 'Yes! Our Sugar-Free collection features laddus and burfis made with natural sweeteners.' },
+    { q: 'Can I visit your stores?', a: 'Absolutely! We have four premium locations. Visit us during store hours for an exclusive experience.' }
+];
+
+let selectedItems = [];
+
+function toggleTheme() {
+    document.body.classList.toggle('dark-mode');
+    localStorage.setItem('aramane-theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
+    updateThemeIcon();
+}
+
+function updateThemeIcon() {
+    document.getElementById('themeToggle').textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+}
+
+if (localStorage.getItem('aramane-theme') === 'dark') {
+    document.body.classList.add('dark-mode');
+    updateThemeIcon();
+}
+
+document.getElementById('themeToggle').addEventListener('click', toggleTheme);
+
+function renderProducts() {
+    document.getElementById('bestsellersGrid').innerHTML = products.map(p => `<div class="product-card"><div class="product-image">${p.tags.length > 0 ? '<div class="product-badge">' + p.tags[0] + '</div>' : ''}<span>${p.icon}</span></div><div class="product-info"><div class="product-name">${p.name}</div><div class="product-description">${p.description}</div><div class="product-weight"><button class="weight-option active">${p.weight}</button></div><div class="product-price"><span class="price">₹${p.price}</span></div><button class="btn btn-primary select-btn btn-sm" onclick="addToSelection(${p.id})">Select Item</button></div></div>`).join('');
+    document.getElementById('buildGrid').innerHTML = document.getElementById('bestsellersGrid').innerHTML;
+}
+
+function renderGifting() {
+    document.getElementById('giftingGrid').innerHTML = giftingProducts.map(p => `<div class="product-card"><div class="product-image">${p.icon}</div><div class="product-info"><div class="product-name">${p.name}</div><div class="product-description">${p.description}</div><div class="product-weight"><button class="weight-option active">${p.weight}</button></div><div class="product-price"><span class="price">₹${p.price}</span></div><button class="btn btn-primary select-btn btn-sm" onclick="addToSelection(${p.id})">Select Item</button></div></div>`).join('');
+}
+
+function renderStores() {
+    document.getElementById('storesGrid').innerHTML = CONFIG.stores.map(s => `<div class="store-card"><div class="store-name">${s.name}</div><div class="store-info"><div class="store-info-item"><div class="store-icon">📍</div><div><div>${s.address}</div><div>${s.city}</div></div></div><div class="store-info-item"><div class="store-icon">🕐</div><div>${s.hours}</div></div><div class="store-info-item"><div class="store-icon">📞</div><div>${s.phone}</div></div></div><div class="store-actions"><button class="btn btn-outline btn-sm" onclick="window.location.href='tel:${s.phone}'">Call</button><button class="btn btn-secondary btn-sm" onclick="openWhatsAppStore('${s.name}')">WhatsApp</button></div></div>`).join('');
+}
+
+function renderFAQ() {
+    document.getElementById('faqContainer').innerHTML = faqData.map((f, i) => `<div class="faq-item"><div class="faq-question" onclick="toggleFAQ(${i})"><span>${f.q}</span><span class="faq-toggle" id="faq-toggle-${i}">▼</span></div><div class="faq-answer" id="faq-answer-${i}"><p>${f.a}</p></div></div>`).join('');
+}
+
+function toggleFAQ(i) {
+    document.getElementById('faq-answer-' + i).classList.toggle('open');
+    document.getElementById('faq-toggle-' + i).classList.toggle('open');
+}
+
+function addToSelection(productId) {
+    let product = products.find(p => p.id === productId) || giftingProducts.find(p => p.id === productId);
+    const existing = selectedItems.find(item => item.id === productId);
+    if (existing) {
+        existing.qty += 1;
+    } else {
+        selectedItems.push({ id: product.id, name: product.name, price: product.price, weight: product.weight, qty: 1, note: '' });
+    }
+    renderSelectedItems();
+    openEnquiryDrawer();
+}
+
+function renderSelectedItems() {
+    const container = document.getElementById('selectedItems');
+    if (selectedItems.length === 0) {
+        container.innerHTML = '<div class="empty-message">No items selected yet!</div>';
+        return;
+    }
+    container.innerHTML = selectedItems.map((item, i) => `<div class="selected-item"><div class="item-header"><div><div class="item-name">${item.name}</div><div style="font-size: 0.875rem;">₹${item.price} • ${item.weight}</div></div><button class="item-remove" onclick="removeItem(${i})" type="button">×</button></div><div class="qty-control"><button class="qty-btn" type="button" onclick="updateQty(${i}, -1)">−</button><span style="min-width: 30px; text-align: center;">${item.qty}</span><button class="qty-btn" type="button" onclick="updateQty(${i}, 1)">+</button></div><input type="text" class="item-note" placeholder="Add notes..." value="${item.note}" onchange="updateNote(${i}, this.value)"></div>`).join('');
+}
+
+function removeItem(i) { selectedItems.splice(i, 1); renderSelectedItems(); }
+function updateQty(i, d) { selectedItems[i].qty += d; selectedItems[i].qty <= 0 ? removeItem(i) : renderSelectedItems(); }
+function updateNote(i, v) { selectedItems[i].note = v; }
+function openEnquiryDrawer() { document.getElementById('enquiryDrawer').classList.add('open'); }
+function closeEnquiryDrawer() { document.getElementById('enquiryDrawer').classList.remove('open'); }
+
+function submitEnquiry(e) {
+    e.preventDefault();
+    const name = document.getElementById('name').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    if (!name || !phone || selectedItems.length === 0) { alert('Please fill all required fields.'); return; }
+    
+    let msg = `Hello ${CONFIG.businessName}!%0A%0ASelected Items:%0A`;
+    selectedItems.forEach((item, i) => {
+        msg += `${i+1}. ${item.name} — Qty: ${item.qty} — ${item.weight} — ₹${item.price}`;
+        if (item.note) msg += ` — ${item.note}`;
+        msg += `%0A`;
+    });
+    msg += `%0ACustomer: ${name}%0APhone: ${phone}`;
+    if (document.getElementById('city').value) msg += `%0ACity: ${document.getElementById('city').value}`;
+    if (document.getElementById('occasion').value && document.getElementById('occasion').value !== 'Select occasion') msg += `%0AOccasion: ${document.getElementById('occasion').value}`;
+    if (document.getElementById('contactTime').value && document.getElementById('contactTime').value !== 'Select time') msg += `%0AContact Time: ${document.getElementById('contactTime').value}`;
+    if (document.getElementById('notes').value) msg += `%0ANotes: ${document.getElementById('notes').value}`;
+    msg += `%0A%0APlease contact me with pricing and delivery options.`;
+    
+    window.open(`https://wa.me/${CONFIG.whatsappNumber}?text=${msg}`, '_blank');
+    document.getElementById('enquiryForm').reset();
+    selectedItems = [];
+    renderSelectedItems();
+}
+
+function openDirectChat() {
+    window.open(`https://wa.me/${CONFIG.whatsappNumber}?text=Hi! I'm interested in Aramane Sweets.`, '_blank');
+}
+
+function openWhatsAppStore(name) {
+    window.open(`https://wa.me/${CONFIG.whatsappNumber}?text=Hi! I'm interested in visiting your ${name} store.`, '_blank');
+}
+
+function scrollToSection(id) {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    renderProducts();
+    renderGifting();
+    renderStores();
+    renderFAQ();
+    renderSelectedItems();
+});
+</script>
+
 </body>
 </html>
