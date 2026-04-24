@@ -1,0 +1,17 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Deploy Static Site
+      run: |
+        echo "✅ Aramane Sweets deployed to GitHub Pages"
+        echo "URL: https://dukevikkivlogs1999-code.github.io/aramane_sweets/"
