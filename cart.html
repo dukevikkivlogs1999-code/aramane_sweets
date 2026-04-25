@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Your shopping cart at Aramane Sweets. Review your heritage mithai selection and place your order via WhatsApp across 4 Karnataka stores.">
+<meta name="keywords" content="Aramane Sweets, cart, Indian sweets, order online, WhatsApp order">
+<meta property="og:title" content="Your Cart | Aramane Sweets">
+<meta property="og:description" content="Review your selection of heritage Indian sweets and complete your WhatsApp order.">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif:ital,wght@0,400;0,600;0,700;1,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<title>Your Cart | Aramane Sweets</title>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          background: "#fbf9f1",
+          primary: "#570013",
+          "primary-light": "#8b2c3f",
+          "primary-container": "#800020",
+          secondary: "#735c00",
+          "secondary-container": "#fed65b",
+          accent: "#d4af37",
+          "surface-container": "#f0eee6",
+          "surface-variant": "#e4e3db",
+          "on-surface-variant": "#584141",
+          outline: "#8c7071",
+          "outline-variant": "#e0bfbf",
+          error: "#ba1a1a",
+          "bg-dark": "#0f0b08",
+          "bg-dark-secondary": "#1a1612",
+          "text-dark": "#faf8f3",
+          "text-dark-secondary": "#c9c3ba"
+        },
+        fontFamily: {
+          serif: ['Noto Serif', 'serif'],
+          sans: ['Inter', 'sans-serif']
+        },
+        spacing: {
+          "stack-sm": "8px",
+          "stack-md": "24px",
+          "stack-lg": "48px",
+          "margin-mobile": "16px",
+          "margin-desktop": "64px",
+          gutter: "24px"
+        }
+      }
+    }
+  };
+</script>
+<style>
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes scaleIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+  @keyframes toastSlide { from { transform: translateX(120%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+  @keyframes shimmerSweep { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
+  .anim-fade-up { animation: fadeUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards; opacity: 0; }
+  .anim-scale-in { animation: scaleIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; opacity: 0; }
+  .gold-shimmer { background: linear-gradient(90deg, #570013 0%, #800020 30%, #d4af37 50%, #800020 70%, #570013 100%); background-size: 200% 100%; animation: shimmerSweep 4s ease-in-out infinite; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .gold-line { height: 2px; background: linear-gradient(90deg, transparent 0%, #d4af37 30%, #fed65b 50%, #d4af37 70%, transparent 100%); }
+  .jali-bg { background-image: radial-gradient(circle at 0 0, #800020 1.5px, transparent 2px), radial-gradient(circle at 12px 12px, #800020 1.5px, transparent 2px); background-size: 24px 24px; opacity: 0.035; }
+  .toast-royal { animation: toastSlide 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; background: linear-gradient(135deg, #570013 0%, #800020 100%); border-left: 3px solid #d4af37; }
+  .card-lift { transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease; }
+  .card-lift:hover { transform: translateY(-6px); box-shadow: 0 20px 40px -8px rgba(87, 0, 19, 0.15); }
+  .modal-overlay { background: rgba(15, 11, 8, 0.65); backdrop-filter: blur(6px); }
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: #fbf9f1; }
+  ::-webkit-scrollbar-thumb { background: #570013; border-radius: 3px; }
+  body { font-family: 'Inter', sans-serif; background: #fbf9f1; }
+  .font-serif { font-family: 'Noto Serif', serif; }
+  .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); }
+</style>
+<script src="assets/js/cart-api.js"></script>
+<script src="assets/js/products-data-full.js"></script>
+<script src="assets/js/ui-components.js"></script>
+</head>
+<body class="text-on-surface-variant antialiased overflow-x-hidden">
+
+<!-- Header -->
+<header class="sticky top-0 z-50 bg-background/90 backdrop-blur-md border-b border-outline-variant/30 shadow-sm">
+  <div class="max-w-[1400px] mx-auto px-4 md:px-8 flex items-center justify-between h-16">
+    <a href="index.html" class="font-serif italic text-xl md:text-2xl font-bold text-primary tracking-tight flex items-center gap-2">
+      <span class="w-8 h-8 rounded-lg bg-primary text-white flex items-center justify-center text-xs not-italic font-bold">AS</span>
+      Aramane Sweets
+    </a>
+    <div class="flex items-center gap-3">
+      <a href="products.html" class="hidden md:inline-flex items-center gap-1 text-sm font-semibold text-primary hover:text-primary-container transition-colors">
+        <span class="material-symbols-outlined text-sm">arrow_back</span> Continue Shopping
+      </a>
+      <a href="cart.html" class="relative flex items-center justify-center w-10 h-10 rounded-full bg-primary-container/10" aria-label="Shopping cart">
+        <span class="material-symbols-outlined text-primary text-2xl" style="font-variation-settings:'FILL' 1">shopping_bag</span>
+        <span id="cartCount" class="absolute -top-1 -right-1 w-5 h-5 bg-error text-white text-[10px] font-bold rounded-full flex items-center justify-center hidden">0</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- Main -->
+<main class="max-w-[1400px] mx-auto px-4 md:px-8 py-8 md:py-12 pb-32 md:pb-12">
+  <div class="mb-8">
+    <span class="text-accent text-xs font-bold uppercase tracking-[0.2em]">Review</span>
+    <h1 class="font-serif text-3xl md:text-4xl font-bold text-primary mt-1 mb-2">Your Heritage Basket</h1>
+    <div class="gold-line w-20"></div>
+  </div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 items-start">
+    <!-- Cart Items -->
+    <div class="lg:col-span-8">
+      <div id="cartItems" class="space-y-4"></div>
+      <div id="emptyCart" class="hidden text-center py-16 md:py-24">
+        <div class="w-20 h-20 rounded-full bg-surface-container flex items-center justify-center mx-auto mb-4">
+          <span class="material-symbols-outlined text-4xl text-outline-variant">shopping_bag</span>
+        </div>
+        <h3 class="font-serif text-xl font-bold text-primary mb-2">Your basket is empty</h3>
+        <p class="text-sm text-on-surface-variant mb-6 max-w-xs mx-auto">Discover our 235+ heritage delicacies and start your royal sweet journey.</p>
+        <a href="products.html" class="inline-flex items-center gap-2 bg-primary text-white font-bold px-6 py-3 rounded-full hover:bg-primary-container transition-all shadow-lg text-sm">
+          <span class="material-symbols-outlined">restaurant_menu</span> Browse Collection
+        </a>
+      </div>
+    </div>
+
+    <!-- Summary Panel -->
+    <div class="lg:col-span-4">
+      <div class="sticky top-24 space-y-4">
+        <div class="bg-white border border-outline-variant/30 rounded-2xl p-5 md:p-6 shadow-sm">
+          <h3 class="font-serif font-bold text-lg text-primary mb-4">Order Summary</h3>
+          <div class="space-y-3 mb-4">
+            <div class="flex justify-between text-sm">
+              <span class="text-on-surface-variant">Subtotal</span>
+              <span class="font-semibold text-primary" id="subtotal">Rs 0</span>
+            </div>
+            <div class="flex justify-between text-sm">
+              <span class="text-on-surface-variant">Shipping</span>
+              <span class="text-green-600 font-semibold text-xs bg-green-50 px-2 py-0.5 rounded-full">FREE above Rs 1000</span>
+            </div>
+            <div class="border-t border-outline-variant/30 pt-3 flex justify-between">
+              <span class="font-serif font-bold text-primary">Total</span>
+              <span class="font-serif font-bold text-xl text-primary" id="totalPrice">Rs 0</span>
+            </div>
+          </div>
+          <button onclick="openOrderModal()" id="placeOrderBtn" class="w-full bg-primary text-white font-bold py-3.5 rounded-xl hover:bg-primary-container transition-all shadow-lg shadow-primary/20 flex items-center justify-center gap-2 text-sm disabled:opacity-50 disabled:cursor-not-allowed">
+            <span class="material-symbols-outlined">chat</span>
+            Place Order on WhatsApp
+          </button>
+          <p class="text-[11px] text-center text-on-surface-variant/50 mt-3">By placing order, you agree to receive confirmation via WhatsApp</p>
+        </div>
+
+        <a href="https://wa.me/919535455770?text=Hi%20Aramane%20Sweets%2C%20I%20need%20help%20with%20my%20order" target="_blank" class="block bg-green-500 text-white text-center font-bold py-3 rounded-xl hover:bg-green-600 transition-all shadow-md text-sm">
+          <span class="material-symbols-outlined inline-block align-middle mr-1 text-sm">help</span>
+          Need Help? WhatsApp Us
+        </a>
+
+        <div class="bg-surface-container rounded-xl p-4 border border-outline-variant/20">
+          <p class="text-xs font-bold text-primary uppercase tracking-wider mb-2">We Accept</p>
+          <div class="flex items-center gap-3 text-xs text-on-surface-variant/60">
+            <span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">chat</span> WhatsApp Order</span>
+            <span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">payments</span> Cash on Delivery</span>
+            <span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">local_shipping</span> Free Shipping Rs 1000+</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- ORDER MODAL -->
+<div id="orderModal" class="fixed inset-0 z-[60] hidden modal-overlay flex items-center justify-center p-4">
+  <div class="bg-background rounded-2xl w-full max-w-md shadow-2xl border border-outline-variant/40 overflow-hidden transform scale-95 opacity-0 transition-all duration-300" id="orderModalContent">
+    <div class="bg-primary px-6 py-4 flex items-center justify-between">
+      <h3 class="text-white font-serif font-bold text-lg">Complete Your Order</h3>
+      <button onclick="closeOrderModal()" class="text-white/70 hover:text-white transition-colors" aria-label="Close modal">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+    <div class="p-6 space-y-4 max-h-[80vh] overflow-y-auto">
+      <p class="text-sm text-on-surface-variant">We will send your order details via WhatsApp. Please confirm:</p>
+      <div>
+        <label class="block text-xs font-bold uppercase tracking-wider text-primary mb-1.5">Your Name *</label>
+        <input type="text" id="modalName" class="w-full px-4 py-3 rounded-lg border border-outline-variant bg-surface-container focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all text-sm" placeholder="Full name" required>
+      </div>
+      <div>
+        <label class="block text-xs font-bold uppercase tracking-wider text-primary mb-1.5">Phone Number *</label>
+        <input type="tel" id="modalPhone" class="w-full px-4 py-3 rounded-lg border border-outline-variant bg-surface-container focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all text-sm" placeholder="+91 XXXXX XXXXX" required>
+      </div>
+      <div>
+        <label class="block text-xs font-bold uppercase tracking-wider text-primary mb-1.5">Preferred Store *</label>
+        <select id="modalStore" class="w-full px-4 py-3 rounded-lg border border-outline-variant bg-surface-container focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all text-sm">
+          <option value="Bengaluru">Bengaluru - Heritage Square, Indiranagar</option>
+          <option value="Davangere">Davangere - Palace Cross, Old Court Rd</option>
+          <option value="Chitradurga">Chitradurga - Fort Road, Near Chitradurga Fort</option>
+          <option value="Hospet">Hospet - Main Road, Near Hampi Circle</option>
+        </select>
+      </div>
+      <div>
+        <label class="block text-xs font-bold uppercase tracking-wider text-primary mb-1.5">Special Requests (Optional)</label>
+        <textarea id="modalNotes" rows="2" class="w-full px-4 py-3 rounded-lg border border-outline-variant bg-surface-container focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all text-sm resize-none" placeholder="Less sugar, gift wrapping, delivery time..."></textarea>
+      </div>
+      <div class="bg-surface-container rounded-lg p-4 border border-outline-variant/30">
+        <p class="text-xs font-bold text-primary uppercase tracking-wider mb-2">Your Items</p>
+        <div id="modalSummary" class="text-sm text-on-surface-variant space-y-1.5 max-h-36 overflow-y-auto"></div>
+        <div class="border-t border-outline-variant/30 mt-2 pt-2 flex justify-between font-bold text-primary">
+          <span>Total</span>
+          <span id="modalTotal">Rs 0</span>
+        </div>
+      </div>
+      <button onclick="submitOrderWhatsApp()" class="w-full bg-primary text-white font-bold py-3.5 rounded-xl hover:bg-primary-container transition-all shadow-lg shadow-primary/20 flex items-center justify-center gap-2 text-sm">
+        <span class="material-symbols-outlined">chat</span>
+        Send Order on WhatsApp
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Mobile Bottom Nav -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 bg-background/95 backdrop-blur-md border-t border-outline-variant/40 z-50 pb-safe shadow-[0_-4px_20px_rgba(87,0,19,0.06)]">
+  <div class="flex justify-around items-center py-2">
+    <a href="index.html" class="flex flex-col items-center gap-0.5 text-on-surface-variant/60 hover:text-primary transition-colors p-1">
+      <span class="material-symbols-outlined text-xl">home</span>
+      <span class="text-[10px] font-medium">Home</span>
+    </a>
+    <a href="products.html" class="flex flex-col items-center gap-0.5 text-on-surface-variant/60 hover:text-primary transition-colors p-1">
+      <span class="material-symbols-outlined text-xl">grid_view</span>
+      <span class="text-[10px] font-medium">Products</span>
+    </a>
+    <a href="gift-collections.html" class="flex flex-col items-center gap-0.5 text-on-surface-variant/60 hover:text-primary transition-colors p-1">
+      <span class="material-symbols-outlined text-xl">card_giftcard</span>
+      <span class="text-[10px] font-medium">Gifts</span>
+    </a>
+    <a href="cart.html" class="flex flex-col items-center gap-0.5 text-primary p-1">
+      <span class="material-symbols-outlined text-xl" style="font-variation-settings:'FILL' 1">shopping_bag</span>
+      <span class="text-[10px] font-medium">Cart</span>
+    </a>
+  </div>
+</nav>
+
+<!-- Footer -->
+<footer class="bg-primary text-white mt-12 pb-24 md:pb-8">
+  <div class="max-w-[1400px] mx-auto px-4 md:px-8 pt-10 pb-6">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+      <div>
+        <h4 class="font-serif italic text-xl font-bold text-secondary-container mb-1">Aramane Sweets</h4>
+        <p class="text-white/50 text-xs">Heritage Indian mithai since 1934</p>
+      </div>
+      <div class="flex gap-3">
+        <a href="tel:+919535455770" class="text-white/60 hover:text-white transition-colors text-sm flex items-center gap-1"><span class="material-symbols-outlined text-xs">call</span> +91 95354 55770</a>
+        <a href="https://wa.me/919535455770" target="_blank" class="text-white/60 hover:text-white transition-colors text-sm flex items-center gap-1"><span class="material-symbols-outlined text-xs">chat</span> WhatsApp</a>
+      </div>
+    </div>
+    <div class="border-t border-white/10 mt-6 pt-4 text-center text-[11px] text-white/40">
+      &copy; 2024 Aramane Sweets. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<script>
+function formatRs(n) { return 'Rs ' + Number(n).toLocaleString('en-IN'); }
+
+function renderCart() {
+  const cart = cartAPI.getCart();
+  const container = document.getElementById('cartItems');
+  const empty = document.getElementById('emptyCart');
+  const subtotalEl = document.getElementById('subtotal');
+  const totalEl = document.getElementById('totalPrice');
+  const placeBtn = document.getElementById('placeOrderBtn');
+  const countEl = document.getElementById('cartCount');
+
+  if (cart.length === 0) {
+    container.innerHTML = '';
+    empty.classList.remove('hidden');
+    subtotalEl.textContent = formatRs(0);
+    totalEl.textContent = formatRs(0);
+    placeBtn.disabled = true;
+    if (countEl) countEl.classList.add('hidden');
+    return;
+  }
+
+  empty.classList.add('hidden');
+  placeBtn.disabled = false;
+  const totals = cartAPI.getTotals();
+  if (countEl) { countEl.textContent = totals.itemCount; countEl.classList.remove('hidden'); }
+
+  container.innerHTML = cart.map((item, i) => {
+    const p = getProductById(item.id);
+    const img = p?.image || item.image || 'https://via.placeholder.com/180';
+    const delay = Math.min(i * 0.06, 0.4);
+    return `
+    <div class="bg-white rounded-xl border border-outline-variant/30 p-4 md:p-5 flex gap-4 anim-fade-up card-lift" style="animation-delay:${delay}s">
+      <img src="${img}" alt="${item.name}" class="w-20 h-20 md:w-24 md:h-24 rounded-lg object-cover flex-shrink-0 bg-surface-container" onerror="this.src='https://via.placeholder.com/180'">
+      <div class="flex-1 min-w-0">
+        <div class="flex items-start justify-between gap-3 mb-1">
+          <div class="min-w-0">
+            <h4 class="font-serif font-bold text-primary text-sm md:text-base truncate">${item.name}</h4>
+            <p class="text-xs text-on-surface-variant/60 mt-0.5">${item.weight || ''}</p>
+          </div>
+          <span class="font-bold text-primary text-sm md:text-base flex-shrink-0">${formatRs(item.price * item.qty)}</span>
+        </div>
+        <div class="flex items-center gap-2 mt-3">
+          <div class="flex items-center border border-outline-variant/40 rounded-lg overflow-hidden">
+            <button onclick="updateQty('${item.id}', -1)" class="w-8 h-8 flex items-center justify-center text-primary hover:bg-surface-container transition-colors" aria-label="Decrease quantity">
+              <span class="material-symbols-outlined text-sm">remove</span>
+            </button>
+            <span class="w-8 text-center text-sm font-semibold text-primary">${item.qty}</span>
+            <button onclick="updateQty('${item.id}', 1)" class="w-8 h-8 flex items-center justify-center text-primary hover:bg-surface-container transition-colors" aria-label="Increase quantity">
+              <span class="material-symbols-outlined text-sm">add</span>
+            </button>
+          </div>
+          <button onclick="removeItem('${item.id}')" class="text-error/70 hover:text-error text-xs font-medium flex items-center gap-1 px-2 py-1.5 rounded-lg hover:bg-error/5 transition-colors" aria-label="Remove item">
+            <span class="material-symbols-outlined text-sm">delete</span> Remove
+          </button>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+
+  subtotalEl.textContent = formatRs(totals.subtotal);
+  totalEl.textContent = formatRs(totals.subtotal);
+}
+
+function updateQty(id, delta) {
+  const item = cartAPI.getItem(id);
+  if (!item) return;
+  const newQty = item.qty + delta;
+  cartAPI.updateQuantity(id, newQty);
+  renderCart();
+}
+
+function removeItem(id) {
+  cartAPI.removeItem(id);
+  renderCart();
+  showToast('Item removed from cart');
+}
+
+function openOrderModal() {
+  const cart = cartAPI.getCart();
+  if (cart.length === 0) return;
+  const modal = document.getElementById('orderModal');
+  const content = document.getElementById('orderModalContent');
+  const summary = document.getElementById('modalSummary');
+  const totalEl = document.getElementById('modalTotal');
+  const totals = cartAPI.getTotals();
+
+  summary.innerHTML = cart.map(item => `
+    <div class="flex justify-between text-xs md:text-sm">
+      <span class="truncate mr-3">${item.name} x${item.qty}</span>
+      <span class="flex-shrink-0">${formatRs(item.price * item.qty)}</span>
+    </div>
+  `).join('');
+  totalEl.textContent = formatRs(totals.subtotal);
+
+  modal.classList.remove('hidden');
+  requestAnimationFrame(() => {
+    content.style.transform = 'scale(1)';
+    content.style.opacity = '1';
+  });
+}
+
+function closeOrderModal() {
+  const modal = document.getElementById('orderModal');
+  const content = document.getElementById('orderModalContent');
+  content.style.transform = 'scale(0.95)';
+  content.style.opacity = '0';
+  setTimeout(() => modal.classList.add('hidden'), 300);
+}
+
+function submitOrderWhatsApp() {
+  const name = document.getElementById('modalName').value.trim();
+  const phone = document.getElementById('modalPhone').value.trim();
+  const store = document.getElementById('modalStore').value;
+  const notes = document.getElementById('modalNotes').value.trim();
+
+  if (!name || !phone) {
+    showToast('Please fill in your name and phone number');
+    return;
+  }
+
+  const cart = cartAPI.getCart();
+  if (cart.length === 0) return;
+
+  const totals = cartAPI.getTotals();
+  let msg = `Hello Aramane Sweets!%0A%0A*New Order from Website*%0A%0A`;
+  msg += `*Customer:* ${name}%0A`;
+  msg += `*Phone:* ${phone}%0A`;
+  msg += `*Store:* ${store}%0A`;
+  if (notes) msg += `*Notes:* ${notes}%0A`;
+  msg += `%0A*Order Items:*%0A`;
+
+  cart.forEach((item, i) => {
+    msg += `${i + 1}. ${item.name} - Qty: ${item.qty} - ${item.weight || ''} - ${formatRs(item.price * item.qty)}%0A`;
+  });
+
+  msg += `%0A*Total: ${formatRs(totals.subtotal)}*%0A`;
+  msg += `%0APlease confirm availability and delivery options. Thank you!`;
+
+  window.open(`https://wa.me/919535455770?text=${msg}`, '_blank');
+  closeOrderModal();
+  cartAPI.clearCart();
+  renderCart();
+  showToast('Order sent on WhatsApp!');
+}
+
+function showToast(msg) {
+  const existing = document.querySelector('.toast-royal');
+  if (existing) existing.remove();
+  const toast = document.createElement('div');
+  toast.className = 'toast-royal fixed bottom-24 md:bottom-6 right-4 md:right-8 z-50 px-5 py-3.5 rounded-lg shadow-2xl text-white text-sm font-medium flex items-center gap-2 max-w-sm';
+  toast.innerHTML = `<span class="material-symbols-outlined text-accent">check_circle</span><span>${msg}</span>`;
+  document.body.appendChild(toast);
+  setTimeout(() => { toast.style.transition='all 0.4s ease'; toast.style.transform='translateY(20px)'; toast.style.opacity='0'; setTimeout(()=>toast.remove(),400); }, 3000);
+}
+
+// Init
+if (cartAPI) {
+  cartAPI.on(CART_CONFIG.EVENTS.CART_UPDATED, renderCart);
+  cartAPI.on(CART_CONFIG.EVENTS.ITEM_ADDED, renderCart);
+  cartAPI.on(CART_CONFIG.EVENTS.ITEM_REMOVED, renderCart);
+  cartAPI.syncAcrossTabs(() => renderCart());
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  renderCart();
+  document.getElementById('orderModal').addEventListener('click', e => {
+    if (e.target === e.currentTarget) closeOrderModal();
+  });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeOrderModal(); });
+});
+</script>
+</body>
+</html>

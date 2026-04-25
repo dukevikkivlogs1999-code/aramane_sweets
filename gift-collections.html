@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Curated heritage gift hampers from Aramane Sweets. Wedding, Diwali, corporate and custom gift boxes with premium Indian mithai. Order via WhatsApp.">
+<meta name="keywords" content="Aramane Sweets, gift boxes, Indian sweets hampers, Diwali gifts, wedding sweets, corporate gifting">
+<meta property="og:title" content="Gift Collections | Aramane Sweets">
+<meta property="og:description" content="Premium heritage gift hampers crafted with royal Indian mithai. Custom boxes available.">
+<title>Gift Collections | Aramane Sweets</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif:ital,wght@0,400;0,600;0,700;1,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          background: "#fbf9f1",
+          primary: "#570013",
+          "primary-container": "#800020",
+          secondary: "#735c00",
+          "secondary-container": "#fed65b",
+          accent: "#d4af37",
+          "surface-container": "#f0eee6",
+          "on-surface-variant": "#584141",
+          "outline-variant": "#e0bfbf",
+          error: "#ba1a1a"
+        },
+        fontFamily: { serif: ['Noto Serif','serif'], sans: ['Inter','sans-serif'] }
+      }
+    }
+  };
+</script>
+<style>
+  @keyframes fadeUp { from { opacity:0; transform:translateY(30px); } to { opacity:1; transform:translateY(0); } }
+  @keyframes scaleIn { from { opacity:0; transform:scale(0.95); } to { opacity:1; transform:scale(1); } }
+  @keyframes toastSlide { from { transform:translateX(120%); opacity:0; } to { transform:translateX(0); opacity:1; } }
+  @keyframes shimmerSweep { 0%{background-position:-200% 0;} 100%{background-position:200% 0;} }
+  .anim-fade-up { animation: fadeUp 0.6s cubic-bezier(0.22,1,0.36,1) forwards; opacity:0; }
+  .anim-scale-in { animation: scaleIn 0.5s cubic-bezier(0.34,1.56,0.64,1) forwards; opacity:0; }
+  .gold-shimmer { background: linear-gradient(90deg, #570013 0%, #800020 30%, #d4af37 50%, #800020 70%, #570013 100%); background-size: 200% 100%; animation: shimmerSweep 4s ease-in-out infinite; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .gold-line { height:2px; background:linear-gradient(90deg,transparent 0%,#d4af37 30%,#fed65b 50%,#d4af37 70%,transparent 100%); }
+  .jali-bg { background-image:radial-gradient(circle at 0 0,#800020 1.5px,transparent 2px),radial-gradient(circle at 12px 12px,#800020 1.5px,transparent 2px); background-size:24px 24px; opacity:0.04; }
+  .card-lift { transition:transform 0.5s cubic-bezier(0.34,1.56,0.64,1),box-shadow 0.5s ease; }
+  .card-lift:hover { transform:translateY(-10px); box-shadow:0 28px 56px -16px rgba(87,0,19,0.2); }
+  .img-zoom { transition:transform 0.8s cubic-bezier(0.4,0,0.2,1); }
+  .group:hover .img-zoom { transform:scale(1.1); }
+  .toast-royal { animation: toastSlide 0.4s cubic-bezier(0.34,1.56,0.64,1) forwards; background:linear-gradient(135deg,#570013 0%,#800020 100%); border-left:3px solid #d4af37; }
+  .pb-safe { padding-bottom: env(safe-area-inset-bottom,0px); }
+  body { font-family:'Inter',sans-serif; background:#fbf9f1; }
+  .font-serif { font-family:'Noto Serif',serif; }
+  ::-webkit-scrollbar { width:6px; }
+  ::-webkit-scrollbar-track { background:#fbf9f1; }
+  ::-webkit-scrollbar-thumb { background:#570013; border-radius:3px; }
+</style>
+<script src="assets/js/cart-api.js"></script>
+<script src="assets/js/products-data-full.js"></script>
+<script src="assets/js/ui-components.js"></script>
+</head>
+<body class="text-on-surface-variant antialiased">
+
+<header class="sticky top-0 z-50 bg-background/90 backdrop-blur-md border-b border-outline-variant/30 shadow-sm">
+  <div class="max-w-[1400px] mx-auto px-4 md:px-8 flex items-center justify-between h-16">
+    <a href="index.html" class="font-serif italic text-xl md:text-2xl font-bold text-primary tracking-tight flex items-center gap-2">
+      <span class="w-8 h-8 rounded-lg bg-primary text-white flex items-center justify-center text-xs not-italic font-bold">AS</span>
+      Aramane Sweets
+    </a>
+    <div class="flex items-center gap-3">
+      <a href="https://wa.me/919535455770" target="_blank" class="hidden md:inline-flex items-center gap-1.5 bg-green-500 text-white px-3 py-2 rounded-full text-xs font-bold hover:bg-green-600 transition-all shadow-md">
+        <span class="material-symbols-outlined text-sm">chat</span> WhatsApp
+      </a>
+      <a href="cart.html" class="relative flex items-center justify-center w-10 h-10 rounded-full bg-primary-container/10 hover:bg-primary-container/20 transition-colors" aria-label="Shopping cart">
+        <span class="material-symbols-outlined text-primary text-2xl">shopping_bag</span>
+        <span id="cartCount" class="absolute -top-1 -right-1 w-5 h-5 bg-error text-white text-[10px] font-bold rounded-full flex items-center justify-center hidden">0</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="pb-28 md:pb-0">
+
+<!-- HERO -->
+<section class="relative min-h-[55vh] md:min-h-[65vh] flex items-center bg-primary overflow-hidden">
+  <div class="absolute inset-0 jali-bg pointer-events-none"></div>
+  <div class="absolute inset-0 bg-gradient-to-r from-primary via-primary/90 to-primary/70"></div>
+  <div class="relative z-10 max-w-[1400px] mx-auto px-4 md:px-8 py-12 w-full">
+    <div class="max-w-2xl">
+      <span class="inline-flex items-center gap-2 text-accent text-xs font-bold uppercase tracking-[0.25em] mb-4 anim-fade-up" style="animation-delay:0.1s">
+        <span class="w-6 h-[2px] bg-accent"></span>Limited Edition
+      </span>
+      <h1 class="font-serif text-4xl md:text-6xl text-white font-bold leading-[1.1] mb-5 anim-fade-up" style="animation-delay:0.2s">
+        Curated<br><span class="gold-shimmer">Heritage Gifts</span>
+      </h1>
+      <p class="text-white/70 text-base md:text-lg max-w-lg leading-relaxed mb-8 anim-fade-up" style="animation-delay:0.35s">
+        Celebrate the grandeur of tradition with our bespoke festive hampers, handcrafted to evoke the splendor of Mysore's royal heritage.
+      </p>
+      <div class="flex flex-wrap gap-3 md:gap-4 anim-fade-up" style="animation-delay:0.5s">
+        <button onclick="scrollToSection('featured')" class="inline-flex items-center gap-2 bg-white text-primary font-bold px-6 py-3.5 rounded-full hover:bg-secondary-container transition-all shadow-xl text-sm">
+          <span class="material-symbols-outlined">expand_more</span> Explore Hampers
+        </button>
+        <a href="https://wa.me/919535455770?text=Hi%20Aramane%20Sweets%2C%20I%20am%20interested%20in%20custom%20gift%20collections" target="_blank" class="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-white font-bold px-6 py-3.5 rounded-full hover:bg-white/20 transition-all text-sm">
+          <span class="material-symbols-outlined">chat</span> Custom Order
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORY TABS -->
+<section class="py-10 px-4 md:px-8 max-w-[1400px] mx-auto">
+  <div class="flex gap-3 overflow-x-auto pb-2" role="tablist">
+    <button class="gift-tab flex-shrink-0 px-5 py-2.5 rounded-full text-sm font-semibold bg-primary text-white transition-all gold-active" data-filter="all" role="tab" aria-selected="true">All Hampers</button>
+    <button class="gift-tab flex-shrink-0 px-5 py-2.5 rounded-full text-sm font-semibold bg-surface-container text-primary border border-outline-variant/40 hover:shadow-md transition-all" data-filter="wedding" role="tab">Wedding</button>
+    <button class="gift-tab flex-shrink-0 px-5 py-2.5 rounded-full text-sm font-semibold bg-surface-container text-primary border border-outline-variant/40 hover:shadow-md transition-all" data-filter="diwali" role="tab">Diwali</button>
+    <button class="gift-tab flex-shrink-0 px-5 py-2.5 rounded-full text-sm font-semibold bg-surface-container text-primary border border-outline-variant/40 hover:shadow-md transition-all" data-filter="corporate" role="tab">Corporate</button>
+  </div>
+</section>
+
+<!-- FEATURED HAMPERS -->
+<section id="featured" class="px-4 md:px-8 max-w-[1400px] mx-auto pb-16">
+  <div class="text-center mb-10">
+    <span class="text-accent text-xs font-bold uppercase tracking-[0.2em]">Signature Selections</span>
+    <h2 class="font-serif text-3xl md:text-4xl font-bold text-primary mt-2 mb-3">Featured Hampers</h2>
+    <div class="gold-line w-24 mx-auto"></div>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6" id="hampersGrid">
+
+    <!-- Royal Mysore Hamper -->
+    <div class="group bg-white rounded-2xl border border-outline-variant/30 overflow-hidden card-lift anim-fade-up" data-tags="all,wedding,diwali" style="animation-delay:0.05s">
+      <div class="relative aspect-square overflow-hidden bg-surface-container">
+        <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?w=500&h=500&fit=crop" alt="Royal Mysore Hamper" class="w-full h-full object-cover img-zoom" loading="lazy">
+        <div class="absolute top-3 left-3">
+          <span class="bg-secondary text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full shadow-sm">Bestseller</span>
+        </div>
+      </div>
+      <div class="p-4 md:p-5">
+        <h3 class="font-serif font-bold text-primary text-base md:text-lg mb-1">Royal Mysore Hamper</h3>
+        <p class="text-xs text-on-surface-variant/60 mb-3">Flagship collection featuring 1kg of signature Mysore Pak, assorted dry fruits & premium laddus.</p>
+        <div class="flex items-center justify-between gap-3">
+          <span class="font-serif font-bold text-xl text-primary">Rs 2,450</span>
+          <button onclick="addGiftToCart('royal-mysore-hamper','Royal Mysore Hamper',2450,'1kg')" class="flex items-center gap-1.5 bg-primary text-white px-4 py-2.5 rounded-full text-xs font-bold hover:bg-primary-container transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5 active:scale-95">
+            <span class="material-symbols-outlined text-sm">add_shopping_cart</span> Add
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Shahi Box -->
+    <div class="group bg-white rounded-2xl border border-outline-variant/30 overflow-hidden card-lift anim-fade-up" data-tags="all,corporate,diwali" style="animation-delay:0.1s">
+      <div class="relative aspect-square overflow-hidden bg-surface-container">
+        <img src="https://images.unsplash.com/photo-1567333126229-db292b2573e9?w=500&h=500&fit=crop" alt="Shahi Box" class="w-full h-full object-cover img-zoom" loading="lazy">
+        <div class="absolute top-3 left-3">
+          <span class="bg-primary text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full shadow-sm">Corporate</span>
+        </div>
+      </div>
+      <div class="p-4 md:p-5">
+        <h3 class="font-serif font-bold text-primary text-base md:text-lg mb-1">The Shahi Box</h3>
+        <p class="text-xs text-on-surface-variant/60 mb-3">Petite selection of artisanal barfis, perfect for corporate greetings and client appreciation.</p>
+        <div class="flex items-center justify-between gap-3">
+          <span class="font-serif font-bold text-xl text-primary">Rs 1,200</span>
+          <button onclick="addGiftToCart('shahi-box','The Shahi Box',1200,'500g')" class="flex items-center gap-1.5 bg-primary text-white px-4 py-2.5 rounded-full text-xs font-bold hover:bg-primary-container transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5 active:scale-95">
+            <span class="material-symbols-outlined text-sm">add_shopping_cart</span> Add
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Heritage Gold -->
+    <div class="group bg-white rounded-2xl border border-outline-variant/30 overflow-hidden card-lift anim-fade-up" data-tags="all,wedding" style="animation-delay:0.15s">
+      <div class="relative aspect-square overflow-hidden bg-surface-container">
+        <img src="https://images.unsplash.com/photo-1549393516-4e29711a6b92?w=500&h=500&fit=crop" alt="Heritage Gold" class="w-full h-full object-cover img-zoom" loading="lazy">
+        <div class="absolute top-3 left-3">
+          <span class="bg-accent text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full shadow-sm">Wedding</span>
+        </div>
+      </div>
+      <div class="p-4 md:p-5">
+        <h3 class="font-serif font-bold text-primary text-base md:text-lg mb-1">Heritage Gold</h3>
+        <p class="text-xs text-on-surface-variant/60 mb-3">Two tiers of pure decadence featuring our most exclusive festive recipes and dry fruit assortments.</p>
+        <div class="flex items-center justify-between gap-3">
+          <span class="font-serif font-bold text-xl text-primary">Rs 4,800</span>
+          <button onclick="addGiftToCart('heritage-gold','Heritage Gold',4800,'1.5kg')" class="flex items-center gap-1.5 bg-primary text-white px-4 py-2.5 rounded-full text-xs font-bold hover:bg-primary-container transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5 active:scale-95">
+            <span class="material-symbols-outlined text-sm">add_shopping_cart</span> Add
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Silk Ribbon Box -->
+    <div class="group bg-white rounded-2xl border border-outline-variant/30 overflow-hidden card-lift anim-fade-up" data-tags="all,diwali,corporate" style="animation-delay:0.2s">
+      <div class="relative aspect-square overflow-hidden bg-surface-container">
+        <img src="https://images.unsplash.com/photo-1579372786545-d24232daf58c?w=500&h=500&fit=crop" alt="Silk Ribbon Box" class="w-full h-full object-cover img-zoom" loading="lazy">
+        <div class="absolute top-3 left-3">
+          <span class="bg-green-600 text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full shadow-sm">New</span>
+        </div>
+      </div>
+      <div class="p-4 md:p-5">
+        <h3 class="font-serif font-bold text-primary text-base md:text-lg mb-1">Silk Ribbon Box</h3>
+        <p class="text-xs text-on-surface-variant/60 mb-3">Classic assortment wrapped in signature silk for elegant gifting on any occasion.</p>
+        <div class="flex items-center justify-between gap-3">
+          <span class="font-serif font-bold text-xl text-primary">Rs 1,850</span>
+          <button onclick="addGiftToCart('silk-ribbon-box','Silk Ribbon Box',1850,'750g')" class="flex items-center gap-1.5 bg-primary text-white px-4 py-2.5 rounded-full text-xs font-bold hover:bg-primary-container transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5 active:scale-95">
+            <span class="material-symbols-outlined text-sm">add_shopping_cart</span> Add
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CUSTOMIZE YOUR BOX -->
+<section class="relative bg-primary py-16 md:py-24 px-4 md:px-8 overflow-hidden">
+  <div class="absolute inset-0 jali-bg pointer-events-none"></div>
+  <div class="max-w-[1400px] mx-auto relative z-10 flex flex-col md:flex-row items-center gap-10 md:gap-16">
+    <div class="md:w-1/2">
+      <span class="text-accent text-xs font-bold uppercase tracking-[0.2em] mb-3 block">Bespoke</span>
+      <h2 class="font-serif text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">Customize<br>Your Own Box</h2>
+      <p class="text-white/70 max-w-md leading-relaxed mb-6">Mix and match our heritage recipes to create a box that is uniquely yours. From signature Mysore Pak to dry fruit delights — the choice is royal.</p>
+      <ul class="space-y-3 mb-8">
+        <li class="flex items-center gap-2.5 text-white/80 text-sm">
+          <span class="material-symbols-outlined text-accent text-sm">check_circle</span>
+          Select from 235+ Artisanal Sweets & Snacks
+        </li>
+        <li class="flex items-center gap-2.5 text-white/80 text-sm">
+          <span class="material-symbols-outlined text-accent text-sm">check_circle</span>
+          Premium Heritage Packaging with Silk Ribbon
+        </li>
+        <li class="flex items-center gap-2.5 text-white/80 text-sm">
+          <span class="material-symbols-outlined text-accent text-sm">check_circle</span>
+          Personalized Calligraphy Note Included
+        </li>
+      </ul>
+      <a href="https://wa.me/919535455770?text=Hi%20Aramane%20Sweets%2C%20I%20want%20to%20build%20a%20custom%20gift%20box" target="_blank" class="inline-flex items-center gap-2 bg-white text-primary font-bold px-8 py-4 rounded-full hover:bg-secondary-container transition-all shadow-xl text-sm">
+        <span class="material-symbols-outlined">chat</span> Build Your Box on WhatsApp
+      </a>
+    </div>
+    <div class="md:w-1/2 flex justify-center">
+      <div class="relative">
+        <div class="w-64 h-64 md:w-80 md:h-80 rounded-2xl bg-gradient-to-br from-secondary-container to-accent p-1 shadow-2xl">
+          <div class="w-full h-full rounded-2xl bg-primary flex items-center justify-center overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?w=500&h=500&fit=crop" alt="Custom gift box" class="w-full h-full object-cover opacity-50">
+            <span class="absolute material-symbols-outlined text-[100px] md:text-[140px] text-white/20">card_giftcard</span>
+          </div>
+        </div>
+        <div class="absolute -bottom-4 -right-4 bg-white rounded-xl p-3 shadow-xl border border-outline-variant/30">
+          <p class="text-xs font-bold text-primary">Custom Gift Box</p>
+          <p class="text-[10px] text-on-surface-variant">From Rs 500 onwards</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OCCASION GRID -->
+<section class="py-16 md:py-20 px-4 md:px-8 max-w-[1400px] mx-auto">
+  <div class="text-center mb-10">
+    <span class="text-accent text-xs font-bold uppercase tracking-[0.2em]">Occasions</span>
+    <h2 class="font-serif text-3xl md:text-4xl font-bold text-primary mt-2 mb-3">Gift for Every Celebration</h2>
+    <div class="gold-line w-24 mx-auto"></div>
+  </div>
+  <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-5">
+    <a href="https://wa.me/919535455770?text=Hi%20Aramane%20Sweets%2C%20I%20need%20a%20Wedding%20gift%20hamper" target="_blank" class="group bg-white rounded-xl border border-outline-variant/30 p-5 text-center card-lift anim-fade-up" style="animation-delay:0.05s">
+      <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform"><span class="material-symbols-outlined text-2xl text-primary">favorite</span></div>
+      <h3 class="font-serif font-bold text-primary text-sm">Wedding</h3>
+      <p class="text-[11px] text-on-surface-variant/60 mt-1">Shubh Arambh</p>
+    </a>
+    <a href="https://wa.me/919535455770?text=Hi%20Aramane%20Sweets%2C%20I%20need%20a%20Diwali%20gift%20hamper" target="_blank" class="group bg-white rounded-xl border border-outline-variant/30 p-5 text-center card-lift anim-fade-up" style="animation-delay:0.1s">
+      <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform"><span class="material-symbols-outlined text-2xl text-primary">celebration</span></div>
+      <h3 class="font-serif font-bold text-primary text-sm">Diwali</h3>
+      <p class="text-[11px] text-on-surface-variant/60 mt-1">Festival of Lights</p>
+    </a>
+    <a href="https://wa.me/919535455770?text=Hi%20Aramane%20Sweets%2C%20I%20need%20a%20Corporate%20gift%20hamper" target="_blank" class="group bg-white rounded-xl border border-outline-variant/30 p-5 text-center card-lift anim-fade-up" style="animation-delay:0.15s">
+      <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform"><span class="material-symbols-outlined text-2xl text-primary">business</span></div>
+      <h3 class="font-serif font-bold text-primary text-sm">Corporate</h3>
+      <p class="text-[11px] text-on-surface-variant/60 mt-1">Professional Gifting</p>
+    </a>
+    <a href="https://wa.me/919535455770?text=Hi%20Aramane%20Sweets%2C%20I%20need%20a%20Birthday%20gift%20hamper" target="_blank" class="group bg-white rounded-xl border border-outline-variant/30 p-5 text-center card-lift anim-fade-up" style="animation-delay:0.2s">
+      <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform"><span class="material-symbols-outlined text-2xl text-primary">cake</span></div>
+      <h3 class="font-serif font-bold text-primary text-sm">Birthday</h3>
+      <p class="text-[11px] text-on-surface-variant/60 mt-1">Sweet Celebrations</p>
+    </a>
+    <a href="https://wa.me/919535455770?text=Hi%20Aramane%20Sweets%2C%20I%20need%20a%20custom%20gift%20hamper" target="_blank" class="group bg-white rounded-xl border border-outline-variant/30 p-5 text-center card-lift anim-fade-up" style="animation-delay:0.25s">
+      <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform"><span class="material-symbols-outlined text-2xl text-primary">auto_awesome</span></div>
+      <h3 class="font-serif font-bold text-primary text-sm">Custom</h3>
+      <p class="text-[11px] text-on-surface-variant/60 mt-1">Build Your Own</p>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<!-- Mobile Bottom Nav -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 bg-background/95 backdrop-blur-md border-t border-outline-variant/40 z-50 pb-safe shadow-[0_-4px_20px_rgba(87,0,19,0.06)]">
+  <div class="flex justify-around items-center py-2">
+    <a href="index.html" class="flex flex-col items-center gap-0.5 text-on-surface-variant/60 hover:text-primary transition-colors p-1">
+      <span class="material-symbols-outlined text-xl">home</span><span class="text-[10px] font-medium">Home</span>
+    </a>
+    <a href="products.html" class="flex flex-col items-center gap-0.5 text-on-surface-variant/60 hover:text-primary transition-colors p-1">
+      <span class="material-symbols-outlined text-xl">grid_view</span><span class="text-[10px] font-medium">Products</span>
+    </a>
+    <a href="gift-collections.html" class="flex flex-col items-center gap-0.5 text-primary p-1">
+      <span class="material-symbols-outlined text-xl" style="font-variation-settings:'FILL' 1">card_giftcard</span><span class="text-[10px] font-medium">Gifts</span>
+    </a>
+    <a href="store-locator.html" class="flex flex-col items-center gap-0.5 text-on-surface-variant/60 hover:text-primary transition-colors p-1">
+      <span class="material-symbols-outlined text-xl">location_on</span><span class="text-[10px] font-medium">Stores</span>
+    </a>
+    <a href="cart.html" class="flex flex-col items-center gap-0.5 text-on-surface-variant/60 hover:text-primary transition-colors p-1 relative">
+      <span class="material-symbols-outlined text-xl">shopping_bag</span><span class="text-[10px] font-medium">Cart</span>
+      <span id="mobileCartCount" class="absolute top-0 right-0 w-4 h-4 bg-error text-white text-[9px] font-bold rounded-full flex items-center justify-center hidden">0</span>
+    </a>
+  </div>
+</nav>
+
+<footer class="bg-primary text-white pb-24 md:pb-8">
+  <div class="max-w-[1400px] mx-auto px-4 md:px-8 pt-12 pb-6">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
+      <div class="col-span-2">
+        <h4 class="font-serif italic text-2xl font-bold text-secondary-container mb-2">Aramane Sweets</h4>
+        <p class="text-white/60 text-sm max-w-sm leading-relaxed">Premium heritage Indian sweets since 1934. Four stores across Karnataka serving 235+ delicacies.</p>
+      </div>
+      <div>
+        <h5 class="text-xs font-bold uppercase tracking-widest text-secondary-container mb-3">Gifting</h5>
+        <ul class="space-y-2 text-sm text-white/60">
+          <li><a href="#" class="hover:text-white transition-colors">Wedding Concierge</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Corporate Orders</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Custom Boxes</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Bulk Inquiries</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 class="text-xs font-bold uppercase tracking-widest text-secondary-container mb-3">Support</h5>
+        <ul class="space-y-2 text-sm text-white/60">
+          <li><a href="store-locator.html" class="hover:text-white transition-colors">Store Locator</a></li>
+          <li><a href="tel:+919535455770" class="hover:text-white transition-colors">Contact: +91 95354 55770</a></li>
+          <li><a href="https://wa.me/919535455770" target="_blank" class="hover:text-white transition-colors">WhatsApp Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-white/10 pt-5 text-center text-xs text-white/40">&copy; 2024 Aramane Sweets. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+function addGiftToCart(id, name, price, weight) {
+  if (cartAPI) {
+    cartAPI.addItem({ id: id, name: name, price: price, weight: weight, category: 'gift', image: '' }, 1);
+    updateCartCount();
+    showToast(`Added ${name} to cart`);
+  }
+}
+
+function updateCartCount() {
+  const totals = cartAPI.getTotals();
+  const count = totals.itemCount;
+  ['cartCount','mobileCartCount'].forEach(id => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    if (count > 0) { el.textContent = count > 99 ? '99+' : count; el.classList.remove('hidden'); }
+    else { el.classList.add('hidden'); }
+  });
+}
+
+function showToast(msg) {
+  const existing = document.querySelector('.toast-royal');
+  if (existing) existing.remove();
+  const toast = document.createElement('div');
+  toast.className = 'toast-royal fixed bottom-24 md:bottom-6 right-4 md:right-8 z-50 px-5 py-3.5 rounded-lg shadow-2xl text-white text-sm font-medium flex items-center gap-2 max-w-sm';
+  toast.innerHTML = `<span class="material-symbols-outlined text-accent">check_circle</span><span>${msg}</span>`;
+  document.body.appendChild(toast);
+  setTimeout(() => { toast.style.transition='all 0.4s ease'; toast.style.transform='translateY(20px)'; toast.style.opacity='0'; setTimeout(()=>toast.remove(),400); }, 3000);
+}
+
+// Tab filtering
+document.querySelectorAll('.gift-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    const filter = tab.dataset.filter;
+    document.querySelectorAll('.gift-tab').forEach(t => {
+      t.setAttribute('aria-selected', 'false');
+      t.classList.remove('bg-primary','text-white','gold-active');
+      t.classList.add('bg-surface-container','text-primary');
+    });
+    tab.setAttribute('aria-selected', 'true');
+    tab.classList.remove('bg-surface-container','text-primary');
+    tab.classList.add('bg-primary','text-white','gold-active');
+
+    document.querySelectorAll('#hampersGrid > div').forEach(card => {
+      const tags = (card.dataset.tags || '').split(',');
+      if (filter === 'all' || tags.includes(filter)) {
+        card.style.display = '';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  });
+});
+
+function scrollToSection(id) {
+  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+}
+
+if (cartAPI) {
+  cartAPI.on('cart:updated', updateCartCount);
+  cartAPI.syncAcrossTabs(() => updateCartCount());
+}
+document.addEventListener('DOMContentLoaded', () => { updateCartCount(); });
+</script>
+</body>
+</html>

@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Browse Aramane Sweets full catalogue: Kaju Sweets, Ghee & Kova, Namkeen, Bengali Sweets, Bakery, Chat Items, Packed Items. Order via WhatsApp.">
+<meta name="keywords" content="Aramane Sweets, Indian sweets, mithai, Kaju Katli, Mysore Pak, Namkeen, Bakery, Chat, online order">
+<meta name="author" content="Aramane Sweets">
+<meta property="og:title" content="Our Complete Collection | Aramane Sweets">
+<meta property="og:description" content="Explore 235+ heritage Indian sweets, savouries and bakery items.">
+<meta property="og:type" content="website">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif:ital,wght@0,400;0,600;0,700;1,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<title>Our Complete Collection | Aramane Sweets</title>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          background: "#fbf9f1",
+          primary: "#570013",
+          "primary-light": "#8b2c3f",
+          "primary-container": "#800020",
+          secondary: "#735c00",
+          "secondary-container": "#fed65b",
+          accent: "#d4af37",
+          "surface-container": "#f0eee6",
+          "surface-variant": "#e4e3db",
+          "on-surface-variant": "#584141",
+          outline: "#8c7071",
+          "outline-variant": "#e0bfbf",
+          error: "#ba1a1a",
+          "bg-dark": "#0f0b08",
+          "bg-dark-secondary": "#1a1612",
+          "text-dark": "#faf8f3",
+          "text-dark-secondary": "#c9c3ba"
+        },
+        fontFamily: {
+          serif: ['Noto Serif', 'serif'],
+          sans: ['Inter', 'sans-serif']
+        },
+        spacing: {
+          "stack-sm": "8px",
+          "stack-md": "24px",
+          "stack-lg": "48px",
+          "margin-mobile": "16px",
+          "margin-desktop": "64px",
+          "gutter": "24px",
+          unit: "8px"
+        },
+        borderRadius: {
+          DEFAULT: "0.25rem",
+          lg: "0.5rem",
+          xl: "0.75rem",
+          full: "9999px"
+        }
+      }
+    }
+  };
+</script>
+<style>
+  /* Jali lattice background pattern */
+  .jali-bg {
+    background-image:
+      radial-gradient(circle at 0 0, #800020 1px, transparent 1.5px),
+      radial-gradient(circle at 12px 12px, #800020 1px, transparent 1.5px),
+      radial-gradient(circle at 24px 0, #800020 1px, transparent 1.5px),
+      radial-gradient(circle at 0 24px, #800020 1px, transparent 1.5px);
+    background-size: 24px 24px;
+    opacity: 0.04;
+  }
+  .jali-bg-strong {
+    background-image:
+      radial-gradient(circle at 0 0, #570013 1.5px, transparent 2px),
+      radial-gradient(circle at 12px 12px, #570013 1.5px, transparent 2px);
+    background-size: 24px 24px;
+    opacity: 0.06;
+  }
+
+  /* Grain texture overlay */
+  .grain::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E");
+    background-size: 256px 256px;
+    pointer-events: none;
+    mix-blend-mode: overlay;
+    opacity: 0.3;
+  }
+
+  /* Maroon-gold shimmer */
+  .shimmer-bg {
+    position: relative;
+    overflow: hidden;
+  }
+  .shimmer-bg::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent 30%, rgba(212,175,55,0.08) 50%, transparent 70%);
+    animation: shimmerSweep 4s ease-in-out infinite;
+    pointer-events: none;
+  }
+  @keyframes shimmerSweep {
+    0% { transform: translateX(-100%) rotate(0deg); }
+    100% { transform: translateX(100%) rotate(0deg); }
+  }
+
+  /* Card lift on hover */
+  .card-lift {
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease;
+  }
+  .card-lift:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 24px 48px -12px rgba(87, 0, 19, 0.18);
+  }
+
+  /* Image zoom on card hover */
+  .img-zoom {
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .group:hover .img-zoom {
+    transform: scale(1.1);
+  }
+
+  /* Stagger fade-in */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .fade-up {
+    opacity: 0;
+    animation: fadeUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  /* Gold border glow for active states */
+  .gold-active {
+    box-shadow: 0 0 0 2px #570013, 0 0 0 4px #d4af37;
+  }
+
+  /* Scrollbar styling */
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: #fbf9f1; }
+  ::-webkit-scrollbar-thumb { background: #570013; border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: #800020; }
+
+  /* Select all checkbox */
+  .select-all-bar {
+    backdrop-filter: blur(12px);
+    background: rgba(87, 0, 19, 0.95);
+  }
+
+  /* Toast notification */
+  .toast-royal {
+    background: linear-gradient(135deg, #570013 0%, #800020 100%);
+    color: #fbf9f1;
+    border-left: 4px solid #d4af37;
+    padding: 14px 24px;
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(87, 0, 19, 0.3);
+    font-weight: 500;
+    animation: toastSlide 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  }
+  @keyframes toastSlide {
+    from { transform: translateX(120%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+  }
+
+  /* Price tag badge */
+  .price-badge {
+    background: linear-gradient(135deg, #570013 0%, #800020 100%);
+    color: #fed65b;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  /* Loading skeleton */
+  .skeleton {
+    background: linear-gradient(90deg, #f0eee6 25%, #e4e3db 50%, #f0eee6 75%);
+    background-size: 200% 100%;
+    animation: skeletonLoad 1.2s ease-in-out infinite;
+  }
+  @keyframes skeletonLoad {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+
+  /* Modal overlay */
+  .modal-overlay {
+    background: rgba(15, 11, 8, 0.7);
+    backdrop-filter: blur(4px);
+  }
+
+  body { font-family: 'Inter', sans-serif; background: #fbf9f1; min-height: 100dvh; }
+  .font-serif { font-family: 'Noto Serif', serif; }
+
+  /* Bottom nav safe area */
+  .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); }
+</style>
+<!-- Cart API -->
+<script src="assets/js/cart-api.js"></script>
+<script src="assets/js/products-data-full.js"></script>
+<script src="assets/js/ui-components.js"></script>
+</head>
+<body class="text-on-surface-variant antialiased overflow-x-hidden">
+
+<!-- ============ HEADER ============ -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-outline-variant/40 shadow-sm">
+  <div class="max-w-[1400px] mx-auto px-4 md:px-8 flex items-center justify-between h-16">
+    <a href="index.html" class="font-serif italic text-xl md:text-2xl font-bold text-primary tracking-tight flex items-center gap-2">
+      <span class="w-8 h-8 rounded-lg bg-primary text-white flex items-center justify-center text-sm not-italic font-bold">AS</span>
+      Aramane Sweets
+    </a>
+    <div class="flex items-center gap-3 md:gap-5">
+      <div class="hidden md:flex items-center bg-surface-container rounded-full px-4 py-2 border border-outline-variant/40">
+        <span class="material-symbols-outlined text-on-surface-variant text-lg mr-2">search</span>
+        <input type="text" id="searchInput" placeholder="Search sweets, snacks..." class="bg-transparent outline-none text-sm w-48 placeholder:text-on-surface-variant/60" aria-label="Search products">
+      </div>
+      <a href="cart.html" class="relative flex items-center justify-center w-10 h-10 rounded-full bg-primary-container/10 hover:bg-primary-container/20 transition-colors" aria-label="Shopping cart">
+        <span class="material-symbols-outlined text-primary text-2xl">shopping_bag</span>
+        <span id="cartCount" class="absolute -top-1 -right-1 w-5 h-5 bg-error text-white text-[10px] font-bold rounded-full flex items-center justify-center hidden">0</span>
+      </a>
+      <button id="themeToggle" class="w-10 h-10 rounded-full bg-surface-container hover:bg-surface-variant transition-colors flex items-center justify-center" aria-label="Toggle dark mode">
+        <span class="material-symbols-outlined text-primary text-xl" id="themeIcon">dark_mode</span>
+      </button>
+    </div>
+  </div>
+  <!-- Mobile search -->
+  <div class="md:hidden px-4 pb-3">
+    <div class="flex items-center bg-surface-container rounded-full px-4 py-2.5 border border-outline-variant/40">
+      <span class="material-symbols-outlined text-on-surface-variant text-lg mr-2">search</span>
+      <input type="text" id="searchInputMobile" placeholder="Search sweets, snacks..." class="bg-transparent outline-none text-sm w-full placeholder:text-on-surface-variant/60" aria-label="Search products">
+    </div>
+  </div>
+</header>
+
+<!-- ============ MAIN CONTENT ============ -->
+<main class="pt-28 md:pt-24 pb-8">
+
+  <!-- HERO -->
+  <section class="relative mb-8 md:mb-12 mx-4 md:mx-8 rounded-2xl overflow-hidden grain shimmer-bg bg-primary min-h-[220px] md:min-h-[280px] flex items-center">
+    <div class="relative z-10 px-6 md:px-12 py-8 md:py-10 max-w-2xl">
+      <span class="inline-block text-accent text-xs font-bold uppercase tracking-[0.2em] mb-3">Complete Catalogue</span>
+      <h1 class="font-serif text-3xl md:text-5xl text-white font-bold mb-3 leading-tight">235+ Heritage Delicacies</h1>
+      <p class="text-white/80 text-sm md:text-base max-w-lg leading-relaxed">From royal Kaju Katli to street-style Chaat, freshly made across our 4 Karnataka stores. Select any item and order instantly via WhatsApp.</p>
+    </div>
+  </section>
+
+  <!-- CATEGORY NAV (Horizontal scroll) -->
+  <section class="mb-6 md:mb-8 px-4 md:px-8">
+    <div class="flex gap-3 overflow-x-auto pb-2 scrollbar-hide" id="categoryNav" role="tablist" aria-label="Product categories">
+      <button class="category-btn flex-shrink-0 px-5 py-2.5 rounded-full text-sm font-semibold bg-primary text-white transition-all hover:shadow-lg gold-active" data-category="all" role="tab" aria-selected="true">
+        All <span class="ml-1 text-xs opacity-80" id="count-all">235</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- TOOLBAR: Search results + Select All -->
+  <section class="px-4 md:px-8 mb-4 flex items-center justify-between flex-wrap gap-3">
+    <div class="flex items-center gap-2">
+      <h2 class="font-serif text-xl md:text-2xl font-bold text-primary" id="sectionTitle">All Products</h2>
+      <span class="text-xs text-on-surface-variant/60 bg-surface-container px-3 py-1 rounded-full" id="resultsCount">235 items</span>
+    </div>
+    <div class="flex items-center gap-3">
+      <label class="flex items-center gap-2 cursor-pointer select-none bg-surface-container hover:bg-surface-variant transition-colors px-4 py-2 rounded-full border border-outline-variant/40">
+        <input type="checkbox" id="selectAllToggle" class="w-4 h-4 accent-primary rounded" aria-label="Select all visible products">
+        <span class="text-sm font-medium text-primary">Select All</span>
+      </label>
+      <button id="addSelectedBtn" class="hidden items-center gap-1.5 bg-primary text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-primary-container transition-all shadow-lg shadow-primary/20" onclick="addSelectedToCart()">
+        <span class="material-symbols-outlined text-base">add_shopping_cart</span>
+        <span id="selectedCount">Add 0</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- PRODUCT GRID -->
+  <section class="px-4 md:px-8">
+    <div id="productGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-5">
+      <!-- JS renders here -->
+    </div>
+    <div id="noResults" class="hidden text-center py-20">
+      <span class="material-symbols-outlined text-6xl text-outline-variant mb-4 block">search_off</span>
+      <p class="text-lg font-serif text-primary mb-1">No products found</p>
+      <p class="text-sm text-on-surface-variant">Try a different search term or category</p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FLOATING SELECT-ALL BAR (appears when items selected) ============ -->
+<div id="selectionBar" class="select-all-bar fixed bottom-20 md:bottom-6 left-4 right-4 md:left-auto md:right-6 md:w-80 rounded-xl p-4 text-white shadow-2xl z-40 transform translate-y-[200%] transition-transform duration-300" aria-live="polite">
+  <div class="flex items-center justify-between mb-2">
+    <span class="text-sm font-semibold"><span id="barCount">0</span> items selected</span>
+    <button onclick="clearSelection()" class="text-white/70 hover:text-white text-xs underline">Clear</button>
+  </div>
+  <button onclick="addSelectedToCart()" class="w-full bg-white text-primary font-bold py-2.5 rounded-lg hover:bg-secondary-container transition-colors flex items-center justify-center gap-2">
+    <span class="material-symbols-outlined text-lg">add_shopping_cart</span>
+    Add to Cart & Order
+  </button>
+</div>
+
+<!-- ============ ORDER MODAL ============ -->
+<div id="orderModal" class="fixed inset-0 z-[60] hidden modal-overlay flex items-center justify-center p-4">
+  <div class="bg-background rounded-2xl w-full max-w-md shadow-2xl border border-outline-variant/40 overflow-hidden transform scale-95 opacity-0 transition-all duration-300" id="orderModalContent">
+    <div class="bg-primary px-6 py-4 flex items-center justify-between">
+      <h3 class="text-white font-serif font-bold text-lg">Complete Your Order</h3>
+      <button onclick="closeOrderModal()" class="text-white/70 hover:text-white transition-colors" aria-label="Close modal">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+    <div class="p-6 space-y-4">
+      <p class="text-sm text-on-surface-variant">We will send your order via WhatsApp. Please confirm your details:</p>
+      <div>
+        <label class="block text-xs font-bold uppercase tracking-wider text-primary mb-1.5">Your Name *</label>
+        <input type="text" id="modalName" class="w-full px-4 py-3 rounded-lg border border-outline-variant bg-surface-container focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all" placeholder="Full name" required>
+      </div>
+      <div>
+        <label class="block text-xs font-bold uppercase tracking-wider text-primary mb-1.5">Phone Number *</label>
+        <input type="tel" id="modalPhone" class="w-full px-4 py-3 rounded-lg border border-outline-variant bg-surface-container focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all" placeholder="+91 XXXXX XXXXX" required>
+      </div>
+      <div>
+        <label class="block text-xs font-bold uppercase tracking-wider text-primary mb-1.5">Preferred Store *</label>
+        <select id="modalStore" class="w-full px-4 py-3 rounded-lg border border-outline-variant bg-surface-container focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all">
+          <option value="Bengaluru">Bengaluru - Heritage Square, Indiranagar</option>
+          <option value="Davangere">Davangere - Palace Cross, Old Court Rd</option>
+          <option value="Chitradurga">Chitradurga - Fort Road, Near Chitradurga Fort</option>
+          <option value="Hospet">Hospet - Main Road, Near Hampi Circle</option>
+        </select>
+      </div>
+      <div>
+        <label class="block text-xs font-bold uppercase tracking-wider text-primary mb-1.5">Special Requests (Optional)</label>
+        <textarea id="modalNotes" rows="2" class="w-full px-4 py-3 rounded-lg border border-outline-variant bg-surface-container focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all resize-none" placeholder="Less sugar, gift wrapping, delivery time..."></textarea>
+      </div>
+      <div class="bg-surface-container rounded-lg p-4 border border-outline-variant/40">
+        <p class="text-xs font-bold text-primary uppercase tracking-wider mb-2">Order Summary</p>
+        <div id="modalSummary" class="text-sm text-on-surface-variant space-y-1 max-h-32 overflow-y-auto"></div>
+        <div class="border-t border-outline-variant/40 mt-2 pt-2 flex justify-between font-bold text-primary">
+          <span>Total</span>
+          <span id="modalTotal">Rs 0</span>
+        </div>
+      </div>
+      <button onclick="submitOrderWhatsApp()" class="w-full bg-primary text-white font-bold py-3.5 rounded-xl hover:bg-primary-container transition-all shadow-lg shadow-primary/20 flex items-center justify-center gap-2">
+        <span class="material-symbols-outlined">chat</span>
+        Send Order on WhatsApp
+      </button>
+      <p class="text-[11px] text-center text-on-surface-variant/60">By ordering, you agree to receive updates on WhatsApp</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============ MOBILE BOTTOM NAV ============ -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 bg-background/95 backdrop-blur-md border-t border-outline-variant/40 z-50 pb-safe shadow-[0_-4px_20px_rgba(87,0,19,0.06)]">
+  <div class="flex justify-around items-center py-2">
+    <a href="index.html" class="flex flex-col items-center gap-0.5 text-on-surface-variant/60 hover:text-primary transition-colors p-1">
+      <span class="material-symbols-outlined text-xl">home</span>
+      <span class="text-[10px] font-medium">Home</span>
+    </a>
+    <a href="products.html" class="flex flex-col items-center gap-0.5 text-primary p-1">
+      <span class="material-symbols-outlined text-xl" style="font-variation-settings:'FILL' 1">grid_view</span>
+      <span class="text-[10px] font-medium">Products</span>
+    </a>
+    <a href="gift-collections.html" class="flex flex-col items-center gap-0.5 text-on-surface-variant/60 hover:text-primary transition-colors p-1">
+      <span class="material-symbols-outlined text-xl">card_giftcard</span>
+      <span class="text-[10px] font-medium">Gifts</span>
+    </a>
+    <a href="store-locator.html" class="flex flex-col items-center gap-0.5 text-on-surface-variant/60 hover:text-primary transition-colors p-1">
+      <span class="material-symbols-outlined text-xl">location_on</span>
+      <span class="text-[10px] font-medium">Stores</span>
+    </a>
+    <a href="cart.html" class="flex flex-col items-center gap-0.5 text-on-surface-variant/60 hover:text-primary transition-colors p-1 relative">
+      <span class="material-symbols-outlined text-xl">shopping_bag</span>
+      <span class="text-[10px] font-medium">Cart</span>
+      <span id="mobileCartCount" class="absolute top-0 right-0 w-4 h-4 bg-error text-white text-[9px] font-bold rounded-full flex items-center justify-center hidden">0</span>
+    </a>
+  </div>
+</nav>
+
+<!-- ============ FOOTER ============ -->
+<footer class="bg-primary text-white mt-12 pb-24 md:pb-8">
+  <div class="max-w-[1400px] mx-auto px-4 md:px-8 py-10 md:py-14">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div class="md:col-span-2">
+        <h4 class="font-serif italic text-2xl font-bold mb-3 text-secondary-container">Aramane Sweets</h4>
+        <p class="text-white/70 text-sm max-w-sm leading-relaxed">A legacy of taste since 1934. Royal Karnataka sweets, freshly crafted with pure ghee and heritage recipes.</p>
+      </div>
+      <div>
+        <h5 class="text-xs font-bold uppercase tracking-widest text-secondary-container mb-3">Collections</h5>
+        <ul class="space-y-2 text-sm text-white/70">
+          <li><a href="products.html?cat=kaju" class="hover:text-white transition-colors">Kaju Sweets</a></li>
+          <li><a href="products.html?cat=ghee-kova" class="hover:text-white transition-colors">Ghee & Kova</a></li>
+          <li><a href="products.html?cat=namkeen" class="hover:text-white transition-colors">Namkeen</a></li>
+          <li><a href="products.html?cat=bakery" class="hover:text-white transition-colors">Bakery</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 class="text-xs font-bold uppercase tracking-widest text-secondary-container mb-3">Contact</h5>
+        <ul class="space-y-2 text-sm text-white/70">
+          <li><a href="tel:+919535455770" class="hover:text-white transition-colors flex items-center gap-2"><span class="material-symbols-outlined text-sm">call</span> +91 95354 55770</a></li>
+          <li><a href="https://wa.me/919535455770" target="_blank" class="hover:text-white transition-colors flex items-center gap-2"><span class="material-symbols-outlined text-sm">chat</span> WhatsApp</a></li>
+          <li><a href="mailto:concierge@aramanesweets.com" class="hover:text-white transition-colors flex items-center gap-2"><span class="material-symbols-outlined text-sm">mail</span> Email</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-white/10 mt-8 pt-6 text-center text-xs text-white/50">
+      &copy; 2024 Aramane Sweets. All rights reserved. Crafted with heritage.
+    </div>
+  </div>
+</footer>
+
+<!-- ============ SCRIPTS ============ -->
+<script>
+// ===== STATE =====
+let currentCategory = 'all';
+let searchQuery = '';
+let selectedProductIds = new Set();
+let currentProducts = [];
+
+const STORES = [
+  { name: 'Bengaluru', address: 'Heritage Square, 100 Feet Rd, Indiranagar', city: 'Bengaluru, KA 560038', hours: '10:00 AM - 11:00 PM', phone: '+91 98765 43210' },
+  { name: 'Davangere', address: 'Palace Cross, Old Court Rd', city: 'Davangere, KA 577001', hours: '9:00 AM - 10:00 PM', phone: '+91 98765 43211' },
+  { name: 'Chitradurga', address: 'Fort Road, Near Chitradurga Fort', city: 'Chitradurga, KA 577501', hours: '8:30 AM - 9:30 PM', phone: '+91 98765 43212' },
+  { name: 'Hospet', address: 'Main Road, Near Hampi Circle', city: 'Hospet, KA 583201', hours: '9:00 AM - 10:00 PM', phone: '+91 98765 43213' }
+];
+
+// ===== CATEGORY NAV RENDER =====
+function renderCategoryNav() {
+  const categories = getCategories();
+  const totalCount = PRODUCTS_FULL_CATALOG.length;
+  const nav = document.getElementById('categoryNav');
+
+  let html = `<button class="category-btn flex-shrink-0 px-5 py-2.5 rounded-full text-sm font-semibold transition-all hover:shadow-lg ${currentCategory === 'all' ? 'bg-primary text-white gold-active' : 'bg-surface-container text-primary border border-outline-variant/40'}" data-category="all" role="tab" aria-selected="${currentCategory === 'all'}">All <span class="ml-1 text-xs opacity-80">${totalCount}</span></button>`;
+
+  categories.forEach(cat => {
+    const isActive = currentCategory === cat.id;
+    const color = getCategoryColor(cat.id);
+    html += `<button class="category-btn flex-shrink-0 px-4 py-2.5 rounded-full text-sm font-semibold transition-all hover:shadow-lg flex items-center gap-1.5 ${isActive ? 'text-white gold-active' : 'bg-surface-container text-primary border border-outline-variant/40'}" data-category="${cat.id}" role="tab" aria-selected="${isActive}" style="${isActive ? `background:${color};box-shadow:0 0 0 2px ${color},0 0 0 4px #d4af37;` : ''}">
+      <span class="material-symbols-outlined text-sm">${cat.meta.icon || 'inventory_2'}</span>
+      ${cat.name} <span class="ml-0.5 text-xs opacity-80">${cat.count}</span>
+    </button>`;
+  });
+
+  nav.innerHTML = html;
+
+  // Event listeners
+  nav.querySelectorAll('.category-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      currentCategory = btn.dataset.category;
+      selectedProductIds.clear();
+      updateSelectAllUI();
+      renderCategoryNav();
+      renderProducts();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
+}
+
+// ===== PRODUCT GRID RENDER =====
+function renderProducts() {
+  const grid = document.getElementById('productGrid');
+  const noResults = document.getElementById('noResults');
+  const sectionTitle = document.getElementById('sectionTitle');
+  const resultsCount = document.getElementById('resultsCount');
+
+  // Filter
+  let products = PRODUCTS_FULL_CATALOG;
+  if (currentCategory !== 'all') {
+    products = products.filter(p => p.category === currentCategory);
+    sectionTitle.textContent = getCategoryName(currentCategory);
+  } else {
+    sectionTitle.textContent = searchQuery ? 'Search Results' : 'All Products';
+  }
+  if (searchQuery) {
+    products = searchProducts(searchQuery);
+  }
+  currentProducts = products;
+
+  resultsCount.textContent = `${products.length} item${products.length !== 1 ? 's' : ''}`;
+
+  if (products.length === 0) {
+    grid.innerHTML = '';
+    noResults.classList.remove('hidden');
+    return;
+  }
+  noResults.classList.add('hidden');
+
+  grid.innerHTML = products.map((p, idx) => {
+    const isSelected = selectedProductIds.has(p.id);
+    const delay = Math.min(idx * 0.04, 0.5);
+    const catMeta = CATEGORY_META[p.category] || {};
+    const catIcon = catMeta.icon || 'inventory_2';
+
+    return `
+    <div class="group relative bg-white rounded-xl overflow-hidden border border-outline-variant/30 card-lift fade-up" style="animation-delay:${delay}s" data-product-id="${p.id}">
+      <div class="relative aspect-square overflow-hidden bg-surface-container">
+        <img src="${p.image || 'https://via.placeholder.com/300x300?text=Aramane'}" alt="${p.name}" loading="lazy" class="w-full h-full object-cover img-zoom" onerror="this.src='https://via.placeholder.com/300x300?text=Aramane+Sweets'">
+        <div class="absolute top-3 left-3">
+          <span class="inline-flex items-center gap-1 bg-white/90 backdrop-blur-sm text-primary text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full shadow-sm">
+            <span class="material-symbols-outlined text-xs">${catIcon}</span>
+            ${catMeta.name || p.category}
+          </span>
+        </div>
+        <div class="absolute top-3 right-3">
+          <label class="cursor-pointer">
+            <input type="checkbox" class="product-checkbox w-5 h-5 accent-primary rounded-md shadow-sm" data-id="${p.id}" ${isSelected ? 'checked' : ''} onchange="toggleProductSelect('${p.id}')" aria-label="Select ${p.name}">
+          </label>
+        </div>
+        ${p.shelf_life ? `<div class="absolute bottom-3 left-3 bg-black/60 backdrop-blur-sm text-white text-[10px] px-2 py-0.5 rounded-full">${p.shelf_life}</div>` : ''}
+      </div>
+      <div class="p-3.5 md:p-4">
+        <h3 class="font-serif font-bold text-primary text-sm md:text-base leading-tight mb-1 truncate">${p.name}</h3>
+        <p class="text-[11px] text-on-surface-variant/70 mb-2.5">${p.weight || ''}${p.shelf_life ? ' &bull; ' + p.shelf_life : ''}</p>
+        <div class="flex items-center justify-between gap-2">
+          <span class="price-badge px-3 py-1 rounded-lg text-sm">${formatPrice(p.price)}</span>
+          <button onclick="addSingleToCart('${p.id}')" class="flex-shrink-0 w-9 h-9 rounded-full bg-primary text-white flex items-center justify-center hover:bg-primary-container transition-all shadow-md hover:shadow-lg hover:scale-110 active:scale-95" aria-label="Add ${p.name} to cart">
+            <span class="material-symbols-outlined text-base">add</span>
+          </button>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+
+  // Sync checkboxes
+  document.querySelectorAll('.product-checkbox').forEach(cb => {
+    cb.checked = selectedProductIds.has(cb.dataset.id);
+  });
+}
+
+// ===== TOGGLE PRODUCT SELECTION =====
+function toggleProductSelect(id) {
+  if (selectedProductIds.has(id)) {
+    selectedProductIds.delete(id);
+  } else {
+    selectedProductIds.add(id);
+  }
+  updateSelectAllUI();
+}
+
+// ===== SELECT ALL LOGIC =====
+const selectAllToggle = document.getElementById('selectAllToggle');
+selectAllToggle.addEventListener('change', () => {
+  if (selectAllToggle.checked) {
+    currentProducts.forEach(p => selectedProductIds.add(p.id));
+  } else {
+    currentProducts.forEach(p => selectedProductIds.delete(p.id));
+  }
+  updateSelectAllUI();
+  renderProducts();
+});
+
+function updateSelectAllUI() {
+  const count = selectedProductIds.size;
+  const bar = document.getElementById('selectionBar');
+  const btn = document.getElementById('addSelectedBtn');
+  const selectedCount = document.getElementById('selectedCount');
+  const barCount = document.getElementById('barCount');
+
+  // Sync select-all checkbox
+  const allVisibleSelected = currentProducts.length > 0 && currentProducts.every(p => selectedProductIds.has(p.id));
+  selectAllToggle.checked = allVisibleSelected;
+  selectAllToggle.indeterminate = !allVisibleSelected && currentProducts.some(p => selectedProductIds.has(p.id));
+
+  if (count > 0) {
+    bar.style.transform = 'translateY(0)';
+    btn.classList.remove('hidden');
+    btn.classList.add('flex');
+    selectedCount.textContent = `Add ${count}`;
+    barCount.textContent = count;
+  } else {
+    bar.style.transform = 'translateY(200%)';
+    btn.classList.add('hidden');
+    btn.classList.remove('flex');
+  }
+}
+
+function clearSelection() {
+  selectedProductIds.clear();
+  updateSelectAllUI();
+  renderProducts();
+}
+
+// ===== ADD SINGLE TO CART =====
+function addSingleToCart(id) {
+  const p = getProductById(id);
+  if (!p) return;
+  cartAPI.addItem({
+    id: p.id,
+    name: p.name,
+    price: p.price,
+    weight: p.weight,
+    image: p.image,
+    category: p.category
+  }, 1);
+  updateCartCount();
+  showToast(`Added ${p.name} to cart`);
+}
+
+// ===== ADD SELECTED TO CART =====
+function addSelectedToCart() {
+  if (selectedProductIds.size === 0) return;
+
+  let added = 0;
+  selectedProductIds.forEach(id => {
+    const p = getProductById(id);
+    if (p) {
+      cartAPI.addItem({
+        id: p.id,
+        name: p.name,
+        price: p.price,
+        weight: p.weight,
+        image: p.image,
+        category: p.category
+      }, 1);
+      added++;
+    }
+  });
+
+  updateCartCount();
+  showToast(`${added} item${added > 1 ? 's' : ''} added to cart`);
+
+  // If 3+ items, prompt to open order modal
+  if (added >= 1) {
+    setTimeout(() => openOrderModal(), 400);
+  }
+}
+
+// ===== ORDER MODAL =====
+function openOrderModal() {
+  const modal = document.getElementById('orderModal');
+  const content = document.getElementById('orderModalContent');
+  const cart = cartAPI.getCart();
+
+  if (cart.length === 0) {
+    showToast('Your cart is empty. Select some items first!');
+    return;
+  }
+
+  const summary = document.getElementById('modalSummary');
+  const totalEl = document.getElementById('modalTotal');
+
+  summary.innerHTML = cart.map(item => `
+    <div class="flex justify-between">
+      <span>${item.name} x${item.qty}</span>
+      <span>Rs ${(item.price * item.qty).toLocaleString('en-IN')}</span>
+    </div>
+  `).join('');
+
+  const totals = cartAPI.getTotals();
+  totalEl.textContent = 'Rs ' + totals.subtotal.toLocaleString('en-IN');
+
+  modal.classList.remove('hidden');
+  requestAnimationFrame(() => {
+    content.style.transform = 'scale(1)';
+    content.style.opacity = '1';
+  });
+}
+
+function closeOrderModal() {
+  const modal = document.getElementById('orderModal');
+  const content = document.getElementById('orderModalContent');
+  content.style.transform = 'scale(0.95)';
+  content.style.opacity = '0';
+  setTimeout(() => modal.classList.add('hidden'), 300);
+}
+
+function submitOrderWhatsApp() {
+  const name = document.getElementById('modalName').value.trim();
+  const phone = document.getElementById('modalPhone').value.trim();
+  const store = document.getElementById('modalStore').value;
+  const notes = document.getElementById('modalNotes').value.trim();
+
+  if (!name || !phone) {
+    showToast('Please fill in your name and phone number');
+    return;
+  }
+
+  const cart = cartAPI.getCart();
+  if (cart.length === 0) {
+    showToast('Cart is empty');
+    return;
+  }
+
+  const totals = cartAPI.getTotals();
+  let msg = `Hello Aramane Sweets!%0A%0A*New Order from Website*%0A%0A`;
+  msg += `*Customer:* ${name}%0A`;
+  msg += `*Phone:* ${phone}%0A`;
+  msg += `*Store:* ${store}%0A`;
+  if (notes) msg += `*Notes:* ${notes}%0A`;
+  msg += `%0A*Order Items:*%0A`;
+
+  cart.forEach((item, i) => {
+    msg += `${i + 1}. ${item.name} - Qty: ${item.qty} - ${item.weight || ''} - Rs ${(item.price * item.qty).toLocaleString('en-IN')}%0A`;
+  });
+
+  msg += `%0A*Total: Rs ${totals.subtotal.toLocaleString('en-IN')}*%0A`;
+  msg += `%0APlease confirm availability and delivery options. Thank you!`;
+
+  window.open(`https://wa.me/919535455770?text=${msg}`, '_blank');
+
+  closeOrderModal();
+  cartAPI.clearCart();
+  selectedProductIds.clear();
+  updateCartCount();
+  updateSelectAllUI();
+  showToast('Order sent on WhatsApp!');
+}
+
+// ===== CART COUNT =====
+function updateCartCount() {
+  const totals = cartAPI.getTotals();
+  const count = totals.itemCount;
+  const el = document.getElementById('cartCount');
+  const mobileEl = document.getElementById('mobileCartCount');
+
+  [el, mobileEl].forEach(el => {
+    if (!el) return;
+    if (count > 0) {
+      el.textContent = count > 99 ? '99+' : count;
+      el.classList.remove('hidden');
+    } else {
+      el.classList.add('hidden');
+    }
+  });
+}
+
+// ===== TOAST =====
+function showToast(message) {
+  const existing = document.querySelector('.toast-royal');
+  if (existing) existing.remove();
+
+  const toast = document.createElement('div');
+  toast.className = 'toast-royal fixed bottom-24 md:bottom-8 right-4 md:right-8 z-50 max-w-sm flex items-center gap-3';
+  toast.innerHTML = `<span class="material-symbols-outlined text-accent text-lg">check_circle</span><span>${message}</span>`;
+  document.body.appendChild(toast);
+
+  setTimeout(() => {
+    toast.style.animation = 'none';
+    toast.style.transition = 'all 0.4s ease';
+    toast.style.transform = 'translateX(120%)';
+    toast.style.opacity = '0';
+    setTimeout(() => toast.remove(), 400);
+  }, 2800);
+}
+
+// ===== SEARCH =====
+function handleSearch(q) {
+  searchQuery = q;
+  currentCategory = 'all';
+  renderCategoryNav();
+  renderProducts();
+}
+
+document.getElementById('searchInput').addEventListener('input', e => handleSearch(e.target.value));
+document.getElementById('searchInputMobile').addEventListener('input', e => handleSearch(e.target.value));
+
+// ===== THEME =====
+document.getElementById('themeToggle').addEventListener('click', () => {
+  document.documentElement.classList.toggle('dark');
+  const isDark = document.documentElement.classList.contains('dark');
+  document.getElementById('themeIcon').textContent = isDark ? 'light_mode' : 'dark_mode';
+  localStorage.setItem('aramane-theme', isDark ? 'dark' : 'light');
+});
+if (localStorage.getItem('aramane-theme') === 'dark') {
+  document.documentElement.classList.add('dark');
+  document.getElementById('themeIcon').textContent = 'light_mode';
+}
+
+// ===== URL CATEGORY PARAM =====
+function parseUrlCategory() {
+  const params = new URLSearchParams(window.location.search);
+  const cat = params.get('cat');
+  if (cat && CATEGORY_META[cat]) {
+    currentCategory = cat;
+  }
+}
+
+// ===== CROSS-TAB SYNC =====
+if (cartAPI) {
+  cartAPI.on('cart:updated', updateCartCount);
+  cartAPI.on('cart:item-added', () => updateCartCount());
+  cartAPI.syncAcrossTabs(() => updateCartCount());
+}
+
+// ===== INIT =====
+document.addEventListener('DOMContentLoaded', () => {
+  parseUrlCategory();
+  renderCategoryNav();
+  renderProducts();
+  updateCartCount();
+
+  // Close modal on overlay click
+  document.getElementById('orderModal').addEventListener('click', e => {
+    if (e.target === e.currentTarget) closeOrderModal();
+  });
+
+  // Escape key
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeOrderModal();
+  });
+});
+</script>
+</body>
+</html>
