@@ -204,9 +204,9 @@
   .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); }
 </style>
 <!-- Cart API -->
-<script src="assets/js/cart-api.js"></script>
-<script src="assets/js/products-data-full.js"></script>
-<script src="assets/js/ui-components.js"></script>
+<script src="assets/js/cart-api.js" defer></script>
+<script src="assets/js/products-data-full.js" defer></script>
+<script src="assets/js/ui-components.js" defer></script>
 </head>
 <body class="text-on-surface-variant antialiased overflow-x-hidden">
 
@@ -793,22 +793,32 @@ if (cartAPI) {
 }
 
 // ===== INIT =====
-document.addEventListener('DOMContentLoaded', () => {
+function initApp() {
+  if (typeof PRODUCTS_FULL_CATALOG === 'undefined' || !PRODUCTS_FULL_CATALOG.length) {
+    setTimeout(initApp, 50);
+    return;
+  }
+
   parseUrlCategory();
   renderCategoryNav();
   renderProducts();
   updateCartCount();
 
   // Close modal on overlay click
-  document.getElementById('orderModal').addEventListener('click', e => {
-    if (e.target === e.currentTarget) closeOrderModal();
-  });
+  const modal = document.getElementById('orderModal');
+  if (modal) {
+    modal.addEventListener('click', e => {
+      if (e.target === e.currentTarget) closeOrderModal();
+    });
+  }
 
   // Escape key
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape') closeOrderModal();
   });
-});
+}
+
+document.addEventListener('DOMContentLoaded', initApp);
 </script>
 </body>
 </html>
