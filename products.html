@@ -462,16 +462,25 @@ function renderCategoryNav() {
 
 // ===== PRODUCT GRID RENDER =====
 function renderProducts() {
+  console.log('renderProducts called, currentCategory:', currentCategory);
+  console.log('PRODUCTS_FULL_CATALOG length:', PRODUCTS_FULL_CATALOG ? PRODUCTS_FULL_CATALOG.length : 'undefined');
+
   const grid = document.getElementById('productGrid');
   const noResults = document.getElementById('noResults');
   const sectionTitle = document.getElementById('sectionTitle');
   const resultsCount = document.getElementById('resultsCount');
+
+  if (!PRODUCTS_FULL_CATALOG) {
+    console.error('PRODUCTS_FULL_CATALOG not loaded');
+    return;
+  }
 
   // Filter
   let products = PRODUCTS_FULL_CATALOG;
   if (currentCategory !== 'all') {
     products = products.filter(p => p.category === currentCategory);
     sectionTitle.textContent = getCategoryName(currentCategory);
+    console.log('Filtered to category', currentCategory, 'products:', products.length);
   } else {
     sectionTitle.textContent = searchQuery ? 'Search Results' : 'All Products';
   }
@@ -772,10 +781,19 @@ if (localStorage.getItem('aramane-theme') === 'dark') {
 
 // ===== URL CATEGORY PARAM =====
 function parseUrlCategory() {
-  const params = new URLSearchParams(window.location.search);
-  const cat = params.get('cat');
-  if (cat && CATEGORY_META[cat]) {
-    currentCategory = cat;
+  try {
+    const params = new URLSearchParams(window.location.search);
+    const cat = params.get('cat');
+    console.log('URL param cat:', cat);
+    console.log('CATEGORY_META keys:', Object.keys(CATEGORY_META));
+    if (cat && CATEGORY_META[cat]) {
+      currentCategory = cat;
+      console.log('Set currentCategory to:', currentCategory);
+    } else {
+      console.log('Category not found in CATEGORY_META:', cat);
+    }
+  } catch (e) {
+    console.error('Error parsing URL category:', e);
   }
 }
 
