@@ -3,8 +3,6 @@
  * Organized by 7 main categories with full metadata from PDF menus
  */
 
-console.log('Loading products-data-full.js...');
-
 const PRODUCTS_FULL_CATALOG = [
   // ============ PACKED ITEMS (32 items) ============
   { id: 'packed-1', name: 'Onion Murkh 150gm', price: 60, weight: '150gm', category: 'packed-items', shelf_life: '7 Days', image: 'https://via.placeholder.com/300x300?text=Onion+Murkh' },
@@ -326,4 +324,4 @@ function formatPrice(price) {
   return 'Rs ' + price.toLocaleString('en-IN');
 }
 
-console.log('PRODUCTS_FULL_CATALOG loaded with', PRODUCTS_FULL_CATALOG.length, 'products');
+
