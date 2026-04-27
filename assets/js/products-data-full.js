@@ -81,7 +81,7 @@ const PRODUCTS_FULL_CATALOG = [
   { id: 'kaju-26', name: 'Kaju Anjeer Sandwich', price: 1240, weight: '500gm', category: 'kaju', shelf_life: '10 Days', image: 'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=400&h=400&fit=crop' },
   { id: 'kaju-27', name: 'Kaju Pista Roll', price: 1240, weight: '500gm', category: 'kaju', shelf_life: '10 Days', image: 'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=400&h=400&fit=crop' },
   { id: 'kaju-28', name: 'Kaju Chocolate Ball', price: 1340, weight: '500gm', category: 'kaju', shelf_life: '10 Days', image: 'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=400&h=400&fit=crop' },
-  { id: 'kaju-29', name: 'Kaju 2 in 1', price: 1400, weight: '500gm', category: 'kaju', shelf_life: '10 Days', image: 'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=400&h=400&fit=crop2+in+1' },
+  { id: 'kaju-29', name: 'Kaju 2 in 1', price: 1400, weight: '500gm', category: 'kaju', shelf_life: '10 Days', image: 'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=400&h=400&fit=crop' },
   { id: 'kaju-30', name: 'Kaju Anjeer Roll', price: 1240, weight: '500gm', category: 'kaju', shelf_life: '10 Days', image: 'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=400&h=400&fit=crop' },
   { id: 'kaju-31', name: 'Watermelon Kaju', price: 1240, weight: '500gm', category: 'kaju', shelf_life: '10 Days', image: 'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=400&h=400&fit=crop' },
   { id: 'kaju-32', name: 'Kaju Dholi', price: 1240, weight: '500gm', category: 'kaju', shelf_life: '10 Days', image: 'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=400&h=400&fit=crop' },
