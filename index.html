@@ -14,6 +14,7 @@
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif:ital,wght@0,400;0,600;0,700;1,700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/clean-styles.css">
 <script id="tailwind-config">
   tailwind.config = {
     darkMode: "class",
@@ -233,7 +234,8 @@
 
 <!-- ========== HERO ========== -->
 <section class="relative min-h-[60vh] md:min-h-[70vh] flex items-center bg-primary overflow-hidden">
-  <div class="jali-pattern absolute inset-0 opacity-[0.03] pointer-events-none"></div>
+<div class="absolute inset-0 bg-cover bg-center opacity-20" style="background-image: url('assets/images/RoyalStreetFood.jpg')"></div>
+<div class="jali-pattern absolute inset-0 opacity-[0.03] pointer-events-none"></div>
 
   <div class="relative z-10 max-w-[1400px] mx-auto px-4 md:px-8 py-12 md:py-20 w-full">
     <div class="max-w-2xl">
@@ -263,7 +265,7 @@
 
   <!-- Hero image (right side, desktop) -->
   <div class="hidden lg:block absolute right-0 top-0 bottom-0 w-[40%]">
-    <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?w=800&h=1200&fit=crop" alt="Assorted Indian sweets in decorative boxes" class="w-full h-full object-cover opacity-40 mask-image-fade" style="-webkit-mask-image: linear-gradient(to left, black 40%, transparent 100%);mask-image: linear-gradient(to left, black 40%, transparent 100%)">
+    <img src="assets/images/shop/RoyalBengaliSweets.jpeg" alt="Aramane Sweets - Authentic Bengali sweets" class="w-full h-full object-cover">
   </div>
 </section>
 
@@ -317,6 +319,7 @@
 
 <!-- ========== BESTSELLERS ========== -->
 <section class="py-16 md:py-20 bg-surface-container relative overflow-hidden">
+  <div class="absolute inset-0 bg-cover bg-center opacity-15" style="background-image: url('assets/images/KajuKatli.jpeg')"></div>
   <div class="absolute inset-0 jali-pattern jali-subtle pointer-events-none"></div>
   <div class="max-w-[1400px] mx-auto px-4 md:px-8 relative z-10">
     <div class="flex items-end justify-between mb-10">
@@ -345,52 +348,73 @@
     <div class="gold-line w-24 mx-auto"></div>
   </div>
 
-  <!-- Kaju Sweets -->
-  <div class="mb-10">
-    <div class="flex items-center justify-between mb-4">
-      <h3 class="font-serif text-xl md:text-2xl font-bold text-primary flex items-center gap-2">
-        <span class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center"><span class="material-symbols-outlined text-primary text-sm">cookie</span></span>
-        Kaju Sweets
-      </h3>
-      <a href="products.html?cat=kaju" class="text-sm font-semibold text-primary hover:text-primary-container flex items-center gap-1">See All <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+  <!-- Background overlay for section -->
+  <div class="relative bg-cover bg-center py-8 px-4 rounded-2xl mb-10" style="background-image: url('assets/images/RoyalBengaliSweets.jpeg'); background-size: 400px 200px; background-repeat: round;">
+    <div class="absolute inset-0 bg-white/90 rounded-2xl"></div>
+    <div class="relative z-10">
+      <!-- Kaju Sweets -->
+      <div class="mb-8">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="font-serif text-xl md:text-2xl font-bold text-primary flex items-center gap-2">
+            <span class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center"><span class="material-symbols-outlined text-primary text-sm">cookie</span></span>
+            Kaju Sweets
+          </h3>
+          <a href="products.html?cat=kaju" class="text-sm font-semibold text-primary hover:text-primary-container flex items-center gap-1">See All <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-3 md:gap-4" id="kajuPreview"></div>
+      </div>
     </div>
-    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-3 md:gap-4" id="kajuPreview"></div>
   </div>
 
   <!-- Ghee & Kova -->
-  <div class="mb-10">
-    <div class="flex items-center justify-between mb-4">
-      <h3 class="font-serif text-xl md:text-2xl font-bold text-primary flex items-center gap-2">
-        <span class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center"><span class="material-symbols-outlined text-primary text-sm">egg_alt</span></span>
-        Ghee & Kova
-      </h3>
-      <a href="products.html?cat=ghee-kova" class="text-sm font-semibold text-primary hover:text-primary-container flex items-center gap-1">See All <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+  <div class="relative bg-cover bg-center py-8 px-4 rounded-2xl mb-10" style="background-image: url('assets/images/GheeSweets.jpeg'); background-size: 400px 200px; background-repeat: round;">
+    <div class="absolute inset-0 bg-white/90 rounded-2xl"></div>
+    <div class="relative z-10">
+      <div class="mb-8">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="font-serif text-xl md:text-2xl font-bold text-primary flex items-center gap-2">
+            <span class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center"><span class="material-symbols-outlined text-primary text-sm">egg_alt</span></span>
+            Ghee & Kova
+          </h3>
+          <a href="products.html?cat=ghee-kova" class="text-sm font-semibold text-primary hover:text-primary-container flex items-center gap-1">See All <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-3 md:gap-4" id="gheePreview"></div>
+      </div>
     </div>
-    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-3 md:gap-4" id="gheePreview"></div>
   </div>
 
   <!-- Bengali Sweets -->
-  <div class="mb-10">
-    <div class="flex items-center justify-between mb-4">
-      <h3 class="font-serif text-xl md:text-2xl font-bold text-primary flex items-center gap-2">
-        <span class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center"><span class="material-symbols-outlined text-primary text-sm">bakery_dining</span></span>
-        Bengali Sweets
-      </h3>
-      <a href="products.html?cat=bengali" class="text-sm font-semibold text-primary hover:text-primary-container flex items-center gap-1">See All <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+  <div class="relative bg-cover bg-center py-8 px-4 rounded-2xl mb-10" style="background-image: url('assets/images/RoyalBengaliSweets.jpeg'); background-size: 400px 200px; background-repeat: round;">
+    <div class="absolute inset-0 bg-white/85 rounded-2xl"></div>
+    <div class="relative z-10">
+      <div class="mb-8">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="font-serif text-xl md:text-2xl font-bold text-primary flex items-center gap-2">
+            <span class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center"><span class="material-symbols-outlined text-primary text-sm">bakery_dining</span></span>
+            Bengali Sweets
+          </h3>
+          <a href="products.html?cat=bengali" class="text-sm font-semibold text-primary hover:text-primary-container flex items-center gap-1">See All <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-3 md:gap-4" id="bengaliPreview"></div>
+      </div>
     </div>
-    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-3 md:gap-4" id="bengaliPreview"></div>
   </div>
 
   <!-- Bakery -->
-  <div class="mb-10">
-    <div class="flex items-center justify-between mb-4">
-      <h3 class="font-serif text-xl md:text-2xl font-bold text-primary flex items-center gap-2">
-        <span class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center"><span class="material-symbols-outlined text-primary text-sm">cake</span></span>
-        Bakery
-      </h3>
-      <a href="products.html?cat=bakery" class="text-sm font-semibold text-primary hover:text-primary-container flex items-center gap-1">See All <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+  <div class="relative bg-cover bg-center py-8 px-4 rounded-2xl" style="background-image: url('assets/images/BakeryandCookies.jpeg'); background-size: 400px 200px; background-repeat: round;">
+    <div class="absolute inset-0 bg-white/90 rounded-2xl"></div>
+    <div class="relative z-10">
+      <div class="mb-8">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="font-serif text-xl md:text-2xl font-bold text-primary flex items-center gap-2">
+            <span class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center"><span class="material-symbols-outlined text-primary text-sm">cake</span></span>
+            Bakery
+          </h3>
+          <a href="products.html?cat=bakery" class="text-sm font-semibold text-primary hover:text-primary-container flex items-center gap-1">See All <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-3 md:gap-4" id="bakeryPreview"></div>
+      </div>
     </div>
-    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-3 md:gap-4" id="bakeryPreview"></div>
   </div>
 </section>
 
@@ -429,33 +453,85 @@
   </div>
 </section>
 
-<!-- ========== 4 STORES ========== -->
-<section id="stores" class="py-16 md:py-20 px-4 md:px-8 max-w-[1400px] mx-auto">
-  <div class="text-center mb-12">
-    <span class="text-accent text-xs font-bold uppercase tracking-[0.2em]">Visit Us</span>
-    <h2 class="font-serif text-3xl md:text-4xl font-bold text-primary mt-2 mb-3">Our Heritage Stores</h2>
-    <div class="gold-line w-24 mx-auto mb-3"></div>
-    <p class="text-on-surface-variant max-w-lg mx-auto text-sm">Four locations across Karnataka, each carrying the same devotion to tradition and taste.</p>
-  </div>
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5" id="storesGrid"></div>
-</section>
+<!-- ========== SHOP GALLERY SECTION ========== -->
+  <section id="shop-gallery" class="py-16 md:py-20 bg-primary text-white relative overflow-hidden">
+    <div class="absolute inset-0 jali-pattern opacity-[0.05]"></div>
+    <div class="max-w-[1400px] mx-auto px-4 md:px-8 relative z-10">
+      <div class="text-center mb-12">
+        <span class="text-accent text-xs font-bold uppercase tracking-[0.2em]">Our Stores</span>
+        <h2 class="font-serif text-3xl md:text-4xl font-bold text-white mt-2 mb-3">Visit Our Heritage</h2>
+        <div class="gold-line w-24 mx-auto mb-4"></div>
+        <p class="text-white/70 max-w-lg mx-auto text-sm">Step into the heart of our heritage — authentic Aramane sweet shops serving royal delicacies since 1934</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+        <div class="group bg-white/10 backdrop-blur-sm rounded-xl overflow-hidden border border-white/20 card-lift">
+          <img src="assets/images/shop/shop-exterior.jpg" alt="Aramane Sweets Exterior" class="w-full h-48 md:h-56 object-cover group-hover:scale-105 transition-transform duration-500">
+          <div class="p-4">
+            <h3 class="font-serif font-bold text-white mb-2">Our Traditional Store</h3>
+            <p class="text-white/60 text-xs">Authentic heritage exterior where tradition meets taste</p>
+          </div>
+        </div>
+        
+        <div class="group bg-white/10 backdrop-blur-sm rounded-xl overflow-hidden border border-white/20 card-lift">
+          <img src="assets/images/shop/shop-interior-1.jpg" alt="Aramane Sweets Interior" class="w-full h-48 md:h-56 object-cover group-hover:scale-105 transition-transform duration-500">
+          <div class="p-4">
+            <h3 class="font-serif font-bold text-white mb-2">Pristine Interiors</h3>
+            <p class="text-white/60 text-xs">Elegant display counters showcasing 235+ delicacies</p>
+          </div>
+        </div>
+        
+        <div class="group bg-white/10 backdrop-blur-sm rounded-xl overflow-hidden border border-white/20 card-lift">
+          <img src="assets/images/shop/shop-interior-2.jpg" alt="Aramane Sweets Premium Counter" class="w-full h-48 md:h-56 object-cover group-hover:scale-105 transition-transform duration-500">
+          <div class="p-4">
+            <h3 class="font-serif font-bold text-white mb-2">Premium Selection</h3>
+            <p class="text-white/60 text-xs">Curated displays of premium gifts and specialty items</p>
+          </div>
+        </div>
+        
+        <div class="group bg-white/10 backdrop-blur-sm rounded-xl overflow-hidden border border-white/20 card-lift">
+          <img src="assets/images/shop/shop-products.jpg" alt="Aramane Sweets Product Showcase" class="w-full h-48 md:h-56 object-cover group-hover:scale-105 transition-transform duration-500">
+          <div class="p-4">
+            <h3 class="font-serif font-bold text-white mb-2">Pure Delicacies</h3>
+            <p class="text-white/60 text-xs">Freshly made sweets arranged with pride and perfection</p>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+  
+    <!-- ========== 4 STORES ========== -->
+    <section id="stores" class="py-16 md:py-20 px-4 md:px-8 max-w-[1400px] mx-auto">
+      <div class="text-center mb-12">
+        <span class="text-accent text-xs font-bold uppercase tracking-[0.2em]">Visit Us</span>
+        <h2 class="font-serif text-3xl md:text-4xl font-bold text-primary mt-2 mb-3">Our Heritage Stores</h2>
+        <div class="gold-line w-24 mx-auto mb-3"></div>
+        <p class="text-on-surface-variant max-w-lg mx-auto text-sm">Four locations across Karnataka, each carrying the same devotion to tradition and taste.</p>
+      </div>
+      <div class="stores-section-bg relative px-4 md:px-6 py-8 rounded-2xl mb-8" style="background-image: url('assets/images/RoyalStreetFood.jpg'); background-size: cover; background-position: center;">
+        <div class="absolute inset-0 bg-white/90 rounded-2xl"></div>
+        <div class="relative z-10">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5" id="storesGrid"></div>
+        </div>
+      </div>
+    </section>
 
 <!-- ========== BRAND STORY CTA ========== -->
-<section class="py-16 md:py-20 bg-surface-container border-y border-outline-variant/20">
-  <div class="max-w-[1400px] mx-auto px-4 md:px-8 flex flex-col md:flex-row items-center gap-8 md:gap-16">
-    <div class="md:w-1/2">
-      <img src="https://images.unsplash.com/photo-1567333126229-db292b2573e9?w=600&h=400&fit=crop" alt="Traditional Indian sweet making" class="w-full rounded-2xl shadow-xl object-cover h-64 md:h-80">
+  <section class="py-16 md:py-20 bg-surface-container border-y border-outline-variant/20">
+    <div class="max-w-[1400px] mx-auto px-4 md:px-8 flex flex-col md:flex-row items-center gap-8 md:gap-16">
+      <div class="md:w-1/2">
+        <img src="assets/images/shop/shop-products.jpg" alt="Aramane Sweets in decorative boxes" class="w-full rounded-2xl shadow-xl object-cover h-64 md:h-80">
+      </div>
+      <div class="md:w-1/2">
+        <span class="text-accent text-xs font-bold uppercase tracking-[0.2em] mb-3 block">Since 1934</span>
+        <h2 class="font-serif text-3xl md:text-4xl font-bold text-primary mb-4 leading-tight">A Legacy Carved<br>in Ghee & Gold</h2>
+        <p class="text-on-surface-variant leading-relaxed mb-6">What began in the royal kitchens of Mysore has journeyed through three generations. Every sweet we craft carries the texture of history — pure, golden, and timeless.</p>
+        <a href="brand-story.html" class="inline-flex items-center gap-2 text-sm font-bold text-primary hover:text-primary-container transition-colors">
+          Read Our Story <span class="material-symbols-outlined">arrow_forward</span>
+        </a>
+      </div>
     </div>
-    <div class="md:w-1/2">
-      <span class="text-accent text-xs font-bold uppercase tracking-[0.2em] mb-3 block">Since 1934</span>
-      <h2 class="font-serif text-3xl md:text-4xl font-bold text-primary mb-4 leading-tight">A Legacy Carved<br>in Ghee & Gold</h2>
-      <p class="text-on-surface-variant leading-relaxed mb-6">What began in the royal kitchens of Mysore has journeyed through three generations. Every sweet we craft carries the texture of history — pure, golden, and timeless.</p>
-      <a href="brand-story.html" class="inline-flex items-center gap-2 text-sm font-bold text-primary hover:text-primary-container transition-colors">
-        Read Our Story <span class="material-symbols-outlined">arrow_forward</span>
-      </a>
-    </div>
-  </div>
-</section>
+  </section>
 
 <!-- ========== FAQ ========== -->
 <section class="py-16 md:py-20 px-4 md:px-8 max-w-[1400px] mx-auto">

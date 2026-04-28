@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Aramane Sweets — Authentic Indian mithai with heritage since 1934">
+    <title>Aramane Sweets | Clean Heritage Design</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
+    
+    <!-- Clean styles ONLY for blur-free design -->
+    <link rel="stylesheet" href="assets/css/clean-styles.css">
+    
+    <style>
+        /* Hero without blur/mask effects */
+        .hero-section {
+            background: linear-gradient(135deg, #570013, #800020);
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+        }
+        
+        .category-card {
+            background: white;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+        }
+        
+        /* NO BACKGROUND BLUR or mask effects */
+        .clean-nav {
+            background: rgba(255,255,255,0.95);
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .clean-footer {
+            background: #570013;
+            color: white;
+        }
+        
+    </style>
+</head>
+<body class="bg-stone-50 font-sans">
+
+    <!-- Clean Header (NO BLUR) -->
+    <header class="clean-nav sticky top-0 z-50">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div class="flex justify-between items-center">
+                <h1 class="font-serif text-2xl font-bold text-red-900">Aramane Sweets</h1>
+                <div class="hidden md:flex space-x-6">
+                    <a href="products.html" class="text-primary hover:text-red-600 font-medium">Products</a>
+                    <a href="gift-collections.html" class="text-primary hover:text-red-600 font-medium">Gifts</a>
+                    <a href="cart.html" class="text-primary hover:text-red-600 font-medium">Cart</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section (NO BLUR/ANIMATION EFFECTS) -->
+    <section class="hero-section text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="font-serif text-4xl md:text-6xl font-bold mb-6">
+                Heritage Indian Sweets Since 1934
+            </h1>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">
+                235+ authentic mithai crafted with pure ghee in Karnataka
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="products.html" class="bg-white text-red-900 px-8 py-3 rounded-full font-bold hover:bg-red-50 transition">
+                    Browse All Sweets
+                </a>
+                <a href="https://wa.me/919535455770" class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-full font-bold hover:bg-white hover:text-red-900 transition">
+                    Order via WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clean Categories Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="font-serif text-3xl font-bold text-center mb-12">Our Collections</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="category-card rounded-xl p-6 text-center">
+                    <img src="assets/images/GheeSweets.jpeg" alt="Ghee Sweets" class="w-full h-40 object-cover rounded-lg mb-4">
+                    <h3 class="font-serif text-xl font-semibold mb-2">Ghee & Kova</h3>
+                    <p class="text-gray-600 text-sm">16+ traditional varieties</p>
+                </div>
+                <div class="category-card rounded-xl p-6 text-center">
+                    <img src="assets/images/KajuKatli.jpeg" alt="Kaju Sweets" class="w-full h-40 object-cover rounded-lg mb-4">
+                    <h3 class="font-serif text-xl font-semibold mb-2">Premium Kaju</h3>
+                    <p class="text-gray-600 text-sm">30+ cashew specialties</p>
+                </div>
+                <div class="category-card rounded-xl p-6 text-center">
+                    <img src="assets/images/RoyalBengaliSweets.jpeg" alt="Bengali Sweets" class="w-full h-40 object-cover rounded-lg mb-4">
+                    <h3 class="font-serif text-xl font-semibold mb-2">Bengali Delights</h3>
+                    <p class="text-gray-600 text-sm">20+ eastern treasures</p>
+                </div>
+                <div class="category-card rounded-xl p-6 text-center">
+                    <img src="assets/images/BakeryandCookies.jpeg" alt="Bakery" class="w-full h-40 object-cover rounded-lg mb-4">
+                    <h3 class="font-serif text-xl font-semibold mb-2">Fresh Bakery</h3>
+                    <p class="text-gray-600 text-sm">40+ baked fresh daily</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clean Footer -->
+    <footer class="clean-footer">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="text-center">
+                <h3 class="font-serif text-xl font-semibold mb-4">Order via WhatsApp</h3>
+                <p class="mb-4">+91 95354 55770</p>
+                <p class="text-sm opacity-80">
+                    Authentic heritage mithai across Karnataka<br>
+                    Bangalore · Davangere · Chitradurga · Hospet
+                </p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
