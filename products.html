@@ -1,281 +1,518 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products - Aramane Sweets & Snacks</title>
-    <link rel="stylesheet" href="assets/css/green-theme.css">
-    <link rel="stylesheet" href="assets/css/products-grid.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,400..700,0..1,0,0" rel="stylesheet">
-    <base href="./">
-</head>
-<body class="text-surface bg-surface">
-    <script src="assets/js/products-data-full.js"></script>
-    <script src="assets/js/cart-api.js"></script>
-
-    <!-- Banner -->
-    <div class="hero-green text-white text-center py-2 px-4 text-xs md:text-sm font-medium tracking-wide">
-        <span class="inline-flex items-center gap-2">
-            <span class="material-symbols-outlined text-sm">local_shipping</span>
-            We deliver fresh sweets across Bangalore • Click & Collect available • WhatsApp: 95354 55770
-        </span>
-    </div>
-
-    <!-- Header -->
-    <header class="bg-primary text-white shadow-md relative z-40">
-        <div class="max-w-[1400px] mx-auto px-4 md:px-8 flex items-center justify-between h-16">
-            <div class="flex items-center gap-3">
-                <div class="md:hidden">
-                    <button onclick="toggleMobileMenu()" class="p-2">
-                        <span class="material-symbols-outlined">menu</span>
-                    </button>
-                </div>
-                <a href="index-green.html" class="font-serif italic text-lg md:text-xl font-bold flex items-center gap-2">
-                    <span class="material-symbols-outlined">restaurant</span>
-                    ARAMANE
-                </a>
-            </div>
-
-            <div class="hidden md:flex items-center gap-6 text-sm">
-                <a href="index-green.html" class="hover:text-green-200 transition-colors">Home</a>
-                <a href="gift-collections.html" class="hover:text-green-200 transition-colors">Gifts</a>
-                <a href="brand-story.html" class="hover:text-green-200 transition-colors">Story</a>
-                <a href="store-locator.html" class="hover:text-green-200 transition-colors">Stores</a>
-            </div>
-
-            <div class="flex items-center gap-3 md:gap-5">
-                <div class="hidden md:flex items-center bg-primary-600 rounded-full px-4 py-2 border border-white/30">
-                    <div class="flex items-center gap-2 text-sm">
-                        <span class="material-symbols-outlined text-sm">phone</span>
-                        <span>+91 95354 55770</span>
-                    </div>
-                </div>
-                <a href="cart.html" id="cartBtn" class="flex items-center gap-2 bg-white bg-opacity-10 hover:bg-opacity-20 px-3 py-1.5 rounded-full transition-colors">
-                    <span class="material-symbols-outlined">shopping_cart</span>
-                    <span id="cartCount" class="text-sm font-bold">0</span>
-                </a>
-            </div>
-        </div>
-
-        <div id="mobileMenu" class="hidden md:hidden absolute top-16 left-0 right-0 z-30"><div class="bg-primary/98 border-t border-primary-500 px-4 py-4">
-            <div class="flex flex-col gap-3">
-                <a href="index-green.html" class="block px-3 py-2 rounded-lg hover:bg-primary-600 transition-colors">Home</a>
-                <a href="products.html" class="block px-3 py-2 bg-primary-600 rounded-lg">Products</a>
-                <a href="gift-collections.html" class="block px-3 py-2 rounded-lg hover:bg-primary-600 transition-colors">Gift Boxes</a>
-                <a href="brand-story.html" class="block px-3 py-2 rounded-lg hover:bg-primary-600 transition-colors">Our Story</a>
-                <a href="store-locator.html" class="block px-3 py-2 rounded-lg hover:bg-primary-600 transition-colors">Store Locator</a>
-            </div>
-        </div></div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero-shop hero-green relative min-h-[240px] text-white flex items-center justify-center">
-        <div class="absolute inset-0 bg-primary-600"></div>
-        <div class="absolute inset-0 bg-cover bg-center bg-fixed opacity-20" 
-             style="background-image: url('assets/images/GheeSweets.jpeg')"></div>
-        
-        <div class="relative z-10 max-w-[1400px] mx-auto px-4 md:px-8 py-8 md:py-12 text-center">
-            <h1 class="font-serif text-3xl md:text-5xl font-bold mb-2">Our Sweet Collections</h1>
-            <p class="text-green-100 text-lg md:text-xl max-w-2xl mx-auto">
-                From traditional Bengali delicacies to royal ghee sweets, each crafted with pure ingredients
-            </p>
-        </div>
-    </section>
-
-    <!-- Main Content -->
-    <main class="pt-4 md:pt-6 pb-8 bg-surface">
-        
-        <!-- Fixed Top Navigation & Filters -->
-        <section class="mb-6 md:mb-8 px-4 md:px-8">
-            
-            <!-- Category Navigation -->
-            <div class="mb-6">
-                <div class="flex gap-2 md:gap-3 overflow-x-auto pb-2 scrollbar-hide" id="categoryNav" role="tablist" aria-label="Product categories">
-                    <button onclick="switchCategory('all')" 
-                            class="category-btn bg-primary text-white px-4 py-2 text-sm font-semibold rounded-full whitespace-nowrap border border-primary">
-                        All Products
-                    </button>
-                    <button onclick="switchCategory('bengali')" 
-                            class="category-btn bg-surface text-surface hover:bg-green-100 px-4 py-2 text-sm font-semibold rounded-full whitespace-nowrap border">Bengali Sweets</button>
-                    <button onclick="switchCategory('ghee-kova')" 
-                            class="category-btn bg-surface text-surface hover:bg-green-100 px-4 py-2 text-sm font-semibold rounded-full whitespace-nowrap border">Ghee Sweets</button>
-                    <button onclick="switchCategory('kaju')" 
-                            class="category-btn bg-surface text-surface hover:bg-green-100 px-4 py-2 text-sm font-semibold rounded-full whitespace-nowrap border">Kaju Sweets</button>
-                    <button onclick="switchCategory('namkeen')" 
-                            class="category-btn bg-surface text-surface hover:bg-green-100 px-4 py-2 text-sm font-semibold rounded-full whitespace-nowrap border">Namkeen</button>
-                    <button onclick="switchCategory('bakery')" 
-                            class="category-btn bg-surface text-surface hover:bg-green-100 px-4 py-2 text-sm font-semibold rounded-full whitespace-nowrap border">Bakery</button>
-                    <button onclick="switchCategory('gift')" 
-                            class="category-btn bg-surface text-surface hover:bg-green-100 px-4 py-2 text-sm font-semibold rounded-full whitespace-nowrap border">Gift Boxes</button>
-                    <button onclick="switchCategory('chat')" 
-                            class="category-btn bg-surface text-surface hover:bg-green-100 px-4 py-2 text-sm font-semibold rounded-full whitespace-nowrap border">Chat Corner</button>
-                </div>
-            </div>
-
-            <!-- Additional Filters -->
-            <div class="mb-4 md:mb-6 md:px-8 flex items-center justify-between flex-wrap gap-3">
-                <div>
-                    <div class="flex items-center gap-2">
-                        <span class="text-sm font-medium text-surface-variant">Show:</span>
-                        <button id="showAllBtn" class="px-3 py-1 text-xs font-semibold rounded-full bg-primary text-white">All Products</button>
-                        <button id="showSpecialBtn" class="px-3 py-1 text-xs font-semibold rounded-full bg-surface text-surface border border-green-200 hover:bg-green-50">Special Items</button>
-                        <button id="showVegetarianBtn" class="px-3 py-1 text-xs font-semibold rounded-full bg-surface text-surface border border-green-200 hover:bg-green-50">Pure Veg</button>
-                    </div>
-                </div>
-
-                <div class="flex items-center gap-3">
-                    <button onclick="resetFilters()" 
-                            class="px-4 py-2 text-xs md:text-sm bg-surface border border-green-200 rounded-full hover:bg-green-50 transition-colors">
-                        <span class="material-symbols-outlined text-xs mr-1">refresh</span>
-                        Reset
-                    </button>
-                    
-                    <label class="flex items-center gap-2 cursor-pointer select-none bg-surface border border-green-200 hover:bg-green-50 px-4 py-2 rounded-full text-sm transition-colors">
-                        <input type="checkbox" id="checkbox" onclick="toggleCartMode()" class="hidden"/>
-                        <span class="toggle bg-surface-variant"></span>
-                        <span class="text-surface-variant text-xs">Bulk Order</span>
-                    </label>
-                    
-                    <button id="addSelectedBtn" 
-                            class="hidden items-center gap-1.5 bg-primary text-white px-4 py-2 text-sm font-semibold rounded-full hover:bg-green-700 transition-colors shadow-lg" 
-                            onclick="addSelectedToCart()">
-                        <span class="material-symbols-outlined text-sm">add_shopping_cart</span>
-                        Add Selected (<span id="selectionCount">0</span>)
-                    </button>
-                </div>
-            </div>
-        </section>
-
-        <!-- No Results Message -->
-        <div id="noResults" class="text-center py-20 hidden">
-            <div class="max-w-md mx-auto">
-                <span class="material-symbols-outlined text-gray-400 text-6xl mb-4">search_off</span>
-                <h3 class="font-serif text-xl font-bold text-surface mb-2">No sweets found</h3>
-                <p class="text-surface-variant">Try adjusting your filters or search terms.</p>
-            </div>
-        </div>
-
-        <!-- Products Grid -->
-        <section class="px-4 md:px-8">
-            <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
-                <!-- Products injected by JavaScript -->
-            </div>
-        </section>
-    </main>
-
-    <!-- ===== SELECTION BAR ===== -->
-    <div id="selectionBar" 
-         class="fixed bottom-20 md:bottom-6 left-4 right-4 md:left-auto md:right-6 bg-primary rounded-xl p-4 text-white shadow-lg z-40 transform translate-y-[200%] transition-transform duration-300" 
-         aria-live="polite">
-        <div class="flex items-center justify-between mb-2">
-            <span class="font-bold">Selected Items</span>
-            <button onclick="clearSelection()" class="text-sm opacity-70 hover:opacity-100">Clear</button>
-        </div>
-        <button onclick="addSelectedToCart()" 
-                class="w-full bg-white text-primary font-bold py-2.5 rounded-lg hover:bg-green-50 transition-colors flex items-center justify-center gap-2 text-sm">
-            <span class="material-symbols-outlined text-sm">shopping_cart_checkout</span>
-            Add to Cart (<span class="font-bold">₹<span id="barAmount">0</span></span>)
-        </button>
-    </div>
-
-    <!-- ===== ORDER MODAL ===== -->
-    <div id="orderModal" class="fixed inset-0 bg-black bg-opacity-75 z-[60] hidden flex items-center justify-center p-4" onclick="closeModal(event)">
-        <div class="bg-white rounded-2xl w-full max-w-md shadow-2xl border border-green-200 overflow-hidden transform scale-95 opacity-0 transition-all duration-300" id="orderModalContent" onclick="event.stopPropagation()">
-            <!-- Modal Header -->
-            <div class="bg-primary text-white px-6 py-4 flex items-center justify-between">
-                <h3 class="font-bold text-lg">Select Store & Quantity</h3>
-                <button onclick="closeModal()" class="hover:bg-primary-600 rounded-full w-8 h-8 flex items-center justify-center">
-                    <span class="material-symbols-outlined">close</span>
-                </button>
-            </div>
-            
-            <!-- Modal Body -->
-            <div class="p-6 space-y-4">
-                <div>
-                    <label class="text-sm font-medium text-surface mb-2 block">Select Store Location</label>
-                    <select id="modalStore" class="w-full px-4 py-3 border border-green-200 rounded-lg bg-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all">
-                        <option value="">Choose store location...</option>
-                        <option value="airport">KIA Airport Road</option>
-                        <option value="banaswadi">Banaswadi Main Road</option>
-                        <option value="btm">BTM Layout</option>
-                        <option value="cmh">CMH Road</option>
-                        <option value="devasandra">Devasandra Main Road</option>
-                        <option value="hebbal">Hebbal</option>
-                        <option value="hegde">Hegde Nagar</option>
-                        <option value="kammana">Kammanahalli</option>
-                        <option value="kavalbyrasandra">Kavalbyrasandra</option>
-                        <option value="kothanur">Kothanur Main Road</option>
-                        <option value="richards">Richards Town</option>
-                    </select>
-                </div>
-
-                <div>
-                    <label class="text-sm font-medium text-surface mb-2 block">Quantity</label>
-                    <div class="flex items-center gap-3">
-                        <button type="button" id="decreaseBtn" class="w-8 h-8 bg-green-100 text-green-600 rounded-full flex items-center justify-center hover:bg-green-200 transition-colors">-</button>
-                        <input type="number" id="modalQuantity" value="1" min="1" max="100" 
-                               class="w-16 text-center px-2 py-1 border border-green-200 rounded-full focus:outline-none focus:border-primary">
-                        <button type="button" id="increaseBtn" class="w-8 h-8 bg-green-100 text-green-600 rounded-full flex items-center justify-center hover:bg-green-200 transition-colors">+</button>
-                    </div>
-                </div>
-
-                <div class="bg-primary-50 rounded-lg p-4 border border-green-200">
-                    <div class="flex justify-between text-sm font-medium text-surface">
-                        <span>Total:</span>
-                        <span>₹<span id="modalAmount">0</span></span>
-                    </div>
-                </div>
-
-                <button onclick="submitOrderWhatsApp()" 
-                        class="w-full bg-primary text-white font-bold py-3 rounded-xl hover:bg-green-700 transition-colors shadow-lg flex items-center justify-center gap-2">
-                    <span class="material-symbols-outlined">shopping_cart_checkout</span>
-                    Order via WhatsApp
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Mobile Bottom Nav -->
-    <nav class="md:hidden fixed bottom-0 left-0 right-0 bg-primary-600 border-t border-primary-500 py-2 z-50">
-        <div class="flex justify-around">
-            <a href="index-green.html" class="flex flex-col items-center text-green-100 p-2">
-                <span class="material-symbols-outlined">home</span>
-                <span class="text-[10px]">Home</span>
-            </a>
-            <a href="products-green.html" class="flex flex-col items-center text-white p-2">
-                <span class="material-symbols-outlined">store</span>
-                <span class="text-[10px]">Products</span>
-            </a>
-            <a href="gift-collections.html" class="flex flex-col items-center text-green-100 p-2">
-                <span class="material-symbols-outlined">gift</span>
-                <span class="text-[10px]">Gifts</span>
-            </a>
-            <a href="cart.html" class="flex flex-col items-center text-green-100 p-2">
-                <span class="material-symbols-outlined">shopping_cart</span>
-                <span class="text-[10px]">Cart</span>
-            </a>
-        </div>
-    </nav>
-
-    <script>
-        // Product display logic will be filled by the unified products JS
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobileMenu');
-            menu.classList.toggle('hidden');
-        }
-
-        function closeModal(e) {
-            const modal = document.getElementById('orderModal');
-            if (!e || e.target.id === 'orderModal') {
-                modal.classList.add('hidden');
-                document.body.style.overflow = 'auto';
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Aramane Sweets - All Products</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#16a34a",
+                        "primary-dark": "#15803d",
+                        "primary-light": "#22c55e",
+                        "on-primary": "#ffffff",
+                        "background": "#f7f9fb",
+                        "on-background": "#191c1e",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface": "#191c1e",
+                        "on-surface-variant": "#3e4a3d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "xl": "80px",
+                        "base": "8px",
+                        "container-max": "1280px",
+                        "md": "24px",
+                        "lg": "48px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "display": ["Playfair Display"],
+                        "body": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display": ["48px", {"lineHeight": "1.1", "fontWeight": "700"}],
+                        "headline": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "body": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}]
+                    }
+                }
             }
         }
-
-        // Link products to green theme
-        document.documentElement.style.background = 'var(--bg-surface)';
-        document.body.style.background = 'var(--bg-surface)';
     </script>
+    
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 24px;
+        }
+        @media (max-width: 768px) {
+            .product-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-background text-on-background antialiased">
+
+<!-- Navigation -->
+<nav class="bg-surface-container-lowest sticky top-0 z-50 border-b border-gray-200 px-gutter h-20 flex justify-between items-center w-full">
+    <a href="index.html" class="text-2xl font-bold text-primary uppercase tracking-widest font-display">Aramane Sweets</a>
+    
+    <div class="hidden md:flex items-center gap-md">
+        <a href="index.html" class="text-on-surface-variant hover:text-primary">Home</a>
+        <a href="products.html" class="text-primary border-b-2 border-primary font-bold pb-1">Products</a>
+        <a href="gift-collections.html" class="text-on-surface-variant hover:text-primary">Gifts</a>
+        <a href="brand-story.html" class="text-on-surface-variant hover:text-primary">Heritage</a>
+        <a href="store-locator.html" class="text-on-surface-variant hover:text-primary">Locate</a>
+    </div>
+    
+    <div class="flex items-center gap-md">
+        <a href="https://wa.me/9535455770" class="hidden lg:flex items-center px-md py-sm bg-primary text-on-primary font-label rounded hover:opacity-80 transition-opacity">
+            WhatsApp Order
+        </a>
+        <a href="cart.html" class="text-primary hover:opacity-80 relative">
+            <span class="material-symbols-outlined">shopping_cart</span>
+            <span id="cart-count" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center hidden">0</span>
+        </a>
+    </div>
+</nav>
+
+<!-- Page Header -->
+<header class="py-xl bg-gradient-to-r from-primary-dark to-primary-light border-b border-gray-200">
+    <div class="max-w-container-max mx-auto px-gutter text-center">
+        <h1 class="text-display text-on-primary mb-4 font-display">Complete Product Catalog</h1>
+        <p class="text-body text-on-primary max-w-2xl mx-auto opacity-90">Discover all 227+ authentic Indian sweets, handcrafted with pure ingredients and generations of heritage since 1960.</p>
+    </div>
+</header>
+
+<main class="max-w-container-max mx-auto px-gutter py-xl">
+
+<!-- Category Navigation -->
+<div class="mb-xl flex flex-wrap gap-md justify-center">
+    <button onclick="filterCategory('all')" class="category-btn active px-md py-sm bg-primary text-on-primary font-label rounded hover:bg-primary-dark transition-colors" data-category="all">All Products</button>
+    <button onclick="filterCategory('bakery')" class="category-btn px-md py-sm bg-gray-200 text-on-surface font-label rounded hover:bg-primary hover:text-on-primary transition-colors" data-category="bakery">Bakery</button>
+    <button onclick="filterCategory('bengali')" class="category-btn px-md py-sm bg-gray-200 text-on-surface font-label rounded hover:bg-primary hover:text-on-primary transition-colors" data-category="bengali">Bengali</button>
+    <button onclick="filterCategory('chat')" class="category-btn px-md py-sm bg-gray-200 text-on-surface font-label rounded hover:bg-primary hover:text-on-primary transition-colors" data-category="chat">Chat Items</button>
+    <button onclick="filterCategory('ghee')" class="category-btn px-md py-sm bg-gray-200 text-on-surface font-label rounded hover:bg-primary hover:text-on-primary transition-colors" data-category="ghee">Ghee Sweets</button>
+    <button onclick="filterCategory('kaju')" class="category-btn px-md py-sm bg-gray-200 text-on-surface font-label rounded hover:bg-primary hover:text-on-primary transition-colors" data-category="kaju">Kaju</button>
+    <button onclick="filterCategory('namkeen')" class="category-btn px-md py-sm bg-gray-200 text-on-surface font-label rounded hover:bg-primary hover:text-on-primary transition-colors" data-category="namkeen">Namkeen</button>
+    <button onclick="filterCategory('packed')" class="category-btn px-md py-sm bg-gray-200 text-on-surface font-label rounded hover:bg-primary hover:text-on-primary transition-colors" data-category="packed">Packed Items</button>
+</div>
+
+<!-- Product Grid -->
+<div id="products-container" class="product-grid">
+    <!-- Products will be loaded here via JavaScript -->
+</div>
+
+</main>
+
+<!-- Modal for Product Details -->
+<div id="product-modal" class="hidden fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
+    <div class="bg-white rounded-lg max-w-md w-full max-h-[90vh] overflow-y-auto">
+        <div class="p-6">
+            <button onclick="closeModal()" class="float-right text-gray-500 hover:text-gray-700">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+            <div id="modal-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-on-surface text-on-primary pt-16 pb-8 mt-xl">
+    <div class="max-w-container-max mx-auto px-md grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div>
+            <div class="text-display text-on-primary mb-sm font-display">Aramane Sweets</div>
+            <p class="text-body text-on-primary/70">Authentic Bengaluru Heritage since 1960.</p>
+        </div>
+        
+        <div>
+            <h4 class="text-label text-primary mb-sm">Quick Links</h4>
+            <ul class="space-y-sm text-body text-on-primary/70">
+                <li><a href="store-locator.html" class="hover:text-primary">Our Stores</a></li>
+                <li><a href="brand-story.html" class="hover:text-primary">Heritage Story</a></li>
+                <li><a href="gift-collections.html" class="hover:text-primary">Gift Collections</a></li>
+            </ul>
+        </div>
+        
+        <div>
+            <h4 class="text-label text-primary mb-sm">Get in Touch</h4>
+            <ul class="space-y-sm text-body text-on-primary/70">
+                <li><a href="mailto:aramanesweets23@gmail.com" class="hover:text-primary">Email: aramanesweets23@gmail.com</a></li>
+                <li><a href="tel:+919535455770" class="hover:text-primary">Phone: +91 95354 55770</a></li>
+                <li class="mt-md">
+                    <a href="https://wa.me/919535455770" class="inline-flex items-center gap-xs text-primary hover:opacity-80">
+                        <span class="material-symbols-outlined">chat</span>
+                        WhatsApp Order
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="max-w-container-max mx-auto px-md mt-16 pt-8 border-t border-on-primary/10 text-center text-body text-on-primary/50">
+        © 1960 Aramane Sweets. Authentic Bengaluru Heritage.
+    </div>
+</footer>
+
+<script>
+const products = [
+    // BAKERY ITEMS
+    { id: 1451, name: 'Milk Bread', price: 50, category: 'bakery', shelf_life: '-', code: '1451' },
+    { id: 1454, name: 'Wheat Bread', price: 60, category: 'bakery', shelf_life: '-', code: '1454' },
+    { id: 1471, name: 'Veg Puff', price: 25, category: 'bakery', shelf_life: '-', code: '1471' },
+    { id: 3582, name: 'Sweet Lachha', price: 20, category: 'bakery', shelf_life: '-', code: '3582' },
+    { id: 3589, name: 'Italian Sweet Corn', price: 50, category: 'bakery', shelf_life: '-', code: '3589' },
+    { id: 3590, name: 'Pizza Roll', price: 50, category: 'bakery', shelf_life: '-', code: '3590' },
+    { id: 3591, name: 'Paneer Internet', price: 80, category: 'bakery', shelf_life: '-', code: '3591' },
+    { id: 3592, name: 'Sweet Corn Paneer Manchoorian', price: 80, category: 'bakery', shelf_life: '-', code: '3592' },
+    { id: 3605, name: 'Almond Sticks 200GM', price: 160, category: 'bakery', shelf_life: '-', code: '3605' },
+    { id: 3606, name: 'Pista Sticks 200GMS', price: 200, category: 'bakery', shelf_life: '-', code: '3606' },
+    { id: 3607, name: 'Choco Almond Sticks 200GMS', price: 160, category: 'bakery', shelf_life: '-', code: '3607' },
+    { id: 3593, name: 'Shezwan Paneer', price: 80, category: 'bakery', shelf_life: '-', code: '3593' },
+    { id: 3595, name: 'Mix Veg', price: 35, category: 'bakery', shelf_life: '-', code: '3595' },
+    { id: 2116, name: 'Garlic Bread', price: 35, category: 'bakery', shelf_life: '-', code: '2116' },
+    { id: 3596, name: 'Italian Focaccia Bread', price: 80, category: 'bakery', shelf_life: '-', code: '3596' },
+    { id: 3597, name: 'Italian Paneer Hot Dog', price: 70, category: 'bakery', shelf_life: '-', code: '3597' },
+    { id: 3598, name: 'Italian Veg Hot Dog', price: 50, category: 'bakery', shelf_life: '-', code: '3598' },
+    { id: 1473, name: 'Paneer Puff', price: 35, category: 'bakery', shelf_life: '-', code: '1473' },
+    { id: 3599, name: 'Multigrain Wheat Bread', price: 80, category: 'bakery', shelf_life: '-', code: '3599' },
+    { id: 2779, name: 'Roasted Honey Almond 125GM', price: 200, category: 'bakery', shelf_life: '-', code: '2779' },
+    { id: 2780, name: 'Roasted Honey Almond 250GM', price: 400, category: 'bakery', shelf_life: '-', code: '2780' },
+    { id: 1875, name: 'Maska Bun', price: 60, category: 'bakery', shelf_life: '-', code: '1875' },
+    { id: 1484, name: 'Chocolava Cup Cake', price: 60, category: 'bakery', shelf_life: '-', code: '1484' },
+    { id: 2346, name: 'Milk Chocolate Donut', price: 40, category: 'bakery', shelf_life: '-', code: '2346' },
+    { id: 2347, name: 'Dark Chocolate Donut', price: 40, category: 'bakery', shelf_life: '-', code: '2347' },
+    { id: 2345, name: 'White Chocolate Donut', price: 40, category: 'bakery', shelf_life: '-', code: '2345' },
+    { id: 1885, name: 'Pav', price: 60, category: 'bakery', shelf_life: '-', code: '1885' },
+    { id: 1581, name: 'Aloo Bun', price: 30, category: 'bakery', shelf_life: '-', code: '1581' },
+    { id: 1433, name: 'Sweet Bun', price: 35, category: 'bakery', shelf_life: '-', code: '1433' },
+    { id: 3650, name: 'Milk Butterscotch Pastry', price: 70, category: 'bakery', shelf_life: '-', code: '3650' },
+    { id: 3651, name: 'Nankhatai 200 GM', price: 100, category: 'bakery', shelf_life: '-', code: '3651' },
+    { id: 3652, name: 'Garlic Butter Rusk 80 GM', price: 60, category: 'bakery', shelf_life: '-', code: '3652' },
+    { id: 3653, name: 'Coconut Crunch 150GM', price: 75, category: 'bakery', shelf_life: '-', code: '3653' },
+    { id: 3654, name: 'Cashew Cookies 150GM', price: 80, category: 'bakery', shelf_life: '-', code: '3654' },
+    { id: 3655, name: 'Dry Fruit Cookies 150GM', price: 80, category: 'bakery', shelf_life: '-', code: '3655' },
+    { id: 3664, name: 'Choco Walnuts 1 PC', price: 110, category: 'bakery', shelf_life: '-', code: '3664' },
+    { id: 3662, name: 'Nutella Hazel Nuts 1PC', price: 130, category: 'bakery', shelf_life: '-', code: '3662' },
+    { id: 3663, name: 'Caramel Butter Scotch 1PC', price: 110, category: 'bakery', shelf_life: '-', code: '3663' },
+    { id: 3665, name: 'Biscoff Lotus 1 PC', price: 130, category: 'bakery', shelf_life: '-', code: '3665' },
+    { id: 1456, name: 'Fruit Bun 3PCS', price: 50, category: 'bakery', shelf_life: '-', code: '1456' },
+    
+    // BENGALI SWEETS
+    { id: 1076, name: 'Kala Jamun 1 PC', price: 40, category: 'bengali', shelf_life: '-', code: '1076' },
+    { id: 1127, name: 'Chamcham 1 PC', price: 35, category: 'bengali', shelf_life: '-', code: '1127' },
+    { id: 1129, name: 'Champakali 1PC', price: 40, category: 'bengali', shelf_life: '-', code: '1129' },
+    { id: 1121, name: 'Malai Sandwich 1 PC', price: 45, category: 'bengali', shelf_life: '-', code: '1121' },
+    { id: 1132, name: 'Rasmalai 1 PC', price: 45, category: 'bengali', shelf_life: '-', code: '1132' },
+    { id: 1133, name: 'Rasgulla 1 PC', price: 35, category: 'bengali', shelf_life: '-', code: '1133' },
+    { id: 1134, name: 'Angoor Rasgulla', price: 520, category: 'bengali', shelf_life: '-', code: '1134' },
+    { id: 1135, name: 'Angoor Rasmalai', price: 620, category: 'bengali', shelf_life: '-', code: '1135' },
+    { id: 1140, name: 'Malai Roll 1 PC', price: 45, category: 'bengali', shelf_life: '-', code: '1140' },
+    { id: 1142, name: 'Mango Malai Roll 1 PC', price: 45, category: 'bengali', shelf_life: '-', code: '1142' },
+    { id: 1146, name: 'Raj Bhog 1 PC', price: 45, category: 'bengali', shelf_life: '-', code: '1146' },
+    { id: 1513, name: 'Rabdi 100GMS', price: 65, category: 'bengali', shelf_life: '-', code: '1513' },
+    { id: 1533, name: 'Pan Petha 1 PCS', price: 30, category: 'bengali', shelf_life: '-', code: '1533' },
+    { id: 1548, name: 'Malai Kesar Sandwich 1 PCS', price: 45, category: 'bengali', shelf_life: '-', code: '1548' },
+    { id: 2118, name: 'Jamoon Roll 1PC', price: 45, category: 'bengali', shelf_life: '-', code: '2118' },
+    { id: 2329, name: 'Pink Sandwich 1PC', price: 45, category: 'bengali', shelf_life: '-', code: '2329' },
+    { id: 1801, name: 'Petha Sandwich 1PC', price: 55, category: 'bengali', shelf_life: '-', code: '1801' },
+    { id: 3513, name: 'Paneer Jamoon', price: 650, category: 'bengali', shelf_life: '-', code: '3513' },
+    { id: 1846, name: 'Bhasundi 100ML', price: 65, category: 'bengali', shelf_life: '-', code: '1846' },
+    { id: 1078, name: 'Malpua 1PC', price: 35, category: 'bengali', shelf_life: '-', code: '1078' },
+    
+    // CHAT ITEMS
+    { id: 1402, name: 'Pani Puri', price: 50, category: 'chat', shelf_life: '-', code: '1402' },
+    { id: 1403, name: 'Masala Puri', price: 50, category: 'chat', shelf_life: '-', code: '1403' },
+    { id: 1404, name: 'Dahi Puri', price: 60, category: 'chat', shelf_life: '-', code: '1404' },
+    { id: 1405, name: 'Bhel Puri', price: 50, category: 'chat', shelf_life: '-', code: '1405' },
+    { id: 1406, name: 'Sev Puri', price: 50, category: 'chat', shelf_life: '-', code: '1406' },
+    { id: 1407, name: 'Raj Kachori', price: 70, category: 'chat', shelf_life: '-', code: '1407' },
+    { id: 1408, name: 'Dahi Bhalla', price: 60, category: 'chat', shelf_life: '-', code: '1408' },
+    { id: 1409, name: 'Papdi Chat', price: 60, category: 'chat', shelf_life: '-', code: '1409' },
+    { id: 1410, name: 'Samosa Masala', price: 60, category: 'chat', shelf_life: '-', code: '1410' },
+    { id: 1411, name: 'Kachori Masala', price: 60, category: 'chat', shelf_life: '-', code: '1411' },
+    { id: 1412, name: 'Katori Chat', price: 70, category: 'chat', shelf_life: '-', code: '1412' },
+    { id: 1915, name: 'Veg Cutlet 2 PC', price: 60, category: 'chat', shelf_life: '-', code: '1915' },
+    { id: 1916, name: 'Cutlet Chat', price: 60, category: 'chat', shelf_life: '-', code: '1916' },
+    { id: 2300, name: 'Vada Pav 1 PC', price: 40, category: 'chat', shelf_life: '-', code: '2300' },
+    { id: 1883, name: 'Pav Bhaji', price: 70, category: 'chat', shelf_life: '-', code: '1883' },
+    { id: 1913, name: 'Chole Bhatura', price: 70, category: 'chat', shelf_life: '-', code: '1913' },
+    { id: 1914, name: 'Paneer Chole Bhatura', price: 110, category: 'chat', shelf_life: '-', code: '1914' },
+    { id: 1395, name: 'Samosa', price: 25, category: 'chat', shelf_life: '-', code: '1395' },
+    { id: 1396, name: 'Dal Kachori', price: 25, category: 'chat', shelf_life: '-', code: '1396' },
+    { id: 1394, name: 'Onion Kachori', price: 30, category: 'chat', shelf_life: '-', code: '1394' },
+    { id: 3608, name: 'Dahi Kachori', price: 60, category: 'chat', shelf_life: '-', code: '3608' },
+    { id: 3609, name: 'Dahi Bhel Puri', price: 60, category: 'chat', shelf_life: '-', code: '3609' },
+    { id: 3027, name: 'Noodles Samosa', price: 40, category: 'chat', shelf_life: '-', code: '3027' },
+    
+    // GHEE & KOVA SWEETS
+    { id: 1009, name: 'Dry Fruit Halwa', price: 740, category: 'ghee', shelf_life: '2 Days', code: '1009' },
+    { id: 1057, name: 'Milk Cake', price: 740, category: 'ghee', shelf_life: '10 Days', code: '1057' },
+    { id: 1063, name: 'Besan Laddu', price: 640, category: 'ghee', shelf_life: '30 Days', code: '1063' },
+    { id: 1067, name: 'Kalakand Burfi', price: 640, category: 'ghee', shelf_life: '10 Days', code: '1067' },
+    { id: 1094, name: 'Coconut Burfi', price: 640, category: 'ghee', shelf_life: '10 Days', code: '1094' },
+    { id: 1098, name: 'Doodh Peda', price: 640, category: 'ghee', shelf_life: '10 Days', code: '1098' },
+    { id: 1100, name: 'Dharwad Peda', price: 620, category: 'ghee', shelf_life: '10 Days', code: '1100' },
+    { id: 1104, name: 'Fruit Cake', price: 640, category: 'ghee', shelf_life: '10 Days', code: '1104' },
+    { id: 1106, name: 'Kova Badam Roll', price: 640, category: 'ghee', shelf_life: '10 Days', code: '1106' },
+    { id: 1110, name: 'Kova Kesar Roll', price: 660, category: 'ghee', shelf_life: '10 Days', code: '1110' },
+    { id: 1118, name: 'Ice Burfi', price: 700, category: 'ghee', shelf_life: '15 Days', code: '1118' },
+    { id: 1124, name: 'Mango Burfi', price: 640, category: 'ghee', shelf_life: '15 Days', code: '1124' },
+    { id: 1530, name: 'Kova Katli', price: 600, category: 'ghee', shelf_life: '10 Days', code: '1530' },
+    { id: 1804, name: 'Horlicks Burfi', price: 760, category: 'ghee', shelf_life: '15 Days', code: '1804' },
+    { id: 2040, name: 'Tutti Fruity Cake', price: 740, category: 'ghee', shelf_life: '10 Days', code: '2040' },
+    { id: 3432, name: 'Boost Burfi', price: 880, category: 'ghee', shelf_life: '15 Days', code: '3432' },
+    { id: 3028, name: 'Orange Kali', price: 640, category: 'ghee', shelf_life: '10 Days', code: '3028' },
+    { id: 3210, name: 'Kalakand Rose Gulkand Burfi', price: 800, category: 'ghee', shelf_life: '10 Days', code: '3210' },
+    { id: 3425, name: 'Moong Dal Burfi', price: 640, category: 'ghee', shelf_life: '10 Days', code: '3425' },
+    { id: 1083, name: 'Sweet Boondi', price: 440, category: 'ghee', shelf_life: '5 Days', code: '1083' },
+    { id: 3433, name: 'Vanilla Burfi', price: 640, category: 'ghee', shelf_life: '10 Days', code: '3433' },
+    { id: 3434, name: 'Karjur Burfi', price: 640, category: 'ghee', shelf_life: '10 Days', code: '3434' },
+    { id: 3493, name: 'Karjur Roll', price: 640, category: 'ghee', shelf_life: '30 Days', code: '3493' },
+    { id: 2033, name: 'Belgaum Kunda', price: 640, category: 'ghee', shelf_life: '10 Days', code: '2033' },
+    { id: 2029, name: 'Karadantu', price: 840, category: 'ghee', shelf_life: '15 Days', code: '2029' },
+    { id: 2262, name: 'Boondi Laddu', price: 580, category: 'ghee', shelf_life: '5 Days', code: '2262' },
+    { id: 1043, name: 'Maharaja Mysore Pak', price: 640, category: 'ghee', shelf_life: '15 Days', code: '1043' },
+    { id: 3455, name: 'Kova Chocolate Roll', price: 640, category: 'ghee', shelf_life: '10 Days', code: '3455' },
+    { id: 1830, name: 'Badam Milk', price: 340, category: 'ghee', shelf_life: '2 Days', code: '1830' },
+    { id: 3438, name: 'Aramane Spl Hot Mysore Pak', price: 880, category: 'ghee', shelf_life: '30 Days', code: '3438' },
+    { id: 3503, name: 'Badam Mysore Pak', price: 880, category: 'ghee', shelf_life: '30 Days', code: '3503' },
+    { id: 3506, name: 'Kaju Mysore Pak', price: 1000, category: 'ghee', shelf_life: '30 Days', code: '3506' },
+    { id: 1039, name: 'Chandrakala', price: 620, category: 'ghee', shelf_life: '7 Days', code: '1039' },
+    { id: 1041, name: 'Suryakala', price: 620, category: 'ghee', shelf_life: '7 Days', code: '1041' },
+    { id: 1049, name: 'Motichur Laddu', price: 800, category: 'ghee', shelf_life: '5 Days', code: '1049' },
+    { id: 1071, name: 'Badusha', price: 620, category: 'ghee', shelf_life: '7 Days', code: '1071' },
+    { id: 1069, name: 'Gulab Jamun', price: 620, category: 'ghee', shelf_life: '10 Days', code: '1069' },
+    { id: 3431, name: 'Ghee Soan Papdi', price: 800, category: 'ghee', shelf_life: '2 Days', code: '3431' },
+    { id: 1084, name: 'Ghee Jalebi', price: 440, category: 'ghee', shelf_life: '3 Days', code: '1084' },
+    { id: 1086, name: 'Jangiri', price: 560, category: 'ghee', shelf_life: '3 Days', code: '1086' },
+    { id: 1971, name: 'Ghee Peni', price: 40, category: 'ghee', shelf_life: '30 Days', code: '1971' },
+    { id: 3437, name: 'Chiroti', price: 440, category: 'ghee', shelf_life: '30 Days', code: '3437' },
+    { id: 3175, name: 'Angoori Jamoon', price: 670, category: 'ghee', shelf_life: '10 Days', code: '3175' },
+    { id: 1047, name: 'Ghee Mysore Pak', price: 840, category: 'ghee', shelf_life: '30 Days', code: '1047' },
+    { id: 3515, name: 'Beatroot Mysorepak', price: 840, category: 'ghee', shelf_life: '10 Days', code: '3515' },
+    { id: 1011, name: 'Dry Fruit Laddu', price: 1200, category: 'ghee', shelf_life: '15 Days', code: '1011' },
+    { id: 3520, name: 'Grape Dry Fruit Halwa', price: 740, category: 'ghee', shelf_life: '10 Days', code: '3520' },
+    { id: 3528, name: 'Chiroti With B Milk', price: 60, category: 'ghee', shelf_life: '2 Days', code: '3528' },
+    
+    // KAJU SWEETS
+    { id: 1818, name: 'Kaju Modaka', price: 1240, category: 'kaju', shelf_life: '10 Days', code: '1818' },
+    { id: 3549, name: 'Kaju Pine Apple', price: 1240, category: 'kaju', shelf_life: '10 Days', code: '3549' },
+    { id: 3481, name: 'Kaju Strawberry', price: 1240, category: 'kaju', shelf_life: '10 Days', code: '3481' },
+    { id: 3534, name: 'Kaju Bisfom Burfi', price: 1240, category: 'kaju', shelf_life: '10 Days', code: '3534' },
+    { id: 1838, name: 'Kaju Apple', price: 1240, category: 'kaju', shelf_life: '10 Days', code: '1838' },
+    { id: 3530, name: 'Kaju Water Apple', price: 1240, category: 'kaju', shelf_life: '10 Days', code: '3530' },
+    { id: 1021, name: 'Kaju Chocolate Bites', price: 1240, category: 'kaju', shelf_life: '10 Days', code: '1021' },
+    { id: 1023, name: 'Kaju Mango Bites', price: 1240, category: 'kaju', shelf_life: '10 Days', code: '1023' },
+    { id: 1019, name: 'Kaju Vanilla Bites', price: 1240, category: 'kaju', shelf_life: '10 Days', code: '1019' },
+    { id: 3555, name: 'Kaju Anjeer Katori', price: 1440, category: 'kaju', shelf_life: '10 Days', code: '3555' },
+    { id: 3548, name: 'Kaju Boat', price: 1340, category: 'kaju', shelf_life: '10 Days', code: '3548' },
+    { id: 3541, name: 'Kaju Chandra Mukhi', price: 1340, category: 'kaju', shelf_life: '10 Days', code: '3541' },
+    { id: 1017, name: 'Kaju Sunflower', price: 1400, category: 'kaju', shelf_life: '10 Days', code: '1017' },
+    { id: 3539, name: 'Kaju Magic Ball', price: 1340, category: 'kaju', shelf_life: '10 Days', code: '3539' },
+    { id: 3556, name: 'Kaju Coconut Laddu', price: 1100, category: 'kaju', shelf_life: '7 Days', code: '3556' },
+    { id: 3547, name: 'Kaju Badam Patodi', price: 1440, category: 'kaju', shelf_life: '10 Days', code: '3547' },
+    { id: 3538, name: 'Kaju Candy', price: 1340, category: 'kaju', shelf_life: '10 Days', code: '3538' },
+    { id: 1096, name: 'Badam Burfi', price: 1240, category: 'kaju', shelf_life: '10 Days', code: '1096' },
+    { id: 1029, name: 'Crystal Pista Laddu', price: 1440, category: 'kaju', shelf_life: '15 Days', code: '1029' },
+    { id: 1027, name: 'Crystal Rose Laddu', price: 1440, category: 'kaju', shelf_life: '15 Days', code: '1027' },
+    { id: 3531, name: 'Kaju Cone', price: 1440, category: 'kaju', shelf_life: '10 Days', code: '3531' },
+    { id: 1013, name: 'Kaju Katli', price: 1200, category: 'kaju', shelf_life: '15 Days', code: '1013' },
+    { id: 1551, name: 'Sugar Free Kaju Katli', price: 1240, category: 'kaju', shelf_life: '15 Days', code: '1551' },
+    { id: 1810, name: 'Kaju Sithapal', price: 1240, category: 'kaju', shelf_life: '10 Days', code: '1810' },
+    { id: 2027, name: 'Kaju Jaggeri Katli', price: 1200, category: 'kaju', shelf_life: '10 Days', code: '2027' },
+    { id: 1865, name: 'Kaju Anjeer Sandwitch', price: 1240, category: 'kaju', shelf_life: '10 Days', code: '1865' },
+    { id: 1503, name: 'Kaju Pista Roll', price: 1240, category: 'kaju', shelf_life: '10 Days', code: '1503' },
+    { id: 1591, name: 'Kaju Chocolate Ball', price: 1240, category: 'kaju', shelf_life: '10 Days', code: '1591' },
+    { id: 3533, name: 'Kaju 2 in 1', price: 1340, category: 'kaju', shelf_life: '10 Days', code: '3533' },
+    { id: 2431, name: 'Kaju Anjeer Roll', price: 1400, category: 'kaju', shelf_life: '10 Days', code: '2431' },
+    { id: 1808, name: 'Watermelon Kaju', price: 1240, category: 'kaju', shelf_life: '10 Days', code: '1808' },
+    { id: 1035, name: 'Kaju Dholi', price: 1240, category: 'kaju', shelf_life: '10 Days', code: '1035' },
+    { id: 3460, name: 'Kaju Rajkamal', price: 1240, category: 'kaju', shelf_life: '10 Days', code: '3460' },
+    { id: 3631, name: 'Kaju Bahar', price: 1240, category: 'kaju', shelf_life: '10 Days', code: '3631' },
+    
+    // NAMKEEN ITEMS
+    { id: 3419, name: 'Cashew Pakoda', price: 780, category: 'namkeen', shelf_life: '7 Days', code: '3419' },
+    { id: 3421, name: 'Onion Pakoda', price: 400, category: 'namkeen', shelf_life: '4 Days', code: '3421' },
+    { id: 3439, name: 'Onion Murkh', price: 400, category: 'namkeen', shelf_life: '15 Days', code: '3439' },
+    { id: 3440, name: 'Garlic Murkh', price: 520, category: 'namkeen', shelf_life: '15 Days', code: '3440' },
+    { id: 1198, name: 'Small Kara Boondi', price: 340, category: 'namkeen', shelf_life: '15 Days', code: '1198' },
+    { id: 1185, name: 'Bombay Mixture', price: 520, category: 'namkeen', shelf_life: '15 Days', code: '1185' },
+    { id: 3441, name: 'Special Sada Mixture', price: 620, category: 'namkeen', shelf_life: '15 Days', code: '3441' },
+    { id: 3442, name: 'Aar Cut Mixture', price: 540, category: 'namkeen', shelf_life: '15 Days', code: '3442' },
+    { id: 3443, name: 'Andhra Murkh', price: 440, category: 'namkeen', shelf_life: '15 Days', code: '3443' },
+    { id: 3205, name: 'Agra Mixture', price: 540, category: 'namkeen', shelf_life: '15 Days', code: '3205' },
+    { id: 3192, name: 'Masala Kodabale', price: 520, category: 'namkeen', shelf_life: '15 Days', code: '3192' },
+    { id: 1193, name: 'Corn Flakes Mixture', price: 440, category: 'namkeen', shelf_life: '15 Days', code: '1193' },
+    { id: 3445, name: 'Golden Mixture', price: 520, category: 'namkeen', shelf_life: '15 Days', code: '3445' },
+    { id: 3446, name: 'Raagi Ribbon Pakoda', price: 340, category: 'namkeen', shelf_life: '15 Days', code: '3446' },
+    { id: 2267, name: 'Ribbon Pakoda', price: 440, category: 'namkeen', shelf_life: '15 Days', code: '2267' },
+    { id: 1392, name: 'Shankarpouli', price: 520, category: 'namkeen', shelf_life: '15 Days', code: '1392' },
+    { id: 3447, name: 'Beatroot Murkh', price: 460, category: 'namkeen', shelf_life: '15 Days', code: '3447' },
+    { id: 3448, name: 'Palak Murkh', price: 440, category: 'namkeen', shelf_life: '15 Days', code: '3448' },
+    { id: 1163, name: 'Butter Murkh', price: 520, category: 'namkeen', shelf_life: '15 Days', code: '1163' },
+    { id: 3450, name: 'Spl Kara Sev', price: 340, category: 'namkeen', shelf_life: '15 Days', code: '3450' },
+    { id: 3451, name: 'Butter Khara Sev', price: 340, category: 'namkeen', shelf_life: '15 Days', code: '3451' },
+    { id: 3454, name: 'Serai Pokoda', price: 340, category: 'namkeen', shelf_life: '15 Days', code: '3454' },
+    { id: 3449, name: 'Ellu Murukh', price: 340, category: 'namkeen', shelf_life: '15 Days', code: '3449' },
+    { id: 1174, name: 'Masala Peanut', price: 520, category: 'namkeen', shelf_life: '15 Days', code: '1174' },
+    { id: 3484, name: 'South Indian Mixture', price: 440, category: 'namkeen', shelf_life: '15 Days', code: '3484' },
+    { id: 3486, name: 'Sweet Potato Mixture', price: 440, category: 'namkeen', shelf_life: '15 Days', code: '3486' },
+    { id: 1168, name: 'Khatta Meetha Mixture', price: 520, category: 'namkeen', shelf_life: '15 Days', code: '1168' },
+    { id: 3498, name: 'Aramane Spl Mixture', price: 480, category: 'namkeen', shelf_life: '15 Days', code: '3498' },
+    
+    // PACKED ITEMS
+    { id: 3518, name: 'Onion Murkh 150GM', price: 60, category: 'packed', shelf_life: '20 Days', code: '3518' },
+    { id: 3517, name: 'Garlic Murkh 150GM', price: 80, category: 'packed', shelf_life: '20 Days', code: '3517' },
+    { id: 1595, name: 'Agra Mixture 150GM', price: 80, category: 'packed', shelf_life: '20 Days', code: '1595' },
+    { id: 1194, name: 'Corn Flakes Mixture 150GM', price: 70, category: 'packed', shelf_life: '20 Days', code: '1194' },
+    { id: 3603, name: 'Raagi Ribbon Pakoda 150GM', price: 50, category: 'packed', shelf_life: '20 Days', code: '3603' },
+    { id: 2271, name: 'Ribbon Pakoda 150GM', price: 70, category: 'packed', shelf_life: '20 Days', code: '2271' },
+    { id: 1495, name: 'Shankarpouli 150GM', price: 80, category: 'packed', shelf_life: '20 Days', code: '1495' },
+    { id: 3519, name: 'Beatroot Murkh 150GM', price: 70, category: 'packed', shelf_life: '20 Days', code: '3519' },
+    { id: 3604, name: 'Palak Murkh 150GM', price: 70, category: 'packed', shelf_life: '20 Days', code: '3604' },
+    { id: 1493, name: 'Butter Murkh 150GM', price: 80, category: 'packed', shelf_life: '20 Days', code: '1493' },
+    { id: 1175, name: 'Masala Peanut 150GM', price: 80, category: 'packed', shelf_life: '20 Days', code: '1175' },
+    { id: 2482, name: 'Aramane Spl Mixture 150GM', price: 70, category: 'packed', shelf_life: '20 Days', code: '2482' },
+    { id: 1212, name: 'Baby Murkh 150GM', price: 90, category: 'packed', shelf_life: '20 Days', code: '1212' },
+    { id: 1416, name: 'Baby Palak Murkh 150GM', price: 90, category: 'packed', shelf_life: '20 Days', code: '1416' },
+    { id: 2036, name: 'Ragi Baby Murkh 150GM', price: 90, category: 'packed', shelf_life: '20 Days', code: '2036' },
+    { id: 1939, name: 'Banana Chips 150GM', price: 100, category: 'packed', shelf_life: '20 Days', code: '1939' },
+    { id: 1832, name: 'Masala Banana 150GM', price: 100, category: 'packed', shelf_life: '20 Days', code: '1832' },
+    { id: 1833, name: 'Pepper Banana Chips 150GM', price: 100, category: 'packed', shelf_life: '20 Days', code: '1833' },
+    { id: 1569, name: 'Bendi 50GM', price: 100, category: 'packed', shelf_life: '20 Days', code: '1569' },
+    { id: 1232, name: 'Tomato Murkh 150GM', price: 90, category: 'packed', shelf_life: '20 Days', code: '1232' },
+    { id: 1858, name: 'Green Peas Fry 150GM', price: 70, category: 'packed', shelf_life: '20 Days', code: '1858' },
+    { id: 1200, name: 'Potato Masala Chips 100GM', price: 60, category: 'packed', shelf_life: '20 Days', code: '1200' },
+    { id: 1202, name: 'Potato Salted Chips 100GM', price: 60, category: 'packed', shelf_life: '20 Days', code: '1202' },
+    { id: 1959, name: 'Potato Peri Peri Chips 100GM', price: 70, category: 'packed', shelf_life: '20 Days', code: '1959' },
+    { id: 3537, name: 'Cream & Onion Chips 100GM', price: 60, category: 'packed', shelf_life: '20 Days', code: '3537' },
+    { id: 2070, name: 'Kabul Channa 150GM', price: 40, category: 'packed', shelf_life: '20 Days', code: '2070' },
+    { id: 2951, name: 'Splitted Masala Peanut 150GM', price: 90, category: 'packed', shelf_life: '20 Days', code: '2951' },
+    { id: 1856, name: 'Roasted Peanut 150GM', price: 70, category: 'packed', shelf_life: '20 Days', code: '1856' },
+    { id: 1859, name: 'Channa Dall 150GM', price: 70, category: 'packed', shelf_life: '20 Days', code: '1859' },
+    { id: 3039, name: 'Moong Dall 150GM', price: 40, category: 'packed', shelf_life: '20 Days', code: '3039' },
+    { id: 1860, name: 'Ghee Peni 3 PC', price: 100, category: 'packed', shelf_life: '20 Days', code: '1860' }
+];
+
+let currentFilter = 'all';
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+function renderProducts(filter = 'all') {
+    const container = document.getElementById('products-container');
+    container.innerHTML = '';
+    
+    const filtered = filter === 'all' ? products : products.filter(p => p.category === filter);
+    
+    filtered.forEach(product => {
+        const card = document.createElement('div');
+        card.className = 'bg-surface-container-lowest border border-gray-200 rounded-lg overflow-hidden group hover:shadow-lg transition-shadow cursor-pointer';
+        card.innerHTML = `
+            <div class="aspect-square relative overflow-hidden border-b border-gray-200 bg-gray-100">
+                <div class="w-full h-full bg-gradient-to-br from-primary-light/10 to-primary-dark/10 flex items-center justify-center">
+                    <span class="material-symbols-outlined text-primary text-5xl">bakery_dining</span>
+                </div>
+            </div>
+            <div class="p-4 flex flex-col gap-3">
+                <div class="flex-grow">
+                    <p class="text-xs text-gray-500 mb-1">Code: ${product.code}</p>
+                    <h3 class="text-sm font-display font-bold text-on-surface line-clamp-2">${product.name}</h3>
+                </div>
+                <div class="flex items-center justify-between border-t border-gray-100 pt-2">
+                    <div>
+                        <p class="text-xs text-gray-500">Price</p>
+                        <p class="text-lg font-bold text-primary">₹${product.price}</p>
+                    </div>
+                    <button onclick="addToCart(${product.id})" class="bg-primary text-white p-2 rounded hover:bg-primary-dark transition-colors">
+                        <span class="material-symbols-outlined text-lg">add_shopping_cart</span>
+                    </button>
+                </div>
+            </div>
+        `;
+        container.appendChild(card);
+    });
+}
+
+function filterCategory(category) {
+    currentFilter = category;
+    document.querySelectorAll('.category-btn').forEach(btn => {
+        btn.classList.remove('bg-primary', 'text-on-primary');
+        btn.classList.add('bg-gray-200', 'text-on-surface');
+    });
+    event.target.classList.remove('bg-gray-200', 'text-on-surface');
+    event.target.classList.add('bg-primary', 'text-on-primary');
+    renderProducts(category);
+}
+
+function addToCart(productId) {
+    const product = products.find(p => p.id === productId);
+    const existingItem = cart.find(item => item.id === productId);
+    
+    if (existingItem) {
+        existingItem.quantity += 1;
+    } else {
+        cart.push({ ...product, quantity: 1 });
+    }
+    
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartCount();
+    showNotification(`${product.name} added to cart!`);
+}
+
+function updateCartCount() {
+    const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+    const cartBadge = document.getElementById('cart-count');
+    if (count > 0) {
+        cartBadge.textContent = count;
+        cartBadge.classList.remove('hidden');
+    } else {
+        cartBadge.classList.add('hidden');
+    }
+}
+
+function showNotification(message) {
+    const notification = document.createElement('div');
+    notification.className = 'fixed bottom-4 right-4 bg-primary text-white px-6 py-3 rounded-lg shadow-lg z-40';
+    notification.textContent = message;
+    document.body.appendChild(notification);
+    setTimeout(() => notification.remove(), 3000);
+}
+
+function closeModal() {
+    document.getElementById('product-modal').classList.add('hidden');
+}
+
+// Initialize
+document.addEventListener('DOMContentLoaded', () => {
+    renderProducts();
+    updateCartCount();
+});
+</script>
+
 </body>
 </html>

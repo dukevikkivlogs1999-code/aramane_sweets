@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Aramane Sweets - Products</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#16a34a",
+                        "primary-dark": "#15803d",
+                        "primary-light": "#22c55e",
+                        "on-primary": "#ffffff",
+                        "background": "#f7f9fb",
+                        "on-background": "#191c1e",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface": "#191c1e",
+                        "on-surface-variant": "#3e4a3d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "xl": "80px",
+                        "base": "8px",
+                        "container-max": "1280px",
+                        "md": "24px",
+                        "lg": "48px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "display": ["Playfair Display"],
+                        "body": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display": ["48px", {"lineHeight": "1.1", "fontWeight": "700"}],
+                        "headline": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "body": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+
+<body class="bg-background text-on-background antialiased">
+
+<!-- Navigation -->
+<nav class="bg-surface-container-lowest sticky top-0 z-50 border-b border-surface-bright px-gutter h-20 flex justify-between items-center w-full">
+    <a href="index.html" class="text-2xl font-bold text-primary uppercase tracking-widest font-display">Aramane Sweets</a>
+    
+    <div class="hidden md:flex items-center gap-md">
+        <a href="index.html" class="text-on-surface-variant hover:text-primary">Home</a>
+        <a href="products.html" class="text-primary border-b-2 border-primary font-bold pb-1">Products</a>
+        <a href="gift-collections.html" class="text-on-surface-variant hover:text-primary">Gifts</a>
+        <a href="brand-story.html" class="text-on-surface-variant hover:text-primary">Heritage</a>
+        <a href="store-locator.html" class="text-on-surface-variant hover:text-primary">Locate</a>
+    </div>
+    
+    <div class="flex items-center gap-md">
+        <a href="https://wa.me/9535455770" class="hidden lg:flex items-center px-md py-sm bg-primary text-on-primary font-label rounded hover:opacity-80 transition-opacity">
+            WhatsApp Order
+        </a>
+        <a href="cart.html" class="text-primary hover:opacity-80">
+            <span class="material-symbols-outlined">shopping_cart</span>
+        </a>
+    </div>
+</nav>
+
+<!-- Page Header -->
+<header class="py-xl bg-gradient-to-r from-primary-dark to-primary-lightborder-b border-surface-bright">
+    <div class="max-w-container-max mx-auto px-gutter text-center">
+        <h1 class="text-display text-on-primary mb-4 font-display">Our Royal Selection</h1>
+        <p class="text-body text-on-primary max-w-2xl mx-auto opacity-90">Discover the authentic flavors of Bengaluru, handcrafted with pure ingredients and generations of heritage since 1960.</p>
+    </div>
+</header>
+
+<main class="max-w-container-max mx-auto px-gutter py-xl flex flex-col gap-xl">
+
+<!-- Category: Bengali Delights -->
+<section class="flex flex-col gap-lg">
+    <div class="relative h-64 rounded-xl overflow-hidden flex items-center justify-center bg-gradient-to-r from-primary-dark to-primary-light">
+        <img alt="Bengali Delights" class="absolute inset-0 w-full h-full object-cover opacity-50" 
+             src="https://lh3.googleusercontent.com/aida-public/AB6AXuASxo8qeklciX_Q1T3AlOFbK8szS7qXUZL-iq9f8TtX3KOwKJnx-wIthgriHtZJwTPsETiRd9BeD-hkQS86CxJeh05zH9k3qtYFURFW-jOSowTai6hCBla5dDmWMJBrzO-eojFcWb6MBH-nlHmkKhfpvl5etULp7IZJhWw3xjxKPsOuHecK_JKh5bDBFg4OzKBoJwd6ou1334C1rr1-d9rciTtS_KyCJJUx9lutiMUXxVSblwiV5h5v8">
+        <h2 class="relative z-20 text-display text-on-primary font-display">Bengali Sweets</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-md">
+        
+        <!-- Product Card 1 -->
+        <article class="bg-surface-container-lowest border border-surface-bright rounded flex flex-col overflow-hidden group">
+            <div class="aspect-square relative overflow-hidden border-b border-surface-bright bg-surface-container">
+                <img alt="Rasgulla" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuutMhOIEyfS-fF9W65enwZdXXIgJw_ZoGX2WfDJRy99XpeR3JslxxyuHd16rpL6Q9yq6gQsqy_Rbabwt4kj739_y5xhrLUCuQrgP6rQyk9qO3WNCQqL6q6SLFydPG9R76uj6hYL1h-f7Nq960mRRfM">
+            </div>
+            <div class="p-6 flex flex-col flex-grow gap-4">
+                <div class="flex-grow">
+                    <h3 class="text-headline text-on-surface mb-2 font-display">Classic Rasgulla</h3>
+                    <p class="text-body text-on-surface-variant">Spongy cottage cheese dumplings cooked in light sugar syrup.</p>
+                </div>
+                <div class="flex items-center justify-between mt-auto">
+                    <span class="text-label font-label text-primary">₹240 / 500g</span>
+                    <a href="https://wa.me/9535455770" class="bg-primary text-on-primary py-sm px-md font-label rounded text-sm hover:bg-primary-dark transition-colors">
+                        Order via WhatsApp
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <!-- Product Card 2 -->
+        <article class="bg-surface-container-lowest border border-surface-bright rounded flex flex-col overflow-hidden group">
+            <div class="aspect-square relative overflow-hidden border-b border-surface-bright bg-surface-container">
+                <img alt="Cham Cham" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuACWiKk7oTN8aeUT6EhyukkaMtYJbHhlyR5ilyuAHQigZQFCL92Rlx3mBUPKLpKVLQslfXTmjxskuIBwDRjp-VykbCZIJFl2TN8H3w6YG9OZ7O_SehVYM7lt3lpjIH15Y">
+            </div>
+            <div class="p-6 flex flex-col flex-grow gap-4">
+                <div class="flex-grow">
+                    <h3 class="text-headline text-on-surface mb-2 font-display">Malai Cham Cham</h3>
+                    <p class="text-body text-on-surface-variant">Rich and creamy traditional sweet layered with fresh malai.</p>
+                </div>
+                <div class="flex items-center justify-between mt-auto">
+                    <span class="text-label font-label text-primary">₹320 / 500g</span>
+                    <a href="https://wa.me/9535455770" class="bg-primary text-on-primary py-sm px-md font-label rounded text-sm hover:bg-primary-dark transition-colors">
+                        Order via WhatsApp
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        
+    </div>
+</section>
+
+<!-- Category: Pure Ghee Sweets -->
+<section class="flex flex-col gap-lg">
+    <div class="relative h-64 rounded-xl overflow-hidden flex items-center justify-center bg-gradient-to-r from-primary-dark to-primary-light">
+        <img alt="Pure Ghee Sweets" class="absolute inset-0 w-full h-full object-cover opacity-50" 
+             src="https://lh3.googleusercontent.com/aida-public/AB6AXuAh8ZhRxw5-578QwPxzmLCm5ujjd39jzOwKKmxbiYVj71JWFezPCyaTQayUXYlInSGOgjpyXTeeEm7YHZ1XDLOw">
+        <h2 class="relative z-20 text-display text-on-primary font-display">Ghee Sweets</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-md">
+
+        <!-- Product Card 3 -->
+        <article class="bg-surface-container-lowest border border-surface-bright rounded flex flex-col overflow-hidden group">
+            <div class="aspect-square relative overflow-hidden border-b border-surface-bright bg-surface-container">
+                <img alt="Mysore Pak" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEBKT6ktdNS6QnxmyCxlD3Kn1fFW5zEy2we8KBHvOjAHjG_tbQKgNsA2iih_odkaUcZOGSIK8KfgBEXOqxDZn">
+            </div>
+            <div class="p-6 flex flex-col flex-grow gap-4">
+                <div class="flex-grow">
+                    <h3 class="text-headline text-on-surface mb-2 font-display">Special Mysore Pak</h3>
+                    <p class="text-body text-on-surface-variant">Our signature creation, dripping with pure cow ghee.</p>
+                </div>
+                <div class="flex items-center justify-between mt-auto">
+                    <span class="text-label font-label text-primary">₹450 / 500g</span>
+                    <a href="https://wa.me/9535455770" class="bg-primary text-on-primary py-sm px-md font-label rounded text-sm hover:bg-primary-dark transition-colors">
+                        Order via WhatsApp
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <!-- Product Card 4 -->
+        <article class="bg-surface-container-lowest border border-surface-bright rounded flex flex-col overflow-hidden group">
+            <div class="aspect-square relative overflow-hidden border-b border-surface-bright bg-surface-container">
+                <img alt="Besan Laddu" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuDb2yh_rsCP1AmgJ8Gltwl3b-GfQlzuzzeZptqHP7ziEJjURVfcxEryQVBIM75Gwin697qJFwDy0tBdc2ho2-ekAVmCr-EeQLFwjenx8TY">
+            </div>
+            <div class="p-6 flex flex-col flex-grow gap-4">
+                <div class="flex-grow">
+                    <h3 class="text-headline text-on-surface mb-2 font-display">Besan Laddu</h3>
+                    <p class="text-body text-on-surface-variant">Roasted gram flour spheres enriched with premium ghee and nuts.</p>
+                </div>
+                <div class="flex items-center justify-between mt-auto">
+                    <span class="text-label font-label text-primary">₹380 / 500g</span>
+                    <a href="https://wa.me/9535455770" class="bg-primary text-on-primary py-sm px-md font-label rounded text-sm hover:bg-primary-dark transition-colors">
+                        Order via WhatsApp
+                    </a>
+                </div>
+            </div>
+        </article>
+
+    </div>
+</section>
+
+<!-- Category: Kaju Sweets -->
+<section class="flex flex-col gap-lg">
+    <div class="relative h-64 rounded-xl overflow-hidden flex items-center justify-center bg-gradient-to-r from-primary-dark to-primary-light">
+        <img alt="Kaju Sweets" class="absolute inset-0 w-full h-full object-cover opacity-50" 
+             src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1u0B5mMuwQkPhcd2T8MWWiT_ulc8Jqdt1_jzJjvvFdbWH7fux89ScfkSvD3bjDcVtv-SKRXsdOIAZxeoInQP7zu">
+        <h2 class="relative z-20 text-display text-on-primary font-display">Kaju Sweets</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-md">
+
+        <!-- Product Card 5 -->
+        <article class="bg-surface-container-lowest border border-surface-bright rounded flex flex-col overflow-hidden group">
+            <div class="aspect-square relative overflow-hidden border-b border-surface-bright bg-surface-container">
+                <img alt="Kaju Katli" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfa-HgEUwIjWsDqfSdwJIk33G7REkx0be6ps1tXfofIAGFk8AvDmwVRID-avV1QjA9wc1OMsPHrvmDGMksbiypLHm4SpMlntE-fFyI1jKzzt">
+            </div>
+            <div class="p-6 flex flex-col flex-grow gap-4">
+                <div class="flex-grow">
+                    <h3 class="text-headline text-on-surface mb-2 font-display">Kaju Katli</h3>
+                    <p class="text-body text-on-surface-variant">Delicate diamond-shaped cashew fudge with silver leaf.</p>
+                </div>
+                <div class="flex items-center justify-between mt-auto">
+                    <span class="text-label font-label text-primary">₹1200 / 500g</span>
+                    <a href="https://wa.me/9535455770" class="bg-primary text-on-primary py-sm px-md font-label rounded text-sm hover:bg-primary-dark transition-colors">
+                        Order via WhatsApp
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <!-- Product Card 6 -->
+        <article class="bg-surface-container-lowest border border-surface-bright rounded flex flex-col overflow-hidden group">
+            <div class="aspect-square relative overflow-hidden border-b border-surface-bright bg-surface-container">
+                <img alt="Pista Rolls" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0vTaRtpuamPCIJPEZSKNzDIjwu-_OM03LdYxEogWkC12sLO19vdMEcJt-6nNZvumFFXkIL8p_Dt4y1kjxa">
+            </div>
+            <div class="p-6 flex flex-col flex-grow gap-4">
+                <div class="flex-grow">
+                    <h3 class="text-headline text-on-surface mb-2 font-display">Pista Rolls</h3>
+                    <p class="text-body text-on-surface-variant">Cashew and pistachio layers rolled to perfection.</p>
+                </div>
+                <div class="flex items-center justify-between mt-auto">
+                    <span class="text-label font-label text-primary">₹750 / 500g</span>
+                    <a href="https://wa.me/9535455770" class="bg-primary text-on-primary py-sm px-md font-label rounded text-sm hover:bg-primary-dark transition-colors">
+                        Order via WhatsApp
+                    </a>
+                </div>
+            </div>
+        </article>
+
+    </div>
+</section>
+
+</main>
+
+<!-- Footer -->
+<footer class="bg-zinc-900 text-white font-label text-xs uppercase tracking-widest pt-16 pb-8 border-t border-zinc-800">
+    <div class="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div>
+            <span class="text-lg font-bold font-display text-white mb-4">Aramane Sweets</span>
+            <p class="text-zinc-500 normal-case tracking-normal">© 1960 Aramane Sweets. Authentic Bengaluru Heritage.</p>
+        </div>
+        <div class="space-y-3">
+            <h4 class="text-white font-bold mb-2">Locations</h4>
+            <a href="store-locator.html#basavanagudi" class="text-zinc-500 hover:text-white hover:text-primary transition-colors duration-200">Basanagudi</a>
+            <a href="store-locator.html#jayanagar" class="text-zinc-500 hover:text-white hover:text-primary transition-colors duration-200">Jayanagar</a>
+            <a href="store-locator.html#indiranagar" class="text-zinc-500 hover:text-white hover:text-primary transition-colors duration-200">Indiranagar</a>
+            <a href="store-locator.html#malleshwaram" class="text-zinc-500 hover:text-white hover:text-primary transition-colors duration-200">Malleshwaram</a>
+        </div>
+        <div class="space-y-3">
+            <h4 class="text-white font-bold mb-2">Support</h4>
+            <a href="https://wa.me/9535455770" class="text-zinc-500 hover:text-white hover:text-primary transition-colors duration-200">WhatsApp: 9535455770</a>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

@@ -1,294 +1,250 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aramane Sweets - Authentic Indian Sweet Shop | Perfect Green Experience</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Aramane Sweets - Authentic Bengaluru Heritage</title>
+    
+    <!-- Favicon & SEO Meta -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta name="description" content="Authentic Bengali sweets in Bengaluru since 1960. Premium quality with pure ghee and traditional craftsmanship. Order via WhatsApp 9535455770.">
+    <meta name="keywords" content="Bengali sweets, Bengalore, Mysore Pak, Kaju Katli, Ghee sweets, Pure ghee, Traditional Indian sweets, 1960">
+    <meta name="author" content="Aramane Sweets">
+    <meta property="og:title" content="Aramane Sweets - Authentic Bengaluru Heritage">
+    <meta property="og:description" content="Palatial modernity in every bite. Authentic Bengaluru sweets since 1960.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aramanesweets.com">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Noto+Serif:wght@600;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#16a34a",
+                        "on-primary": "#ffffff",
+                        "background": "#f7f9fb",
+                        "on-background": "#191c1e",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-variant": "#e0e3e5",
+                        "on-surface": "#191c1e",
+                        "on-surface-variant": "#3e4a3d",
+                        "outline": "#6e7b6c",
+                        "outline-variant": "#bdcaba"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "xl": "80px",
+                        "base": "8px",
+                        "container-max": "1280px",
+                        "md": "24px",
+                        "lg": "48px",
+                        "sm": "12px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "display": ["Noto Serif"],
+                        "body": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display": ["48px", {"lineHeight": "1.1", "fontWeight": "700"}],
+                        "headline": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "body": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+    
     <style>
-        /* ✅ PERFECT GREEN THEME - ZERO BLUR COMPLETELY */
-        :root {
-            --primary-50: #f0fdf4;
-            --primary-100: #dcfce7;
-            --primary-200: #bbf7d0;
-            --primary-300: #86efac;
-            --primary-400: #4ade80;
-            --primary-500: #22c55e;
-            --primary-600: #16a34a;
-            --primary-700: #15803d;
-            --primary-800: #166534;
-            --primary-900: #14532d;
-            
-            --text-white: #ffffff;
-            --text-dark: #1e293b;
-            --bg-white: #ffffff;
-            --bg-dark: #14532d;
-        }
-
-        * { 
-            margin: 0; 
-            padding: 0; 
-            box-sizing: border-box; 
-            backdrop-filter: none !important; 
-            filter: none !important; 
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            color: var(--text-white);
-            background: var(--primary-700);
-        }
-
-        .hero {
-            background: linear-gradient(135deg, var(--primary-700), var(--primary-600)), url('assets/images/RoyalBengaliSweets.jpeg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 2rem;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            background: rgba(34, 197, 94, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            backdrop-filter: none;
-            padding: 3rem;
-            border-radius: 25px;
-        }
-
-        h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            margin-bottom: 1rem;
-            line-height: 1.1;
-        }
-
-        .hero-text {
-            font-size: clamp(1.2rem, 2.5vw, 1.8rem);
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-
-        .btn {
-            background: var(--primary-600);
-            color: white;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 50px;
-            text-decoration: none;
-            display: inline-block;
-            margin: 10px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: background 0.3s, transform 0.3s;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-
-        .btn:hover {
-            background: var(--primary-800);
-            transform: translateY(-2px);
-        }
-
-        .section {
-            padding: 4rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .shop-showcase {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .shop-item {
-            background: white;
-            color: var(--primary-700);
-            padding: 2rem;
-            text-align: center;
-            border-radius: 15px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-
-        .shop-item:hover {
-            transform: translateY(-4px);
-        }
-
-        .shop-image {
-            width: 100%;
-            height: 200px;
-            background-size: cover;
-            background-position: center;
-            border-radius: 10px;
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: 
-            center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-            font-size: 1.2rem;
-            position: relative;
-        }
-
-        .shop-bg-1 { background: linear-gradient(rgba(22, 163, 74, 0.7), rgba(21, 128, 61, 0.7)), url('assets/images/shop/806.jpg.jpeg'); }
-        .shop-bg-2 { background: linear-gradient(rgba(22, 163, 74, 0.7), rgba(21, 128, 61, 0.7)), url('assets/images/shop/3629.jpg.jpeg'); }
-        .shop-bg-3 { background: linear-gradient(rgba(22, 163, 74, 0.7), rgba(21, 128, 61, 0.7)), url('assets/images/shop/4297.jpg.jpeg'); }
-        .shop-bg-4 { background: linear-gradient(rgba(22, 163, 74, 0.7), rgba(21, 128, 61, 0.7)), url('assets/images/shop/222497.jpg.jpeg'); }
-
-        .category-banner {
-            padding: 3rem 2rem;
-            margin: 2rem 0;
-            text-align: center;
-            font-size: 2rem;
-            font-weight: bold;
-            color: white;
-            background-size: cover;
-            background-position: center;
-        }
-
-        .bengali-bg { background: linear-gradient(rgba(22, 163, 74, 0.8), rgba(21, 128, 61, 0.8)), url('assets/images/RoyalBengaliSweets.jpeg'); }
-        .ghee-bg { background: linear-gradient(rgba(22, 163, 74, 0.8), rgba(21, 128, 61, 0.8)), url('assets/images/GheeSweets.jpeg'); }
-        .kaju-bg { background: linear-gradient(rgba(22, 163, 74, 0.8), rgba(21, 128, 61, 0.8)), url('assets/images/KajuKatli.jpeg'); }
-        .bakery-bg { background: linear-gradient(rgba(22, 163, 74, 0.8), rgba(21, 128, 61, 0.8)), url('assets/images/BakeryandCookies.jpeg'); }
-        .snack-bg { background: linear-gradient(rgba(22, 163, 74, 0.8), rgba(21, 128, 61, 0.8)), url('assets/images/IndianSnacks.jpeg'); }
-
-        .footer {
-            background: var(--primary-800);
-            color: white;
-            text-align: center;
-            padding: 3rem 2rem;
-            margin-top: 4rem;
-            font-size: 1.1rem;
-        }
-
-        .mobile-nav {
-            display: none;
-        }
-
-        @media (max-width: 768px) {
-            .btn {
-                font-size: 1rem;
-                padding: 12px 25px;
-            }
-            
-            .hero-content {
-                padding: 2rem;
-                margin: 1rem;
-            }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
     </style>
 </head>
-<body>
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>🍯 Aramane Sweets<br><span style="font-size: 2rem;">Perfect Authentic Experience</span></h1>
-            <p class="hero-text">
-                ✨ 182 authentic products • 🏪 4 real shop displays • 🌿 Beautiful green theme • 📱 Zero blur effects<br>
-                🔗 Direct WhatsApp: <strong>9535455770</strong> • Ready for immediate deployment
-            </p>
-            <a href="products.html" class="btn">
-                <span style="font-size: 1.2em;">🛒</span>
-                Browse All 182 Products
-            </a>
-            <a href="https://wa.me/919535455770" class="btn">
-                <span style="font-size: 1.2em;">📞</span>
-                WhatsApp Order
-            </a>
-            <a href="store-locator.html" class="btn">
-                <span style="font-size: 1.2em;">🏪</span>
-                Find Near You
-            </a>
-        </div>
-    </section>
 
-    <!-- Main Content -->
-    <div class="section">
-        <h2 style="text-align: center; color: var(--text-white); font-size: 2.5rem; margin-bottom: 2rem;">
-            🏆 PERFECT SWEET SHOP EXPERIENCE
-        </h2>
+<body class="bg-background text-on-background font-body text-body antialiased">
+
+<!-- Navigation -->
+<nav class="bg-surface-container-lowest sticky top-0 z-50 border-b border-surface-variant px-md h-20 flex justify-between items-center w-full">
+    <a href="index.html" class="text-display text-primary uppercase tracking-widest font-display">Aramane Sweets</a>
+    
+    <div class="hidden md:flex items-center gap-md">
+        <a href="index.html" class="text-primary border-b-2 border-primary font-bold pb-1">Home</a>
+        <a href="products.html" class="text-on-surface-variant hover:text-primary">Products</a>
+        <a href="gift-collections.html" class="text-on-surface-variant hover:text-primary">Gifts</a>
+        <a href="brand-story.html" class="text-on-surface-variant hover:text-primary">Heritage</a>
+        <a href="store-locator.html" class="text-on-surface-variant hover:text-primary">Locate</a>
     </div>
-
-    <!-- Shop Showcase -->
-    <div class="section">
-        <h3 style="text-align: center; font-size: 2rem; margin: 2rem 0; color: var(--text-white);">
-            🏪 Our Authentic Store Locations
-        </h3>
-        <div class="shop-showcase">
-            <div class="shop-item">
-                <div class="shop-image shop-bg-1"></div>
-                <h3>Bengali Special Counter</h3>
-                <p>Traditional rosogolla, mishti doi & sandesh<br>Authentic shop display with real preparation</p>
-            </div>
-            <div class="shop-item">
-                <div class="shop-image shop-bg-2"></div>
-                <h3>Fresh Preparation Area</h3>
-                <p>Pure ghee sweets & traditional delicacies<br>Melt-in-mouth authentic flavors</p>
-            </div>
-            <div class="shop-item">
-                <div class="shop-image shop-bg-3"></div>
-                <h3>Premium Display</h3>
-                <p>Premium kaju & cashew sweets<br>Authentic cashew milk recipes</p>
-            </div>
-            <div class="shop-item">
-                <div class="shop-image shop-bg-4"></div>
-                <h3>Special Collections</h3>
-                <p>Curated gift items & celebration sweets<br>Perfect for every occasion</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Category Sections -->
-    <div class="section">
-        <div class="category-banner bengali-bg">
-            <div>🍬 Bengali Sweets • Traditional Recipes • Pure Ingredients</div>
-        </div>
-        <div class="category-banner ghee-bg">
-            <div>🥛 Pure Ghee Sweets • Authentic Preparation • Fresh Daily</div>
-        </div>
-        <div class="category-banner kaju-bg">
-            <div>👑 Premium Kaju Collection • Cashew Delights • Celebration Ready</div>
-        </div>
-        <div class="category-banner bakery-bg">
-            <div>🥐 Fresh Bakery Items • Multiple Varieties • Quality Guaranteed</div>
-        </div>
-        <div class="category-banner snack-bg">
-            <div>🍽️ Traditional Snacks • Namkeen Collection • Tea-time Ready</div>
-        </div>
-    </div>
-
-    <!-- Call to Action -->
-    <div class="section" style="text-align: center;">
-        <h2 style="font-size: 2.5rem; margin-bottom: 2rem; color: var(--text-white);">
-            🔗 Ready to Order? ⚡ Direct WhatsApp
-        </h2>
-        <a href="products.html" class="btn" style="font-size: 1.2rem;padding: 20px 40px;">
-            <span style="font-size: 1.5em;">🛒</span>
-            View All 182 Products
+    
+    <div class="flex items-center gap-sm">
+        <a href="cart.html" class="text-primary hover:opacity-80">
+            <span class="material-symbols-outlined">shopping_cart</span>
         </a>
-        <a href="https://wa.me/919535455770" class="btn" style="font-size: 1.2rem;padding: 20px 40px;">
-            <span style="font-size: 1.5em;">📱</span>
-            WhatsApp: 9535455770
+        <a href="https://wa.me/9535455770" class="hidden md:flex items-center gap-xs px-md py-sm bg-primary text-on-primary font-label rounded hover:opacity-80">
+            WhatsApp Order
         </a>
     </div>
+</nav>
 
-    <!-- Footer -->
-    <footer>
-        <p>
-            🏆 <strong>COMPLETED:</strong> Perfect green theme • 182 authentic products • 10 real shop images<br>
-            ✨ Zero blur effects • Authentic Aramane brand • Clean structure • Ready for deployment<br>
-            🌿 Aramane Sweets | Authentic Indian Sweet Shop | Bengaluru, India | Since 1960
-        </p>
-    </footer>
+<!-- Hero Section -->
+<section class="relative w-full h-[600px] flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-[#15803d] to-[#22c55e]"></div>
+    <div class="absolute inset-0 opacity-40 bg-cover bg-center" 
+         style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD1jOo4iXxz_JaF1WDj0iIMC3HnsSRfFQgvFbnMD2YwNYj9gsQ6jOw7dha5evAajgcQxx1qFfTduMWT7XYutoGoqQZcM2tFZ1DcMgDKVdBPVfxTMlh761OmE7eQknZhWJAq8gFN13d2X79vnViPHn6QUf9IsdeEK8MCLBfeo7IRuyj5DI___-QYYoBUwLs');"></div>
+    
+    <div class="relative z-20 text-center px-md max-w-[800px]">
+        <span class="inline-block px-sm py-xs bg-primary text-on-primary font-label uppercase tracking-widest mb-md">Since 1960</span>
+        <h1 class="text-display text-on-primary mb-md font-display">Palatial Modernity in Every Bite</h1>
+        <p class="text-body text-on-primary/90 mb-lg max-w-[600px] mx-auto">Bridging the gap between traditional Indian craftsmanship and contemporary premium retail.</p>
+        <a href="https://wa.me/9535455770" class="inline-flex items-center gap-sm px-lg py-sm bg-surface-container-lowest text-primary font-label rounded hover:bg-surface-variant">
+            Order via WhatsApp <span class="material-symbols-outlined">arrow_forward</span>
+        </a>
+    </div>
+</section>
+
+<!-- Legacy Banner -->
+<section class="w-full bg-primary py-xl">
+    <div class="max-w-container-max mx-auto px-md text-center">
+        <h2 class="text-headline text-on-primary mb-sm font-display">A Legacy of Authentic Taste</h2>
+        <p class="text-body text-on-primary/80 max-w-2xl mx-auto">Crafting sensory delights with pure ghee and uncompromising quality for over six decades.</p>
+    </div>
+</section>
+
+<!-- Heritage Showcase -->
+<section class="max-w-container-max mx-auto px-md py-xl">
+    <div class="text-center mb-lg">
+        <h2 class="text-headline text-on-surface mb-sm font-display">Heritage Showcase</h2>
+        <p class="text-body text-on-surface-variant">Glimpses of our enduring tradition in Bengaluru.</p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-md">
+        <div class="group relative aspect-[4/5] overflow-hidden border border-surface-variant">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOpS8xZfHU4IMbRZidKffI-Nq4OcYnW7JTQfMlhZPyjvsj0Kp2b2Y-qXVj0fd5F1KxBC6CkSQkuugAzVAiPILDrJkorO4uBxZTcdBPKwC849PDP1Bi7E96BE2Ft7XdNHq5wGHtc-L4EfvPj9hx-trTIbQ1ZM2vSvHLWOdFPwTrlbS4O9djnHNkenp4srdpmFz" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                 alt="Vintage storefront">
+        </div>
+        <div class="group relative aspect-[4/5] overflow-hidden border border-surface-variant">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwINJTWNKS7cUZmuCsejc2LqKRw6lCMCdGWjgS2wFnsNaLibO4NajxX1zmej1oOwJHMiAW_qjHZmZpcnx6g7ip" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                 alt="Artisan making sweets">
+        </div>
+        <div class="group relative aspect-[4/5] overflow-hidden border border-surface-variant">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUfSV7P6QPrKgxBE37sIWrOIr70ERx-t6X5lrKhengcl8qMZYn95dUJX68" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                 alt="Classic display">
+        </div>
+        <div class="group relative aspect-[4/5] overflow-hidden border border-surface-variant">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCq0aR5MbUh5FQPtcJ9lpkX2_nBssWSMiwx5-smxbI3CnSN15iYzuZjkKfWKI5MaGNtwxsTG-QMLD0qR9Uqm9_d" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                 alt="Modern interior">
+        </div>
+    </div>
+</section>
+
+<!-- Categories -->
+<section class="max-w-container-max mx-auto px-md py-xl border-t border-surface-variant">
+    <div class="text-center mb-lg">
+        <h2 class="text-headline text-on-surface mb-sm font-display">Our Offerings</h2>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-md auto-rows-[300px]">
+        <a href="products.html" class="md:col-span-2 relative group overflow-hidden border border-surface-variant">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxKsGd8mKKzRQ5B04mKSoigbxzXkOiVM871Ntl7gbbB6xHMQbkbS_xkrGg00zn6Idx7ZRi" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                 alt="Bengali sweets">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+            <div class="absolute bottom-0 left-0 p-md">
+                <span class="inline-block px-xs py-xs bg-primary text-on-primary font-label mb-sm">Premium</span>
+                <h3 class="text-headline text-on-primary font-display">Bengali Delights</h3>
+            </div>
+        </a>
+        
+        <a href="products.html" class="relative group overflow-hidden border border-surface-variant">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVt_LAJ67RyNiXpXVe2Lz9594e-S8ykEuYzld6L2ZZ4rjmRLEI8V7XzeY90ZhsC" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                 alt="Ghee sweets">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+            <div class="absolute bottom-0 left-0 p-md">
+                <h3 class="text-headline text-on-primary font-display">Pure Ghee</h3>
+            </div>
+        </a>
+        
+        <a href="products.html" class="relative group overflow-hidden border border-surface-variant">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1u0B5mMuwQkPhcd2T8MWWiT_ulc8Jqdt1_jzJjvvFdbWH7fux89ScfkSvD3bj" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                 alt="Kaju sweets">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+            <div class="absolute bottom-0 left-0 p-md">
+                <h3 class="text-headline text-on-primary font-display">Kaju Wonders</h3>
+            </div>
+        </a>
+        
+        <a href="gift-collections.html" class="md:col-span-2 relative group overflow-hidden border border-surface-variant">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDo2jrb9wNxdYEI8Wq4f1MzJXnnCvIWBDK6INaLmELu-laOdnFJ6PRDHfGNGBm6l" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                 alt="Gift boxes">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+            <div class="absolute bottom-0 left-0 p-md">
+                <h3 class="text-headline text-on-primary font-display">Gift Boxes</h3>
+            </div>
+        </a>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-on-surface text-on-primary pt-16 pb-8">
+    <div class="max-w-container-max mx-auto px-md grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div>
+            <div class="text-display text-on-primary mb-sm font-display">Aramane Sweets</div>
+            <p class="text-body text-on-primary/70">Authentic Bengaluru Heritage since 1960.</p>
+        </div>
+        
+        <div>
+            <h4 class="text-label text-primary mb-sm">Our Stores</h4>
+            <ul class="space-y-sm text-body text-on-primary/70">
+                <li><a href="store-locator.html#christ-college" class="hover:text-primary">Christ College</a></li>
+                <li><a href="store-locator.html#chitradurga" class="hover:text-primary">Chitradurga</a></li>
+                <li><a href="store-locator.html#muddanpalya" class="hover:text-primary">Muddanpalya</a></li>
+                <li><a href="store-locator.html#davanagere" class="hover:text-primary">Davanagere</a></li>
+                <li><a href="store-locator.html#hospet" class="hover:text-primary">Hospet</a></li>
+            </ul>
+        </div>
+        
+        <div>
+            <h4 class="text-label text-primary mb-sm">Get in Touch</h4>
+            <ul class="space-y-sm text-body text-on-primary/70">
+                <li><a href="mailto:aramanesweets23@gmail.com" class="hover:text-primary">Email: aramanesweets23@gmail.com</a></li>
+                <li><a href="tel:+919535455770" class="hover:text-primary">Phone: +91 95354 55770</a></li>
+                <li class="mt-md">
+                    <a href="https://wa.me/919535455770" class="inline-flex items-center gap-xs text-primary hover:opacity-80">
+                        <span class="material-symbols-outlined">chat</span>
+                        WhatsApp Order
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="max-w-container-max mx-auto px-md mt-16 pt-8 border-t border-on-primary/10 text-center text-body text-on-primary/50">
+        © 1960 Aramane Sweets. Authentic Bengaluru Heritage.
+    </div>
+</footer>
+
 </body>
 </html>

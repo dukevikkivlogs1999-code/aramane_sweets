@@ -1,0 +1,364 @@
+================================================================================
+                    VIKKI SWEET SHOP - COMPLETE INVENTORY
+                         All Products with Prices
+                          Date: April 29, 2026
+================================================================================
+
+================================================================================
+1. BAKERY ITEMS (40 Products)
+================================================================================
+
+SL.NO | CODE | ITEM NAME                           | PRICE(₹) | SHELF LIFE
+------+------+-------------------------------------+----------+----------
+  1   | 1451 | MILK BREAD                          |    50    |    -
+  2   | 1454 | WHEAT BREAD                         |    60    |    -
+  3   | 1471 | VEG PUFF                            |    25    |    -
+  4   | 3582 | SWEET LACHHA                        |    20    |    -
+  5   | 3589 | ITALIAN SWEET CORN                  |    50    |    -
+  6   | 3590 | PIZZA ROLL                          |    50    |    -
+  7   | 3591 | PANEER INTERNET                     |    80    |    -
+  8   | 3592 | SWEET CORN PANEER MANCHOORIAN       |    80    |    -
+  9   | 3605 | ALMOND STICKS 200GM                 |   160    |    -
+ 10   | 3606 | PISTA STICKS 200GMS                 |   200    |    -
+ 11   | 3607 | CHOCO ALMOND STICKS 200GMS          |   160    |    -
+ 12   | 3593 | SHEZWAN PANEER                      |    80    |    -
+ 13   | 3595 | MIX VEG                             |    35    |    -
+ 14   | 2116 | GARLIC BREAD                        |    35    |    -
+ 15   | 3596 | ITALIAN FOCACCIA BREAD              |    80    |    -
+ 16   | 3597 | ITALIAN PANEER HOT DOG              |    70    |    -
+ 17   | 3598 | ITALIAN VEG HOT DOG                 |    50    |    -
+ 18   | 1473 | PANEER PUFF                         |    35    |    -
+ 19   | 3599 | MULTIGRAIN WHEAT BREAD              |    80    |    -
+ 20   | 2779 | ROASTED HONEY ALMOND 125GM          |   200    |    -
+ 21   | 2780 | ROASTED HONEY ALMOND 250GM          |   400    |    -
+ 22   | 1875 | MASKA BUN                           |    60    |    -
+ 23   | 1484 | CHOCOLAVA CUP CAKE                  |    60    |    -
+ 24   | 2346 | MILK CHOCOLATE DONUT                |    40    |    -
+ 25   | 2347 | DARK CHOCOLATE DONUT                |    40    |    -
+ 26   | 2345 | WHITE CHOCOLATE DONUT               |    40    |    -
+ 27   | 1885 | PAV                                 |    60    |    -
+ 28   | 1581 | ALOO BUN                            |    30    |    -
+ 29   | 1433 | SWEET BUN                           |    35    |    -
+ 30   | 3650 | MILK BUTTERSCOTCH PASTRY            |    70    |    -
+ 31   | 3651 | NANKHATAI 200 GM                    |   100    |    -
+ 32   | 3652 | GARLIC BUTTER RUSK 80 GM            |    60    |    -
+ 33   | 3653 | COCONUT CRUNCH 150GM                |    75    |    -
+ 34   | 3654 | CASHEW COOKIES 150GM                |    80    |    -
+ 35   | 3655 | DRY FRUIT COOKIES 150GM             |    80    |    -
+ 36   | 3664 | CHOCO WALNUTS 1 PC                  |   110    |    -
+ 37   | 3662 | NUTELLA HAZEL NUTS 1PC              |   130    |    -
+ 38   | 3663 | CARAMEL BUTTER SCOTCH 1PC           |   110    |    -
+ 39   | 3665 | BISCOFF LOTUS 1 PC                  |   130    |    -
+ 40   | 1456 | FRUIT BUN 3PCS                      |    50    |    -
+
+BAKERY ITEMS TOTAL: 40 Products | Price Range: ₹20 - ₹400
+
+================================================================================
+2. BENGALI SWEETS (20 Products)
+================================================================================
+
+SL.NO | CODE | ITEM NAME                           | PRICE(₹) | SHELF LIFE
+------+------+-------------------------------------+----------+----------
+  1   | 1076 | KALA JAMUN 1 PC                     |    40    |    -
+  2   | 1127 | CHAMCHAM 1 PC                       |    35    |    -
+  3   | 1129 | CHAMPAKALI 1 PC                     |    40    |    -
+  4   | 1121 | MALAI SANDWICH 1 PC                 |    45    |    -
+  5   | 1132 | RASMALAI 1 PC                       |    45    |    -
+  6   | 1133 | RASGULLA 1 PC                       |    35    |    -
+  7   | 1134 | ANGOOR RASGULLA                     |   520    |    -
+  8   | 1135 | ANGOOR RASMALAI                     |   620    |    -
+  9   | 1140 | MALAI ROLL 1 PC                     |    45    |    -
+ 10   | 1142 | MANGO MALAI ROLL 1 PC               |    45    |    -
+ 11   | 1146 | RAJ BHOG 1 PC                       |    45    |    -
+ 12   | 1513 | RABDI 100GMS                        |    65    |    -
+ 13   | 1533 | PAN PETHA 1 PCS                     |    30    |    -
+ 14   | 1548 | MALAI KESAR SANDWICH 1 PCS          |    45    |    -
+ 15   | 2118 | JAMOON ROLL 1 PC                    |    45    |    -
+ 16   | 2329 | PINK SANDWICH 1 PC                  |    45    |    -
+ 17   | 1801 | PETHA SANDWICH 1 PC                 |    55    |    -
+ 18   | 3513 | PANEER JAMOON                       |   650    |    -
+ 19   | 1846 | BHASUNDI 100ML                      |    65    |    -
+ 20   | 1078 | MALPUA 1 PC                         |    35    |    -
+
+BENGALI SWEETS TOTAL: 20 Products | Price Range: ₹30 - ₹650
+
+================================================================================
+3. CHAT ITEMS (23 Products)
+================================================================================
+
+SL.NO | CODE | ITEM NAME                           | PRICE(₹) | SHELF LIFE
+------+------+-------------------------------------+----------+----------
+  1   | 1402 | PANI PURI                           |    50    |    -
+  2   | 1403 | MASALA PURI                         |    50    |    -
+  3   | 1404 | DAHI PURI                           |    60    |    -
+  4   | 1405 | BHEL PURI                           |    50    |    -
+  5   | 1406 | SEV PURI                            |    50    |    -
+  6   | 1407 | RAJ KACHORI                         |    70    |    -
+  7   | 1408 | DAHI BHALLA                         |    60    |    -
+  8   | 1409 | PAPDI CHAT                          |    60    |    -
+  9   | 1410 | SAMOSA MASALA                       |    60    |    -
+ 10   | 1411 | KACHORI MASALA                      |    60    |    -
+ 11   | 1412 | KATORI CHAT                         |    70    |    -
+ 12   | 1915 | VEG CUTLET 2 PC                     |    60    |    -
+ 13   | 1916 | CUTLET CHAT                         |    60    |    -
+ 14   | 2300 | VADA PAV 1 PC                       |    40    |    -
+ 15   | 1883 | PAV BHAJI                           |    70    |    -
+ 16   | 1913 | CHOLE BHATURA                       |    70    |    -
+ 17   | 1914 | PANEER CHOLE BHATURA                |   110    |    -
+ 18   | 1395 | SAMOSA                              |    25    |    -
+ 19   | 1396 | DAL KACHORI                         |    25    |    -
+ 20   | 1394 | ONION KACHORI                       |    30    |    -
+ 21   | 3608 | DAHI KACHORI                        |    60    |    -
+ 22   | 3609 | DAHI BHEL PURI                      |    60    |    -
+ 23   | 3027 | NOODLES SAMOSA                      |    40    |    -
+
+CHAT ITEMS TOTAL: 23 Products | Price Range: ₹25 - ₹110
+
+================================================================================
+4. GHEE & KOVA SWEETS (48 Products)
+================================================================================
+
+SL.NO | CODE | ITEM NAME                           | PRICE(₹) | SHELF LIFE
+------+------+-------------------------------------+----------+----------
+  1   | 1009 | DRY FRUIT HALWA                     |   740    | 2 Days
+  2   | 1057 | MILK CAKE                           |   740    | 10 Days
+  3   | 1063 | BESAN LADDU                         |   640    | 30 Days
+  4   | 1067 | KALAKAND BURFI                      |   640    | 10 Days
+  5   | 1094 | COCONUT BURFI                       |   640    | 10 Days
+  6   | 1098 | DOODH PEDA                          |   640    | 10 Days
+  7   | 1100 | DHARWAD PEDA                        |   620    | 10 Days
+  8   | 1104 | FRUIT CAKE                          |   640    | 10 Days
+  9   | 1106 | KOVA BADAM ROLL                     |   640    | 10 Days
+ 10   | 1110 | KOVA KESAR ROLL                     |   660    | 10 Days
+ 11   | 1118 | ICE BURFI                           |   700    | 15 Days
+ 12   | 1124 | MANGO BURFI                         |   640    | 15 Days
+ 13   | 1530 | KOVA KATLI                          |   600    | 10 Days
+ 14   | 1804 | HORLICKS BURFI                      |   760    | 15 Days
+ 15   | 2040 | TUTTI FRUITY CAKE                   |   740    | 10 Days
+ 16   | 3432 | BOOST BURFI                         |   880    | 15 Days
+ 17   | 3028 | ORANGE KALI                         |   640    | 10 Days
+ 18   | 3210 | KALAKAND ROSE GULKAND BURFI         |   800    | 10 Days
+ 19   | 3425 | MOONG DAL BURFI                     |   640    | 10 Days
+ 20   | 1083 | SWEET BOONDI                        |   440    | 5 Days
+ 21   | 3433 | VANILLA BURFI                       |   640    | 10 Days
+ 22   | 3434 | KARJUR BURFI                        |   640    | 10 Days
+ 23   | 3493 | KARJUR ROLL                         |   640    | 30 Days
+ 24   | 2033 | BELGAUM KUNDA                       |   640    | 10 Days
+ 25   | 2029 | KARADANTU                           |   840    | 15 Days
+ 26   | 2262 | BOONDI LADDU                        |   580    | 5 Days
+ 27   | 1043 | MAHARAJA MYSORE PAK                 |   640    | 15 Days
+ 28   | 3455 | KOVA CHOCOLATE ROLL                 |   640    | 10 Days
+ 29   | 1830 | BADAM MILK                          |   340    | 2 Days
+ 30   | 3438 | ARAMANE SPL HOT MYSORE PAK          |   880    | 30 Days
+ 31   | 3503 | BADAM MYSORE PAK                    |   880    | 30 Days
+ 32   | 3506 | KAJU MYSORE PAK                     |  1000    | 30 Days
+ 33   | 1039 | CHANDRAKALA                         |   620    | 7 Days
+ 34   | 1041 | SURYAKALA                           |   620    | 7 Days
+ 35   | 1049 | MOTICHUR LADDU                      |   800    | 5 Days
+ 36   | 1071 | BADUSHA                             |   620    | 7 Days
+ 37   | 1069 | GULAB JAMUN                         |   620    | 10 Days
+ 38   | 3431 | GHEE SOAN PAPDI                     |   800    | 2 Days
+ 39   | 1084 | GHEE JALEBI                         |   440    | 3 Days
+ 40   | 1086 | JANGIRI                             |   560    | 3 Days
+ 41   | 1971 | GHEE PENI                           |    40    | 30 Days
+ 42   | 3437 | CHIROTI                             |   440    | 30 Days
+ 43   | 3175 | ANGOORI JAMOON                      |   670    | 10 Days
+ 44   | 1047 | GHEE MYSORE PAK                     |   840    | 30 Days
+ 45   | 3515 | BEATROOT MYSOREPAK                  |   840    | 10 Days
+ 46   | 1011 | DRY FRUIT LADDU                     |  1200    | 15 Days
+ 47   | 3520 | GRAPE DRY FRUIT HALWA               |   740    | 10 Days
+ 48   | 3528 | CHIROTI WITH B MILK                 |    60    | 2 Days
+
+GHEE & KOVA SWEETS TOTAL: 48 Products | Price Range: ₹40 - ₹1,200
+
+================================================================================
+5. KAJU SWEETS (34 Products)
+================================================================================
+
+SL.NO | CODE | ITEM NAME                           | PRICE(₹) | SHELF LIFE
+------+------+-------------------------------------+----------+----------
+  1   | 1818 | KAJU MODAKA                         |  1240    | 10 Days
+  2   | 3549 | KAJU PINE APPLE                     |  1240    | 10 Days
+  3   | 3481 | KAJU STRAWBERRY                     |  1240    | 10 Days
+  4   | 3534 | KAJU BISFOM BURFI                   |  1240    | 10 Days
+  5   | 1838 | KAJU APPLE                          |  1240    | 10 Days
+  6   | 3530 | KAJU WATER APPLE                    |  1240    | 10 Days
+  7   | 1021 | KAJU CHOCOLATE BITES                |  1240    | 10 Days
+  8   | 1023 | KAJU MANGO BITES                    |  1240    | 10 Days
+  9   | 1019 | KAJU VANILLA BITES                  |  1240    | 10 Days
+ 10   | 3555 | KAJU ANJEER KATORI                  |  1440    | 10 Days
+ 11   | 3548 | KAJU BOAT                           |  1340    | 10 Days
+ 12   | 3541 | KAJU CHANDRA MUKHI                  |  1340    | 10 Days
+ 13   | 1017 | KAJU SUNFLOWER                      |  1400    | 10 Days
+ 14   | 3539 | KAJU MAGIC BALL                     |  1340    | 10 Days
+ 15   | 3556 | KAJU COCONUT LADDU                  |  1100    | 7 Days
+ 16   | 3547 | KAJU BADAM PATODI                   |  1440    | 10 Days
+ 17   | 3538 | KAJU CANDY                          |  1340    | 10 Days
+ 18   | 1096 | BADAM BURFI                         |  1240    | 10 Days
+ 19   | 1029 | CRYSTAL PISTA LADDU                 |  1440    | 15 Days
+ 20   | 1027 | CRYSTAL ROSE LADDU                  |  1440    | 15 Days
+ 21   | 3531 | KAJU CONE                           |  1440    | 10 Days
+ 22   | 1013 | KAJU KATLI                          |  1200    | 15 Days
+ 23   | 1551 | SUGAR FREE KAJU KATLI               |  1240    | 15 Days
+ 24   | 1810 | KAJU SITHAPAL                       |  1240    | 10 Days
+ 25   | 2027 | KAJU JAGGERI KATLI                  |  1200    | 10 Days
+ 26   | 1865 | KAJU ANJEER SANDWITCH               |  1240    | 10 Days
+ 27   | 1503 | KAJU PISTA ROLL                     |  1240    | 10 Days
+ 28   | 1591 | KAJU CHOCOLATE BALL                 |  1240    | 10 Days
+ 29   | 3533 | KAJU 2 IN 1                         |  1340    | 10 Days
+ 30   | 2431 | KAJU ANJEER ROLL                    |  1400    | 10 Days
+ 31   | 1808 | WATERMELON KAJU                     |  1240    | 10 Days
+ 32   | 1035 | KAJU DHOLI                          |  1240    | 10 Days
+ 33   | 3460 | KAJU RAJKAMAL                       |  1240    | 10 Days
+ 34   | 3631 | KAJU BAHAR                          |  1240    | 10 Days
+
+KAJU SWEETS TOTAL: 34 Products | Price Range: ₹1,100 - ₹1,440
+
+================================================================================
+6. NAMKEEN ITEMS (30 Products)
+================================================================================
+
+SL.NO | CODE | ITEM NAME                           | PRICE(₹) | SHELF LIFE
+------+------+-------------------------------------+----------+----------
+  1   | 3419 | CASHEW PAKODA                       |   780    | 7 Days
+  2   | 3421 | ONION PAKODA                        |   400    | 4 Days
+  3   | 3439 | ONION MURKH                         |   400    | 15 Days
+  4   | 3440 | GARLIC MURKH                        |   520    | 15 Days
+  5   | 1198 | SMALL KARA BOONDI (SMALL)           |   340    | 15 Days
+  6   | 1185 | BOMBAY MIXTURE                      |   520    | 15 Days
+  7   | 3441 | SPECIAL SADA MIXTURE                |   620    | 15 Days
+  8   | 3442 | AAR CUT MIXTURE                     |   540    | 15 Days
+  9   | 3443 | ANDHRA MURKH                        |   440    | 15 Days
+ 10   | 3205 | AGRA MIXTURE                        |   540    | 15 Days
+ 11   | 3192 | MASALA KODABALE                     |   520    | 15 Days
+ 12   | 1193 | CORN FLAKES MIXTURE                 |   440    | 15 Days
+ 13   | 3445 | GOLDEN MIXTURE                      |   520    | 15 Days
+ 14   | 3446 | RAAGI RIBBON PAKODA                 |   340    | 15 Days
+ 15   | 2267 | RIBBON PAKODA                       |   440    | 15 Days
+ 16   | 1392 | SHANKARPOULI                        |   520    | 15 Days
+ 17   | 3447 | BEATROOT MURKH                      |   460    | 15 Days
+ 18   | 3448 | PALAK MURKH                         |   440    | 15 Days
+ 19   | 1163 | BUTTER MURKH                        |   520    | 15 Days
+ 20   | 3450 | SPL KARA SEV                        |   340    | 15 Days
+ 21   | 3451 | BUTTER KHARA SEV                    |   340    | 15 Days
+ 22   | 3454 | SERAI POKODA                        |   340    | 15 Days
+ 23   | 3449 | ELLU MURUKH                         |   340    | 15 Days
+ 24   | 1174 | MASALA PEANUT                       |   520    | 15 Days
+ 25   | 3484 | SOUTH INDIAN MIXTURE                |   440    | 15 Days
+ 26   | 3486 | SWEET POTATO MIXTURE                |   440    | 15 Days
+ 27   | 1168 | KHATTA MEETHA MIXTURE               |   520    | 15 Days
+ 28   | 3498 | ARAMANE SPL MIXTURE                 |   480    | 15 Days
+ 29   | 2274 | SPECIAL BOMBAY MIXTURE              |   520    | 15 Days
+ 30   | 1145 | PREMIUM BOONDI LADDU                |   580    | 10 Days
+
+NAMKEEN ITEMS TOTAL: 30 Products | Price Range: ₹340 - ₹780
+
+================================================================================
+7. PACKED ITEMS - 150GM PORTIONS (32 Products)
+================================================================================
+
+SL.NO | CODE | ITEM NAME                           | PRICE(₹) | SHELF LIFE
+------+------+-------------------------------------+----------+----------
+  1   | 3518 | ONION MURKH 150 GM                  |    60    | 7 Days
+  2   | 3517 | GARLIC MURKH 150 GM                 |    80    | 4 Days
+  3   | 1595 | AGRA MIXTURE 150 GM                 |    80    | 20 Days
+  4   | 3192 | MASALA KODABALE 150 GM              |    80    | 20 Days
+  5   | 1194 | CORN FLAKES MIXTURE 150 GM          |    70    | 20 Days
+  6   | 3603 | RAAGI RIBBON PAKODA 150 GM          |    50    | 20 Days
+  7   | 2271 | RIBBON PAKODA 150 GM                |    70    | 20 Days
+  8   | 1495 | SHANKARPOULI 150 GM                 |    80    | 20 Days
+  9   | 3519 | BEATROOT MURKH 150 GM               |    70    | 20 Days
+ 10   | 3604 | PALAK MURKH 150 GM                  |    70    | 20 Days
+ 11   | 1493 | BUTTER MURKH 150 GM                 |    80    | 20 Days
+ 12   | 1175 | MASALA PEANUT 150 GM                |    80    | 20 Days
+ 13   | 2482 | ARAMANE SPL MIXTURE 150 GM          |    70    | 20 Days
+ 14   | 1212 | BABY MURKH 150 GM                   |    90    | 20 Days
+ 15   | 1416 | BABY PALAK MURKH 150 GM             |    90    | 20 Days
+ 16   | 2036 | RAGI BABY MURKH 150 GM              |    90    | 20 Days
+ 17   | 1939 | BANANA CHIPS 150 GM                 |   100    | 20 Days
+ 18   | 1832 | MASALA BANANA 150 GM                |   100    | 20 Days
+ 19   | 1833 | PEPPER BANANA CHIPS 150 GM          |   100    | 20 Days
+ 20   | 1569 | BENDI 50 GM                         |   100    | 20 Days
+ 21   | 1232 | TOMATO MURKH 150 GM                 |    90    | 20 Days
+ 22   | 1858 | GREEN PEAS FRY 150 GM               |    70    | 20 Days
+ 23   | 1200 | POTATO MASALA CHIPS 100 GM          |    60    | 20 Days
+ 24   | 1202 | POTATO SALTED CHIPS 100 GM          |    60    | 20 Days
+ 25   | 1959 | POTATO PERI PERI CHIPS 100 GM       |    70    | 20 Days
+ 26   | 3537 | CREAM & ONION CHIPS 100 GM          |    60    | 20 Days
+ 27   | 2070 | KABUL CHANNA 150 GM                 |    40    | 20 Days
+ 28   | 2951 | SPLITTED MASALA PEANUT 150 GM       |    90    | 20 Days
+ 29   | 1856 | ROASTED PEANUT 150 GM               |    70    | 20 Days
+ 30   | 1859 | CHANNA DALL 150 GM                  |    70    | 20 Days
+ 31   | 3039 | MOONG DALL 150 GM                   |    40    | 20 Days
+ 32   | 1860 | GHEE PENI 3 PC                      |   100    | 20 Days
+
+PACKED ITEMS TOTAL: 32 Products | Price Range: ₹40 - ₹100
+
+================================================================================
+                              SUMMARY REPORT
+================================================================================
+
+Category                          Products    Min Price    Max Price    Avg Price
+-----------------------------------+----------+-----------+----------+-----------
+1. Bakery Items                        40         ₹20         ₹400        ₹97
+2. Bengali Sweets                      20         ₹30         ₹650        ₹126
+3. Chat Items                          23         ₹25         ₹110        ₹57
+4. Ghee & Kova Sweets                  48         ₹40        ₹1,200       ₹639
+5. Kaju Sweets                         34       ₹1,100      ₹1,440      ₹1,275
+6. Namkeen Items                       30        ₹340         ₹780        ₹485
+7. Packed Items (150GM)                32         ₹40         ₹100        ₹77
+
+GRAND TOTAL                           227       ₹20        ₹1,440       ₹362
+
+================================================================================
+PRICE ANALYSIS
+================================================================================
+
+Most Expensive Products:
+  - Kaju Mysore Pak (Code: 3506) ............................ ₹1,440
+  - Dry Fruit Laddu (Code: 1011) ........................... ₹1,200
+  - Multiple Kaju items ..................................... ₹1,240
+  - Crystal Pista/Rose Laddu (Codes: 1029/1027) ............ ₹1,440
+
+Most Affordable Products:
+  - Sweet Lachha (Code: 3582) ............................... ₹20
+  - Ghee Peni (Code: 1971) .................................. ₹40
+  - Kabul Channa (Code: 2070) ............................... ₹40
+  - Moong Dall (Code: 3039) ................................. ₹40
+
+Best Value Categories:
+  1. Bakery Items (₹20-400)
+  2. Chat Items (₹25-110)
+  3. Bengali Sweets - Premium (₹30-650)
+
+Premium Categories:
+  1. Kaju Sweets (₹1,100-1,440)
+  2. Ghee & Kova Sweets (₹40-1,200)
+  3. Namkeen Items (₹340-780)
+
+================================================================================
+SHELF LIFE ANALYSIS
+================================================================================
+
+Freshly Made Products (2 Days):
+  - Dry Fruit Halwa, Badam Milk, Ghee Soan Papdi, Chiroti With B Milk
+
+Short Shelf Life (3-5 Days):
+  - Ghee Jalebi, Jangiri, Sweet Boondi, Boondi Laddu
+
+Medium Shelf Life (7-10 Days):
+  - Most Kaju Sweets, Badusha, Chandrakala, Mango Burfi, etc.
+
+Long Shelf Life (15-30 Days):
+  - Packed Items (20 Days), Namkeen Items (15 Days), Besan Laddu (30 Days)
+
+================================================================================
+NOTES:
+- Prices are in Indian Rupees (₹)
+- Shelf life varies; Packed items generally have longest shelf life
+- Kaju sweets command premium prices due to ingredient costs
+- Namkeen items are packaged for longer shelf life
+- Bakery items are fresh daily
+
+Generated: April 29, 2026
+================================================================================

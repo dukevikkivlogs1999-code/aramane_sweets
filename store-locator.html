@@ -1,198 +1,308 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Visit Aramane Sweets at 4 heritage locations across Karnataka: Bengaluru, Davangere, Chitradurga, and Hospet. WhatsApp order from any store.">
-<meta name="keywords" content="Aramane Sweets, store locator, Bengaluru, Davangere, Chitradurga, Hospet, Indian sweets">
-<meta property="og:title" content="Store Locator | Aramane Sweets">
-<meta property="og:description" content="Find your nearest Aramane Sweets store across Karnataka. Heritage Indian mithai since 1934.">
-<title>Store Locator | Aramane Sweets</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif:ital,wght@0,400;0,600;0,700;1,700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
-<script id="tailwind-config">
-  tailwind.config = {
-    darkMode: "class",
-    theme: {
-      extend: {
-        colors: {
-          background: "#fbf9f1",
-          primary: "#570013",
-          "primary-container": "#800020",
-          secondary: "#735c00",
-          "secondary-container": "#fed65b",
-          accent: "#d4af37",
-          "surface-container": "#f0eee6",
-          "on-surface-variant": "#584141",
-          "outline-variant": "#e0bfbf",
-          error: "#ba1a1a"
-        },
-        fontFamily: { serif: ['Noto Serif','serif'], sans: ['Inter','sans-serif'] }
-      }
-    }
-  };
-</script>
-<style>
-  @keyframes fadeUp { from { opacity:0; transform:translateY(30px); } to { opacity:1; transform:translateY(0); } }
-  .anim-fade-up { animation: fadeUp 0.6s cubic-bezier(0.22,1,0.36,1) forwards; opacity:0; }
-  .gold-line { height:2px; background:linear-gradient(90deg,transparent 0%,#d4af37 30%,#fed65b 50%,#d4af37 70%,transparent 100%); }
-  .card-lift { transition:transform 0.4s cubic-bezier(0.34,1.56,0.64,1),box-shadow 0.4s ease; }
-  .card-lift:hover { transform:translateY(-8px); box-shadow:0 24px 48px -12px rgba(87,0,19,0.18); }
-  .jali-bg { background-image:radial-gradient(circle at 0 0,#800020 1.5px,transparent 2px),radial-gradient(circle at 12px 12px,#800020 1.5px,transparent 2px); background-size:24px 24px; opacity:0.04; }
-  .pb-safe { padding-bottom: env(safe-area-inset-bottom,0px); }
-  body { font-family:'Inter',sans-serif; background:#fbf9f1; }
-  .font-serif { font-family:'Noto Serif',serif; }
-</style>
-<script src="assets/js/cart-api.js"></script>
-<script src="assets/js/products-data-full.js"></script>
-<script src="assets/js/ui-components.js"></script>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Aramane Sweets - Store Locator</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#16a34a",
+                        "primary-dark": "#15803d",
+                        "on-primary": "#ffffff",
+                        "background": "#f7f9fb",
+                        "on-background": "#191c1e",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container": "#eceef0",
+                        "surface-bright": "#f7f9fb",
+                        "on-surface": "#191c1e",
+                        "on-surface-variant": "#3e4a3d",
+                        "outline": "#6e7b6c",
+                        "outline-variant": "#bdcaba"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "xl": "80px",
+                        "base": "8px",
+                        "container-max": "1280px",
+                        "md": "24px",
+                        "lg": "48px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "display": ["Playfair Display"],
+                        "body": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display": ["48px", {"lineHeight": "1.1", "fontWeight": "700"}],
+                        "headline": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "body": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body class="text-on-surface-variant antialiased">
 
-<header class="sticky top-0 z-50 bg-background/90 backdrop-blur-md border-b border-outline-variant/30 shadow-sm">
-  <div class="max-w-[1400px] mx-auto px-4 md:px-8 flex items-center justify-between h-16">
-    <a href="index.html" class="font-serif italic text-xl md:text-2xl font-bold text-primary tracking-tight flex items-center gap-2">
-      <span class="w-8 h-8 rounded-lg bg-primary text-white flex items-center justify-center text-xs not-italic font-bold">AS</span>
-      Aramane Sweets
-    </a>
-    <div class="flex items-center gap-3">
-      <a href="https://wa.me/919535455770" target="_blank" class="hidden md:inline-flex items-center gap-1.5 bg-green-500 text-white px-3 py-2 rounded-full text-xs font-bold hover:bg-green-600 transition-all shadow-md">
-        <span class="material-symbols-outlined text-sm">chat</span> WhatsApp
-      </a>
-      <a href="cart.html" class="relative flex items-center justify-center w-10 h-10 rounded-full bg-primary-container/10 hover:bg-primary-container/20 transition-colors">
-        <span class="material-symbols-outlined text-primary text-2xl">shopping_bag</span>
-        <span id="cartCount" class="absolute -top-1 -right-1 w-5 h-5 bg-error text-white text-[10px] font-bold rounded-full flex items-center justify-center hidden">0</span>
-      </a>
+<body class="bg-background text-on-background font-body text-body min-h-screen flex flex-col">
+
+<!-- Navigation -->
+<header class="bg-white dark:bg-zinc-950 w-full border-b border-zinc-100 dark:border-zinc-900 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center w-full">
+        <div class="flex items-center gap-6">
+            <a href="index.html" class="text-2xl font-bold text-primary uppercase tracking-widest font-display">Aramane Sweets</a>
+        </div>
+        <nav class="hidden md:flex items-center gap-8">
+            <a href="index.html" class="text-zinc-600 dark:text-zinc-400 hover:text-primary">Home</a>
+            <a href="products.html" class="text-zinc-600 dark:text-zinc-400 hover:text-primary">Products</a>
+            <a href="gift-collections.html" class="text-zinc-600 dark:text-zinc-400 hover:text-primary">Gifts</a>
+            <a href="brand-story.html" class="text-zinc-600 dark:text-zinc-400 hover:text-primary">Heritage</a>
+            <a href="store-locator.html" class="text-primary border-b-2 border-primary font-bold pb-1">Locate</a>
+        </nav>
+        <div class="flex items-center gap-4">
+            <a href="https://wa.me/9535455770" class="hidden md:flex bg-gradient-to-r from-primary-dark to-primary-light text-white px-6 rounded font-label hover:opacity-90 transition-opacity">
+                WhatsApp Order
+            </a>
+            <a href="cart.html" class="text-primary hover:opacity-80">
+                <span class="material-symbols-outlined">shopping_cart</span>
+            </a>
+        </div>
     </div>
-  </div>
 </header>
 
-<main class="max-w-[1400px] mx-auto px-4 md:px-8 py-8 md:py-12 pb-28 md:pb-12">
-  <div class="mb-10">
-    <span class="text-accent text-xs font-bold uppercase tracking-[0.2em]">Find Us</span>
-    <h1 class="font-serif text-3xl md:text-4xl font-bold text-primary mt-1 mb-2">Our Heritage Stores</h1>
-    <div class="gold-line w-20"></div>
-    <p class="text-on-surface-variant mt-4 max-w-lg text-sm md:text-base">Four locations across Karnataka, each carrying the same devotion to tradition and taste. Visit us or order via WhatsApp from any store.</p>
-  </div>
+<!-- Main Content -->
+<main class="flex-grow flex flex-col md:flex-row max-w-container-max mx-auto w-full">
 
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 mb-12" id="storeCards"></div>
+    <!-- Side Nav (Mobile: hidden) -->
+    <aside class="hidden md:flex flex-col h-full py-8 bg-white dark:bg-zinc-950 border-r border-zinc-100 dark:border-zinc-900 w-64 sticky top-20 z-40" style="height: calc(100vh - 80px);">
+        <div class="px-6 mb-8">
+            <h2 class="text-xl font-bold text-primary mb-2">Aramane Sweets</h2>
+            <p class="text-zinc-500">Since 1960</p>
+        </div>
+        <nav class="flex-grow px-4 space-y-2">
+            <a href="#christ-college" class="flex items-center gap-3 px-4 py-3 rounded text-zinc-500 dark:text-zinc-400 hover:bg-zinc-50 dark:hover:bg-zinc-900 hover:translate-x-1 transition-transform duration-200">
+                <span class="material-symbols-outlined">location_on</span> Christ College
+            </a>
+            <a href="#chitradurga" class="flex items-center gap-3 px-4 py-3 rounded text-zinc-500 dark:text-zinc-400 hover:bg-zinc-50 dark:hover:bg-zinc-900 hover:translate-x-1 transition-transform duration-200">
+                <span class="material-symbols-outlined">location_on</span> Chitradurga
+            </a>
+            <a href="#muddanpalya" class="flex items-center gap-3 px-4 py-3 rounded text-zinc-500 dark:text-zinc-400 hover:bg-zinc-50 dark:hover:bg-zinc-900 hover:translate-x-1 transition-transform duration-200">
+                <span class="material-symbols-outlined">location_on</span> Muddanpalya
+            </a>
+            <a href="#udupi-veg" class="flex items-center gap-3 px-4 py-3 rounded text-zinc-500 dark:text-zinc-400 hover:bg-zinc-50 dark:hover:bg-zinc-900 hover:translate-x-1 transition-transform duration-200">
+                <span class="material-symbols-outlined">location_on</span> Udupi Veg
+            </a>
+            <a href="#davanagere" class="flex items-center gap-3 px-4 py-3 rounded text-zinc-500 dark:text-zinc-400 hover:bg-zinc-50 dark:hover:bg-zinc-900 hover:translate-x-1 transition-transform duration-200">
+                <span class="material-symbols-outlined">location_on</span> Davanagere
+            </a>
+            <a href="#hospet" class="flex items-center gap-3 px-4 py-3 rounded text-zinc-500 dark:text-zinc-400 hover:bg-zinc-50 dark:hover:bg-zinc-900 hover:translate-x-1 transition-transform duration-200">
+                <span class="material-symbols-outlined">location_on</span> Hospet
+            </a>
+        </nav>
+    </aside>
 
-  <div class="bg-primary rounded-2xl p-6 md:p-10 text-white relative overflow-hidden grain-overlay">
-    <div class="absolute inset-0 jali-bg pointer-events-none"></div>
-    <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
-      <div>
-        <h3 class="font-serif text-2xl md:text-3xl font-bold mb-2">Prefer Home Delivery?</h3>
-        <p class="text-white/70 text-sm max-w-md">Order from any location and get fresh heritage sweets delivered. Free delivery on orders above Rs 1000.</p>
-      </div>
-      <div class="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
-        <a href="products.html" class="inline-flex items-center justify-center gap-2 bg-white text-primary font-bold px-6 py-3 rounded-full hover:bg-secondary-container transition-all shadow-lg text-sm">
-          <span class="material-symbols-outlined">restaurant_menu</span> Browse Products
-        </a>
-        <a href="https://wa.me/919535455770?text=Hi%20Aramane%20Sweets%2C%20I%20want%20to%20place%20a%20delivery%20order" target="_blank" class="inline-flex items-center justify-center gap-2 bg-white/10 border border-white/20 text-white font-bold px-6 py-3 rounded-full hover:bg-white/20 transition-all text-sm">
-          <span class="material-symbols-outlined">chat</span> WhatsApp Order
-        </a>
-      </div>
+    <!-- Main Content Canvas -->
+    <div class="flex-grow p-6 md:p-12 lg:p-xl bg-surface flex flex-col gap-xl">
+
+        <!-- Hero Section -->
+        <section class="flex flex-col gap-4 max-w-3xl">
+            <h1 class="text-display font-display text-on-background mb-4">Our Palatial Locations</h1>
+            <p class="text-body text-on-surface-variant">Experience the authentic taste of 1960s Bengaluru. Visit our heritage boutiques across the city for a sensory journey of traditional Indian sweets and premium craftsmanship.</p>
+        </section>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+
+            <!-- Store List (Bento-style) -->
+            <div class="lg:col-span-5 flex flex-col gap-6">
+
+                <!-- Location 1: Christ College -->
+                <div id="christ-college" class="bg-surface-container-lowest border-l-4 border-primary rounded-r-lg shadow-sm hover:shadow-md transition-shadow cursor-pointer overflow-hidden flex flex-col sm:flex-row">
+                    <img alt="Christ College Store" class="w-full sm:w-1/3 object-cover h-40 sm:h-auto" 
+                         src="images/shop/222497.jpg.jpeg">
+                    <div class="p-6 flex-grow">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-headline font-display text-on-background">Christ College</h3>
+                            <span class="bg-primary text-white text-label px-2 py-1 uppercase tracking-wider">Premium</span>
+                        </div>
+                        <p class="text-body text-on-surface-variant mb-4">Christ College Campus, Bengaluru, Karnataka</p>
+                        <a href="https://maps.app.goo.gl/FskC1nZvcYPLhQ5SA" target="_blank" class="flex items-center gap-2 text-primary font-label hover:opacity-80">
+                            <span class="material-symbols-outlined">directions</span>
+                            Get Directions
+                        </a>
+                        <p class="text-sm text-on-surface-variant mt-2">📞 Contact for details</p>
+                    </div>
+                </div>
+
+                <!-- Location 2: Chitradurga -->
+                <div id="chitradurga" class="bg-surface-container-lowest border border-outline-variant rounded-lg hover:border-primary transition-colors cursor-pointer overflow-hidden flex flex-col sm:flex-row">
+                    <img alt="Chitradurga Store" class="w-full sm:w-1/3 object-cover h-40 sm:h-auto" 
+                         src="images/shop/3629.jpg.jpeg">
+                    <div class="p-6 flex-grow">
+                        <h3 class="text-headline font-display text-on-background mb-4">Chitradurga Outlet</h3>
+                        <p class="text-body text-on-surface-variant mb-4">Chitradurga, Karnataka</p>
+                        <a href="https://maps.app.goo.gl/dtcQGXS7TS7G7Kvy6" target="_blank" class="flex items-center gap-2 text-primary font-label hover:opacity-80">
+                            <span class="material-symbols-outlined">directions</span>
+                            Get Directions
+                        </a>
+                        <p class="text-sm text-on-surface-variant mt-2">📞 9945 1308 8</p>
+                    </div>
+                </div>
+
+                <!-- Location 3: Muddanpalya -->
+                <div id="muddanpalya" class="bg-surface-container-lowest border border-outline-variant rounded-lg hover:border-primary transition-colors cursor-pointer overflow-hidden flex flex-col sm:flex-row">
+                    <img alt="Muddanpalya Store" class="w-full sm:w-1/3 object-cover h-40 sm:h-auto" 
+                         src="images/shop/4297.jpg.jpeg">
+                    <div class="p-6 flex-grow">
+                        <h3 class="text-headline font-display text-on-background mb-4">Muddanpalya</h3>
+                        <p class="text-body text-on-surface-variant mb-4">Muddanpalya, Bengaluru</p>
+                        <a href="https://maps.app.goo.gl/trThwXfJbLRMSv636" target="_blank" class="flex items-center gap-2 text-primary font-label hover:opacity-80">
+                            <span class="material-symbols-outlined">directions</span>
+                            Get Directions
+                        </a>
+                        <p class="text-sm text-on-surface-variant mt-2">📞 7349 3608 1</p>
+                    </div>
+                </div>
+
+                <!-- Location 4: Udupi Veg -->
+                <div id="udupi-veg" class="bg-surface-container-lowest border border-outline-variant rounded-lg hover:border-primary transition-colors cursor-pointer overflow-hidden flex flex-col sm:flex-row">
+                    <img alt="Udupi Veg Store" class="w-full sm:w-1/3 object-cover h-40 sm:h-auto" 
+                         src="images/shop/806.jpg.jpeg">
+                    <div class="p-6 flex-grow">
+                        <h3 class="text-headline font-display text-on-background mb-4">Udupi Veg</h3>
+                        <p class="text-body text-on-surface-variant mb-4">Udupi Veg Outlet</p>
+                        <a href="https://maps.app.goo.gl/V6rGvRFvQDUM2g4T7" target="_blank" class="flex items-center gap-2 text-primary font-label hover:opacity-80">
+                            <span class="material-symbols-outlined">directions</span>
+                            Get Directions
+                        </a>
+                        <p class="text-sm text-on-surface-variant mt-2">📞 Contact for details</p>
+                    </div>
+                </div>
+
+                <!-- Location 5: Davanagere -->
+                <div id="davanagere" class="bg-surface-container-lowest border border-outline-variant rounded-lg hover:border-primary transition-colors cursor-pointer overflow-hidden flex flex-col sm:flex-row">
+                    <img alt="Davanagere Store" class="w-full sm:w-1/3 object-cover h-40 sm:h-auto" 
+                         src="images/shop/222497.jpg.jpeg">
+                    <div class="p-6 flex-grow">
+                        <h3 class="text-headline font-display text-on-background mb-4">Davanagere</h3>
+                        <p class="text-body text-on-surface-variant mb-4">Davanagere, Karnataka</p>
+                        <a href="https://maps.app.goo.gl/oppQyRDen6q7bp339" target="_blank" class="flex items-center gap-2 text-primary font-label hover:opacity-80">
+                            <span class="material-symbols-outlined">directions</span>
+                            Get Directions
+                        </a>
+                        <p class="text-sm text-on-surface-variant mt-2">📞 9108 2560 1</p>
+                    </div>
+                </div>
+
+                <!-- Location 6: Hospet -->
+                <div id="hospet" class="bg-surface-container-lowest border border-outline-variant rounded-lg hover:border-primary transition-colors cursor-pointer overflow-hidden flex flex-col sm:flex-row">
+                    <img alt="Hospet Store" class="w-full sm:w-1/3 object-cover h-40 sm:h-auto" 
+                         src="images/shop/3629.jpg.jpeg">
+                    <div class="p-6 flex-grow">
+                        <h3 class="text-headline font-display text-on-background mb-4">Hospet</h3>
+                        <p class="text-body text-on-surface-variant mb-4">Hospet, Karnataka</p>
+                        <a href="https://maps.app.goo.gl/mTYK5GGy3J9Wo1Vw8" target="_blank" class="flex items-center gap-2 text-primary font-label hover:opacity-80">
+                            <span class="material-symbols-outlined">directions</span>
+                            Get Directions
+                        </a>
+                        <p class="text-sm text-on-surface-variant mt-2">📞 8123 1063 0</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Interactive Map Area -->
+            <div class="lg:col-span-7 flex flex-col gap-6">
+
+                <!-- Simulated Map -->
+                <div class="relative w-full h-[400px] rounded-lg overflow-hidden border border-outline-variant bg-surface-container">
+                    <img alt="Map of Karnataka" class="absolute inset-0 w-full h-full object-cover" 
+                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuATdTq3WFRcKbnY9AG1GQzh1Xkj1WwnhP-iwBw4OC_x9u-joqZ8_zFpXpmAj">
+                    
+                    <!-- Map Markers (Simulated) -->
+                    
+                    <!-- Christ College -->
+                    <div class="absolute top-[40%] left-[30%] flex flex-col items-center group cursor-pointer transition-opacity">
+                        <span class="material-symbols-outlined bg-primary text-white p-2 rounded-full shadow-md z-10">storefront</span>
+                        <div class="bg-surface-container-lowest border border-outline-variant px-3 py-1 mt-2 rounded font-label text-xs">Christ College</div>
+                    </div>
+                    
+                    <!-- Muddanpalya -->
+                    <div class="absolute top-[50%] left-[45%] flex flex-col items-center group cursor-pointer transition-opacity">
+                        <span class="material-symbols-outlined bg-surface-container-lowest text-primary border border-primary p-2 rounded-full shadow-sm z-10">storefront</span>
+                    </div>
+                    
+                    <!-- Davanagere -->
+                    <div class="absolute top-[55%] left-[35%] flex flex-col items-center group cursor-pointer transition-opacity">
+                        <span class="material-symbols-outlined bg-surface-container-lowest text-primary border border-primary p-2 rounded-full shadow-sm z-10">storefront</span>
+                    </div>
+                    
+                    <!-- Hospet -->
+                    <div class="absolute top-[45%] left-[25%] flex flex-col items-center group cursor-pointer transition-opacity">
+                        <span class="material-symbols-outlined bg-surface-container-lowest text-primary border border-primary p-2 rounded-full shadow-sm z-10">storefront</span>
+                    </div>
+                </div>
+
+                <!-- Highlighted Store Image -->
+                <div class="h-64 rounded-lg overflow-hidden border border-outline-variant relative">
+                    <img alt="Store Storefront" class="w-full h-full object-cover" 
+                         src="images/shop/222497.jpg.jpeg">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-6">
+                        <p class="text-white upper font-label tracking-widest mb-1">Now Available</p>
+                        <p class="text-white font-headline text-headline">6 Premium Locations Across Karnataka</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
     </div>
-  </div>
+
 </main>
 
-<nav class="md:hidden fixed bottom-0 left-0 right-0 bg-background/95 backdrop-blur-md border-t border-outline-variant/40 z-50 pb-safe shadow-[0_-4px_20px_rgba(87,0,19,0.06)]">
-  <div class="flex justify-around items-center py-2">
-    <a href="index.html" class="flex flex-col items-center gap-0.5 text-on-surface-variant/60 hover:text-primary transition-colors p-1">
-      <span class="material-symbols-outlined text-xl">home</span><span class="text-[10px] font-medium">Home</span>
-    </a>
-    <a href="products.html" class="flex flex-col items-center gap-0.5 text-on-surface-variant/60 hover:text-primary transition-colors p-1">
-      <span class="material-symbols-outlined text-xl">grid_view</span><span class="text-[10px] font-medium">Products</span>
-    </a>
-    <a href="gift-collections.html" class="flex flex-col items-center gap-0.5 text-on-surface-variant/60 hover:text-primary transition-colors p-1">
-      <span class="material-symbols-outlined text-xl">card_giftcard</span><span class="text-[10px] font-medium">Gifts</span>
-    </a>
-    <a href="store-locator.html" class="flex flex-col items-center gap-0.5 text-primary p-1">
-      <span class="material-symbols-outlined text-xl" style="font-variation-settings:'FILL' 1">location_on</span><span class="text-[10px] font-medium">Stores</span>
-    </a>
-    <a href="cart.html" class="flex flex-col items-center gap-0.5 text-on-surface-variant/60 hover:text-primary transition-colors p-1 relative">
-      <span class="material-symbols-outlined text-xl">shopping_bag</span><span class="text-[10px] font-medium">Cart</span>
-      <span id="mobileCartCount" class="absolute top-0 right-0 w-4 h-4 bg-error text-white text-[9px] font-bold rounded-full flex items-center justify-center hidden">0</span>
-    </a>
-  </div>
-</nav>
-
-<footer class="bg-primary text-white pb-24 md:pb-8">
-  <div class="max-w-[1400px] mx-auto px-4 md:px-8 pt-10 pb-6">
-    <div class="flex flex-col md:flex-row items-center justify-between gap-4">
-      <div>
-        <h4 class="font-serif italic text-xl font-bold text-secondary-container mb-1">Aramane Sweets</h4>
-        <p class="text-white/50 text-xs">Heritage Indian mithai since 1934</p>
-      </div>
-      <div class="flex gap-3">
-        <a href="tel:+919535455770" class="text-white/60 hover:text-white transition-colors text-sm flex items-center gap-1"><span class="material-symbols-outlined text-xs">call</span> +91 95354 55770</a>
-        <a href="https://wa.me/919535455770" target="_blank" class="text-white/60 hover:text-white transition-colors text-sm flex items-center gap-1"><span class="material-symbols-outlined text-xs">chat</span> WhatsApp</a>
-      </div>
+<!-- Footer -->
+<footer class="bg-zinc-900 text-white font-label uppercase tracking-widest py-16 px-8 border-t border-zinc-800">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div>
+            <div class="text-lg font-bold font-display text-white mb-4">Aramane Sweets</div>
+            <p class="text-zinc-500 normal-case tracking-normal">&copy; 1960 Aramane Sweets. Authentic Bengaluru Heritage.</p>
+        </div>
+        <div class="space-y-3">
+            <h4 class="font-bold font-display mb-2">Our Locations</h4>
+            <ul class="text-zinc-500 space-y-2 text-sm">
+                <li><a href="#christ-college" class="hover:text-primary transition-colors">Christ College</a></li>
+                <li><a href="#chitradurga" class="hover:text-primary transition-colors">Chitradurga</a></li>
+                <li><a href="#muddanpalya" class="hover:text-primary transition-colors">Muddanpalya</a></li>
+                <li><a href="#davanagere" class="hover:text-primary transition-colors">Davanagere</a></li>
+                <li><a href="#hospet" class="hover:text-primary transition-colors">Hospet</a></li>
+            </ul>
+        </div>
+        <div class="space-y-3">
+            <h4 class="font-bold font-display mb-2">Contact Us</h4>
+            <ul class="text-zinc-500 space-y-2 text-sm">
+                <li><a href="mailto:aramanesweets23@gmail.com" class="hover:text-primary transition-colors">📧 aramanesweets23@gmail.com</a></li>
+                <li><a href="tel:+919535455770" class="hover:text-primary transition-colors">📞 +91 95354 55770</a></li>
+                <li><a href="https://wa.me/919535455770" class="hover:text-primary transition-colors">💬 WhatsApp Order</a></li>
+            </ul>
+        </div>
     </div>
-    <div class="border-t border-white/10 mt-6 pt-4 text-center text-[11px] text-white/40">&copy; 2024 Aramane Sweets. All rights reserved.</div>
-  </div>
 </footer>
 
-<script>
-const STORES = [
-  { name:'Bengaluru', address:'Heritage Square, 100 Feet Rd, Indiranagar', city:'Bengaluru, KA 560038', hours:'10:00 AM - 11:00 PM', phone:'+91 95354 55770', mapUrl:'https://maps.google.com/?q=Indiranagar,Bengaluru', desc:'Our flagship store in the heart of Bengaluru. Experience the full collection of heritage sweets.' },
-  { name:'Davangere', address:'Palace Cross, Old Court Rd', city:'Davangere, KA 577001', hours:'9:00 AM - 10:00 PM', phone:'+91 9108256017', mapUrl:'https://maps.google.com/?q=Davangere,Karnataka', desc:'Where tradition meets the crossroads of North Karnataka. Fresh deliveries daily.' },
-  { name:'Chitradurga', address:'Fort Road, Near Chitradurga Fort', city:'Chitradurga, KA 577501', hours:'8:30 AM - 9:30 PM', phone:'+91 99451 30885', mapUrl:'https://maps.google.com/?q=Chitradurga,Karnataka', desc:'Nestled near the historic Chitradurga Fort. A favourite stop for travellers and locals.' },
-  { name:'Hospet', address:'Main Road, Near Hampi Circle', city:'Hospet, KA 583201', hours:'9:00 AM - 10:00 PM', phone:'+91 8123106303', mapUrl:'https://maps.google.com/?q=Hospet,Karnataka', desc:'Serving the spiritual travellers of Hampi and local communities with royal recipes.' }
-];
-
-function renderStores() {
-  const container = document.getElementById('storeCards');
-  container.innerHTML = STORES.map((s,i) => {
-    const delay = i * 0.1;
-    return `
-    <div class="bg-white rounded-2xl border border-outline-variant/30 overflow-hidden card-lift anim-fade-up" style="animation-delay:${delay}s">
-      <div class="h-48 bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
-        <span class="material-symbols-outlined text-[80px] text-primary/30">storefront</span>
-      </div>
-      <div class="p-6">
-        <h3 class="font-serif font-bold text-primary text-lg mb-2">${s.name}</h3>
-        <p class="text-sm text-on-surface-variant/70 mb-3">${s.address}</p>
-        <p class="text-xs text-on-surface-variant/60 mb-3">${s.city}</p>
-        <div class="flex items-center gap-2 text-sm text-on-surface-variant mb-2">
-          <span class="material-symbols-outlined text-primary text-sm">schedule</span>
-          <span>${s.hours}</span>
-        </div>
-        <div class="flex items-center gap-2 text-sm text-primary">
-          <span class="material-symbols-outlined text-sm">phone</span>
-          <a href="tel:${s.phone.replace(/\s/g,'')}">${s.phone}</a>
-        </div>
-        <div class="text-sm text-on-surface-variant/50 mt-2">aramanesweets23@gmail.com</div>
-      </div>
-      <div class="p-4 pt-0 flex gap-2">
-        <a href="${s.mapUrl}" target="_blank" class="flex-1 text-center text-xs font-semibold text-primary bg-surface-container py-2 rounded-lg hover:bg-surface-variant transition-colors flex items-center justify-center gap-1">
-          <span class="material-symbols-outlined text-xs">map</span> Directions
-        </a>
-        <a href="https://wa.me/${s.phone.replace(/[^0-9]/g,'')}?text=Hi%20Aramane%20Sweets%2C%20I%27m%20interested%20in%20${encodeURIComponent(s.name)}" target="_blank" class="flex-1 text-center text-xs font-semibold text-white bg-green-500 py-2 rounded-lg hover:bg-green-600 transition-colors flex items-center justify-center gap-1">
-          <span class="material-symbols-outlined text-xs">chat</span> WhatsApp
-        </a>
-      </div>
-    </div>`;
-  }).join('');
-}
-
-function updateCartCount() {
-  const totals = cartAPI.getTotals();
-  const count = totals.itemCount;
-  ['cartCount','mobileCartCount'].forEach(id => {
-    const el = document.getElementById(id);
-    if (!el) return;
-    if (count > 0) { el.textContent = count > 99 ? '99+' : count; el.classList.remove('hidden'); }
-    else { el.classList.add('hidden'); }
-  });
-}
-
-if (cartAPI) {
-  cartAPI.on('cart:updated', updateCartCount);
-  cartAPI.syncAcrossTabs(() => updateCartCount());
-}
-document.addEventListener('DOMContentLoaded', () => { renderStores(); updateCartCount(); });
-</script>
 </body>
 </html>
