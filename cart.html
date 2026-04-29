@@ -101,36 +101,44 @@
     </div>
 </nav>
 
-<!-- Main Content -->
-<main class="max-w-[1280px] mx-auto px-gutter py-xl grid grid-cols-1 md:grid-cols-12 gap-xl">
+<!-- Enhanced Main Content with Cart Background -->
+<main class="relative max-w-[1280px] mx-auto px-gutter py-xl grid grid-cols-1 md:grid-cols-12 gap-xl">
+  <div class="absolute inset-0 bg-cover bg-center opacity-10"
+       style="background-image: url('images/IndianSnacks.jpeg'); filter: brightness(0.9) contrast(1.1);">
+  </div>
+  <div class="absolute inset-0 bg-gradient-to-b from-transparent via-surface/50 to-surface"></div>
+  
+  <div class="relative z-10 md:col-span-8 flex flex-col gap-lg">
+    <header class="border-b border-outline-variant pb-md">
+      <h1 class="font-display text-display text-on-background">Royal Selection Cart</h1>
+      <p class="font-body text-on-surface-variant mt-sm">Your curated collection ready for authentic traditional crafting</p>
+    </header>
 
-    <!-- Cart Items Section -->
-    <div class="md:col-span-8 flex flex-col gap-lg">
-        <header class="border-b border-outline-variant pb-md">
-            <h1 class="font-display text-display text-on-background">Your Selection</h1>
-            <p class="font-body text-on-surface-variant mt-sm">2 items in your cart ready for traditional crafting.</p>
-        </header>
-        
-        <div class="flex flex-col gap-md">
-            
-            <!-- Cart Item 1 -->
-            <div class="flex flex-col sm:flex-row items-start sm:items-center gap-md p-md bg-surface-container-lowest border border-outline-variant rounded">
-                <div class="w-full sm:w-32 h-32 bg-surface-container flex-shrink-0 border border-outline-variant rounded overflow-hidden">
-                    <img alt="Premium Kaju Katli" class="w-full h-full object-cover" 
-                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfa-HgEUwIjWsDqfSdwJIk33G7REkx0be6ps1tXfofIAGFk8AvDmwVRID-av">
-                </div>
-                <div class="flex-grow flex flex-col gap-xs">
-                    <div class="flex justify-between items-start">
-                        <div>
-                            <h3 class="font-display text-headline text-on-background">Premium Kaju Katli</h3>
-                            <p class="font-body text-on-surface-variant">Pure cashew fudge with silver leaf</p>
-                        </div>
-                        <span class="font-label text-label text-on-background">₹1,200.00</span>
-                    </div>
-                    <div class="flex items-center gap-sm mt-sm">
-                        <span class="bg-primary text-white font-label text-[10px] px-2 py-1 uppercase tracking-wider">Vegan</span>
-                        <span class="bg-primary text-white font-label text-[10px] px-2 py-1 uppercase tracking-wider">Bestseller</span>
-                    </div>
+    <div class="flex flex-col gap-md">
+
+      <!-- Cart Item 1 - Enhanced with Kaju background -->
+      <div class="relative flex flex-col sm:flex-row items-start sm:items-center gap-md p-md bg-surface-container-lowest border border-outline-variant rounded">
+        <div class="absolute inset-0 bg-cover bg-center opacity-10 rounded"
+             style="background-image: url('images/KajuKatli.jpeg'); filter: blur(2px);">
+        </div>
+        <div class="relative z-10 w-full sm:w-32 h-32 bg-surface-container flex-shrink-0 border border-outline-variant rounded overflow-hidden">
+          <img alt="Premium Kaju Katli" class="w-full h-full object-cover" src="images/KajuKatli.jpeg">
+        </div>
+        <div class="relative z-10 flex-grow flex flex-col gap-xs">
+          <div class="flex justify-between items-start">
+            <div>
+              <h3 class="font-display text-headline text-on-background">Premium Royal Kaju Katli</h3>
+              <p class="font-body text-on-surface-variant">Authentic cashew fudge with heritage silver leaf</p>
+            </div>
+            <span class="font-label text-label text-on-background">₹1,200.00</span>
+          </div>
+          <div class="flex items-center gap-sm mt-sm">
+            <span class="bg-primary text-white font-label text-[10px] px-2 py-1 uppercase tracking-wider rounded flex items-center gap-1">
+              <span class="material-symbols-outlined text-[12px]">check</span>
+              Royal
+            </span>
+            <span class="bg-primary text-white font-label text-[10px] px-2 py-1 uppercase tracking-wider rounded">Bestseller</span>
+          </div>
                     <div class="flex justify-between items-end mt-md">
                         <div class="flex items-center border border-outline rounded h-10 w-32">
                             <button class="w-10 h-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors">

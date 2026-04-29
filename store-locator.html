@@ -121,11 +121,26 @@
     <!-- Main Content Canvas -->
     <div class="flex-grow p-6 md:p-12 lg:p-xl bg-surface flex flex-col gap-xl">
 
-        <!-- Hero Section -->
-        <section class="flex flex-col gap-4 max-w-3xl">
-            <h1 class="text-display font-display text-on-background mb-4">Our Palatial Locations</h1>
-            <p class="text-body text-on-surface-variant">Experience the authentic taste of 1960s Bengaluru. Visit our heritage boutiques across the city for a sensory journey of traditional Indian sweets and premium craftsmanship.</p>
+        <!-- Hero Section - Enhanced with Store Backgrounds -->
+        <section class="relative w-full h-[400px] flex items-center justify-center overflow-hidden rounded-lg">
+          <div class="absolute inset-0">
+            <img alt="Bengaluru Sweet Shops Heritage Details" class="w-full h-full object-cover opacity-30"
+                 src="images/shop/806.jpg.jpeg" style="filter: blur(1px) brightness(0.9);">
+            <div class="absolute inset-0 bg-gradient-to-r from-surface/80 via-surface/60 to-primary/30"></div>
+          </div>
+          <div class="relative z-10 max-w-3xl mx-auto text-center px-gutter">
+            <h1 class="text-display font-display text-on-background mb-4">Our Heritage Store Network</h1>
+            <p class="text-body text-on-surface-variant">Experience six decades of authentic royal craftsmanship at our premium Bengaluru locations</p>
+          </div>
         </section>
+      
+        <!-- Enhanced Location Grid Background -->
+        <section class="relative py-lg">
+          <div class="absolute inset-0 bg-cover bg-center opacity-5"
+               style="background-image: url('images/shop/4297.jpg.jpeg'); filter: sepia(0.5);">
+          </div>
+          <div class="relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
 
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
 
