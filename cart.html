@@ -106,9 +106,15 @@
   <div class="absolute inset-0 bg-gradient-to-b from-transparent via-surface/50 to-surface"></div>
   
   <div class="relative z-10 md:col-span-8 flex flex-col gap-lg">
-    <header class="border-b border-outline-variant pb-md">
-      <h1 class="font-display text-display text-on-background">Your Shopping Cart</h1>
-      <p class="font-body text-on-surface-variant mt-sm" id="cart-status">Loading your cart...</p>
+    <header class="border-b border-outline-variant pb-md flex justify-between items-start">
+      <div>
+        <h1 class="font-display text-display text-on-background">Your Shopping Cart</h1>
+        <p class="font-body text-on-surface-variant mt-sm" id="cart-status">Loading your cart...</p>
+      </div>
+      <button onclick="clearCart()" id="clear-btn" class="hidden text-error hover:opacity-80 font-label text-sm transition-colors flex items-center gap-1">
+        <span class="material-symbols-outlined text-lg">delete_sweep</span>
+        <span class="hidden md:inline">Clear Cart</span>
+      </button>
     </header>
 
     <!-- Cart Items Container -->
@@ -220,15 +226,15 @@ let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 function getProductImage(product) {
     const categoryImages = {
-        'bakery': 'images/shop/bakery.jpg',
-        'bengali': 'images/shop/bengali.jpg',
-        'chat': 'images/shop/chat.jpg',
-        'ghee': 'images/shop/ghee.jpg',
-        'kaju': 'images/shop/kaju.jpg',
-        'namkeen': 'images/shop/namkeen.jpg',
-        'packed': 'images/shop/packed.jpg'
+        'bakery': 'https://images.unsplash.com/photo-1587080353051-f1a0b7f2ffe9?w=400&h=400&fit=crop',
+        'bengali': 'https://images.unsplash.com/photo-1585961454529-4f1a5168dd31?w=400&h=400&fit=crop',
+        'chat': 'https://images.unsplash.com/photo-1599599810694-9de9de2053e5?w=400&h=400&fit=crop',
+        'ghee': 'https://images.unsplash.com/photo-1599599810980-c5cbe46a0dac?w=400&h=400&fit=crop',
+        'kaju': 'https://images.unsplash.com/photo-1583422409516-2895a77efded?w=400&h=400&fit=crop',
+        'namkeen': 'https://images.unsplash.com/photo-1585521999206-c3b7c3b91560?w=400&h=400&fit=crop',
+        'packed': 'https://images.unsplash.com/photo-1585941536370-7f2c81f142fd?w=400&h=400&fit=crop'
     };
-    return categoryImages[product.category] || 'images/shop/default.jpg';
+    return categoryImages[product.category] || 'https://images.unsplash.com/photo-1568901346375-23c9450fc58b?w=400&h=400&fit=crop';
 }
 
 function renderCart() {
@@ -316,6 +322,15 @@ function removeItem(index) {
     renderCart();
 }
 
+function clearCart() {
+    if (confirm('Are you sure you want to clear your entire cart?')) {
+        cart = [];
+        localStorage.removeItem('cart');
+        showNotification('Cart cleared successfully');
+        renderCart();
+    }
+}
+
 function updateSummary() {
     const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
     const itemCount = cart.reduce((sum, item) => sum + item.quantity, 0);
@@ -326,6 +341,14 @@ function updateSummary() {
     
     // Enable/disable WhatsApp button
     document.getElementById('whatsapp-btn').disabled = cart.length === 0;
+    
+    // Show/hide clear button
+    const clearBtn = document.getElementById('clear-btn');
+    if (cart.length > 0) {
+        clearBtn.classList.remove('hidden');
+    } else {
+        clearBtn.classList.add('hidden');
+    }
 }
 
 function showNotification(message) {
