@@ -437,6 +437,19 @@ const products = [
 let currentFilter = 'all';
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
+function getProductImage(product) {
+    const categoryImages = {
+        'bakery': 'images/shop/bakery.jpg',
+        'bengali': 'images/shop/bengali.jpg',
+        'chat': 'images/shop/chat.jpg',
+        'ghee': 'images/shop/ghee.jpg',
+        'kaju': 'images/shop/kaju.jpg',
+        'namkeen': 'images/shop/namkeen.jpg',
+        'packed': 'images/shop/packed.jpg'
+    };
+    return categoryImages[product.category] || 'images/shop/default.jpg';
+}
+
 function renderProducts(filter = 'all') {
     const container = document.getElementById('products-container');
     container.innerHTML = '';
@@ -446,23 +459,23 @@ function renderProducts(filter = 'all') {
     filtered.forEach(product => {
         const card = document.createElement('div');
         card.className = 'bg-surface-container-lowest border border-gray-200 rounded-lg overflow-hidden group hover:shadow-lg transition-shadow cursor-pointer';
+        const imageUrl = getProductImage(product);
         card.innerHTML = `
             <div class="aspect-square relative overflow-hidden border-b border-gray-200 bg-gray-100">
-                <div class="w-full h-full bg-gradient-to-br from-primary-light/10 to-primary-dark/10 flex items-center justify-center">
-                    <span class="material-symbols-outlined text-primary text-5xl">bakery_dining</span>
-                </div>
+                <img src="${imageUrl}" alt="${product.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Crect fill=%22%23f3f4f6%22 width=%22100%22 height=%22100%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-size=%2214%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22%3ENo Image%3C/text%3E%3C/svg%3E'">
             </div>
             <div class="p-4 flex flex-col gap-3">
                 <div class="flex-grow">
                     <p class="text-xs text-gray-500 mb-1">Code: ${product.code}</p>
                     <h3 class="text-sm font-display font-bold text-on-surface line-clamp-2">${product.name}</h3>
+                    <p class="text-xs text-gray-500 mt-1 capitalize">${product.category}</p>
                 </div>
                 <div class="flex items-center justify-between border-t border-gray-100 pt-2">
                     <div>
                         <p class="text-xs text-gray-500">Price</p>
                         <p class="text-lg font-bold text-primary">₹${product.price}</p>
                     </div>
-                    <button onclick="addToCart(${product.id})" class="bg-primary text-white p-2 rounded hover:bg-primary-dark transition-colors">
+                    <button onclick="addToCart(${product.id})" class="bg-primary text-white p-2 rounded hover:bg-primary-dark transition-colors" title="Add to cart">
                         <span class="material-symbols-outlined text-lg">add_shopping_cart</span>
                     </button>
                 </div>

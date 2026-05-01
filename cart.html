@@ -90,13 +90,9 @@
         </div>
         
         <div class="flex items-center gap-md">
-            <button class="flex items-center justify-center text-primary hover:opacity-80 relative group">
-                <span class="material-symbols-outlined text-[24px]">shopping_cart</span>
-                <span class="absolute -top-2 -right-2 bg-primary text-white text-[10px] font-bold h-4 w-4 rounded-full flex items-center justify-center">2</span>
-            </button>
-            
-            <a href="https://wa.me/9535455770" class="hidden md:flex items-center gap-sm bg-gradient-to-r from-primary-dark to-primary text-white px-md py-sm rounded font-label hover:opacity-90">
-                <span>WhatsApp Order</span>
+            <a href="products.html" class="text-primary hover:opacity-80 flex items-center gap-1">
+                <span class="material-symbols-outlined">arrow_back</span>
+                <span class="hidden md:inline text-sm">Continue Shopping</span>
             </a>
         </div>
     </div>
@@ -111,138 +107,75 @@
   
   <div class="relative z-10 md:col-span-8 flex flex-col gap-lg">
     <header class="border-b border-outline-variant pb-md">
-      <h1 class="font-display text-display text-on-background">Royal Selection Cart</h1>
-      <p class="font-body text-on-surface-variant mt-sm">Your curated collection ready for authentic traditional crafting</p>
+      <h1 class="font-display text-display text-on-background">Your Shopping Cart</h1>
+      <p class="font-body text-on-surface-variant mt-sm" id="cart-status">Loading your cart...</p>
     </header>
 
-    <div class="flex flex-col gap-md">
+    <!-- Cart Items Container -->
+    <div class="flex flex-col gap-md" id="cart-items-container">
+        <!-- Items will be loaded here via JavaScript -->
+    </div>
 
-      <!-- Cart Item 1 - Enhanced with Kaju background -->
-      <div class="relative flex flex-col sm:flex-row items-start sm:items-center gap-md p-md bg-surface-container-lowest border border-outline-variant rounded">
-        <div class="absolute inset-0 bg-cover bg-center opacity-10 rounded"
-             style="background-image: url('images/KajuKatli.jpeg'); filter: blur(2px);">
-        </div>
-        <div class="relative z-10 w-full sm:w-32 h-32 bg-surface-container flex-shrink-0 border border-outline-variant rounded overflow-hidden">
-          <img alt="Premium Kaju Katli" class="w-full h-full object-cover" src="images/KajuKatli.jpeg">
-        </div>
-        <div class="relative z-10 flex-grow flex flex-col gap-xs">
-          <div class="flex justify-between items-start">
-            <div>
-              <h3 class="font-display text-headline text-on-background">Premium Royal Kaju Katli</h3>
-              <p class="font-body text-on-surface-variant">Authentic cashew fudge with heritage silver leaf</p>
-            </div>
-            <span class="font-label text-label text-on-background">₹1,200.00</span>
-          </div>
-          <div class="flex items-center gap-sm mt-sm">
-            <span class="bg-primary text-white font-label text-[10px] px-2 py-1 uppercase tracking-wider rounded flex items-center gap-1">
-              <span class="material-symbols-outlined text-[12px]">check</span>
-              Royal
-            </span>
-            <span class="bg-primary text-white font-label text-[10px] px-2 py-1 uppercase tracking-wider rounded">Bestseller</span>
-          </div>
-                    <div class="flex justify-between items-end mt-md">
-                        <div class="flex items-center border border-outline rounded h-10 w-32">
-                            <button class="w-10 h-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors">
-                                <span class="material-symbols-outlined text-[18px]">remove</span>
-                            </button>
-                            <span class="flex-grow text-center font-label text-label text-on-surface border-x border-outline h-full flex items-center justify-center">500g</span>
-                            <button class="w-10 h-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors">
-                                <span class="material-symbols-outlined text-[18px]">add</span>
-                            </button>
-                        </div>
-                        <button class="flex items-center gap-xs text-error hover:opacity-80 font-label text-sm group">
-                            <span class="material-symbols-outlined text-[18px]">delete</span>
-                            <span class="group-hover:underline">Remove</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Cart Item 2 -->
-            <div class="flex flex-col sm:flex-row items-start sm:items-center gap-md p-md bg-surface-container-lowest border border-outline-variant rounded">
-                <div class="w-full sm:w-32 h-32 bg-surface-container flex-shrink-0 border border-outline-variant rounded overflow-hidden">
-                    <img alt="Mysore Pak" class="w-full h-full object-cover" 
-                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKq-iaaMFz3RIh5RK1rbVqDta7tUpHCtRpGzmNQ-UCRPnKgR9oCZdTDoMDNE0Cj5AcLRV08JT4_sR8K">
-                </div>
-                <div class="flex-grow flex flex-col gap-xs">
-                    <div class="flex justify-between items-start">
-                        <div>
-                            <h3 class="font-display text-headline text-on-background">Pure Ghee Mysore Pak</h3>
-                            <p class="font-body text-on-surface-variant">Soft, porous texture melting in mouth</p>
-                        </div>
-                        <span class="font-label text-label text-on-background">₹850.00</span>
-                    </div>
-                    <div class="flex items-center gap-sm mt-sm">
-                        <span class="bg-primary text-white font-label text-[10px] px-2 py-1 uppercase tracking-wider">Heritage</span>
-                    </div>
-                    <div class="flex justify-between items-end mt-md">
-                        <div class="flex items-center border border-outline rounded h-10 w-32">
-                            <button class="w-10 h-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors">
-                                <span class="material-symbols-outlined text-[18px]">remove</span>
-                            </button>
-                            <span class="flex-grow text-center font-label text-label text-on-surface border-x border-outline h-full flex items-center justify-center">1 kg</span>
-                            <button class="w-10 h-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors">
-                                <span class="material-symbols-outlined text-[18px]">add</span>
-                            </button>
-                        </div>
-                        <button class="flex items-center gap-xs text-error hover:opacity-80 font-label text-sm group">
-                            <span class="material-symbols-outlined text-[18px]">delete</span>
-                            <span class="group-hover:underline">Remove</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            
-        </div>
+    <!-- Empty Cart Message -->
+    <div id="empty-cart-message" class="hidden flex flex-col items-center justify-center py-16 px-6 text-center">
+        <span class="material-symbols-outlined text-6xl text-gray-300 mb-4">shopping_cart</span>
+        <h2 class="font-display text-headline text-on-background mb-2">Your Cart is Empty</h2>
+        <p class="text-on-surface-variant mb-6 max-w-md">Select your favorite sweets from our exclusive collection and they'll appear here!</p>
+        <a href="products.html" class="bg-primary text-white px-md py-sm rounded font-label hover:bg-primary-dark transition-colors inline-flex items-center gap-2">
+            <span class="material-symbols-outlined text-lg">shopping_bag</span>
+            Browse Products
+        </a>
     </div>
     
-    <!-- Order Summary Section -->
-    <div class="md:col-span-4 h-fit sticky top-20">
-        <div class="bg-surface-container-lowest border border-outline-variant p-lg flex flex-col gap-lg rounded">
-            <h2 class="font-display text-headline text-on-background border-b border-outline-variant pb-sm">Order Summary</h2>
-            
-            <div class="flex flex-col gap-sm font-body text-on-surface-variant">
-                <div class="flex justify-between items-center">
-                    <span>Subtotal (2 items)</span>
-                    <span class="font-label text-label text-on-surface">₹2,050.00</span>
-                </div>
-                <div class="flex justify-between items-center">
-                    <span>Delivery (Bengaluru)</span>
-                    <span class="font-label text-label text-on-surface">Calculated next</span>
-                </div>
-                <div class="flex justify-between items-center text-primary">
-                    <span>Taxes</span>
-                    <span class="font-label text-label">Included</span>
-                </div>
-            </div>
-            
-            <div class="border-t border-outline-variant pt-md flex justify-between items-end">
-                <span class="font-display text-headline text-on-surface">Total</span>
-                <span class="font-display text-[32px] font-bold text-on-surface">₹2,050.00</span>
-            </div>
-            
-            <a href="https://wa.me/9535455770" class="w-full bg-gradient-to-r from-primary-dark to-primary text-white py-md rounded font-label text-[16px] flex items-center justify-center gap-sm hover:opacity-90 mt-sm">
-                <span class="material-symbols-outlined fill">chat</span>
-                Finalize Order via WhatsApp
-            </a>
-            
-            <p class="font-body text-xs text-on-surface-variant text-center mt-xs">
-                Our concierge team will confirm availability, delivery slot, and share the payment link via WhatsApp (9535455770).
-            </p>
-            
-            <div class="mt-md p-md bg-surface border border-outline-variant rounded flex items-start gap-sm">
-                <span class="material-symbols-outlined text-primary mt-1">verified_user</span>
-                <div>
-                    <h4 class="font-label text-label text-on-surface">Authenticity Guaranteed</h4>
-                    <p class="font-body text-sm text-on-surface-variant mt-xs">Crafted fresh daily since 1960. No artificial preservatives.</p>
-                </div>
-            </div>
+  </div>
+  
+  <!-- Order Summary Section -->
+  <div class="md:col-span-4 h-fit sticky top-20" id="summary-section">
+    <div class="bg-surface-container-lowest border border-outline-variant p-lg flex flex-col gap-lg rounded">
+      <h2 class="font-display text-headline text-on-background border-b border-outline-variant pb-sm">Order Summary</h2>
+      
+      <div class="flex flex-col gap-sm font-body text-on-surface-variant">
+        <div class="flex justify-between items-center">
+          <span>Subtotal (<span id="item-count">0</span> items)</span>
+          <span class="font-label text-label text-on-surface">₹<span id="subtotal">0</span></span>
         </div>
+        <div class="flex justify-between items-center">
+          <span>Delivery (Bengaluru)</span>
+          <span class="font-label text-label text-on-surface">Calculated next</span>
+        </div>
+        <div class="flex justify-between items-center text-primary">
+          <span>Taxes</span>
+          <span class="font-label text-label">Included</span>
+        </div>
+      </div>
+      
+      <div class="border-t border-outline-variant pt-md flex justify-between items-end">
+        <span class="font-display text-headline text-on-surface">Total</span>
+        <span class="font-display text-[32px] font-bold text-on-surface">₹<span id="total-price">0</span></span>
+      </div>
+      
+      <button onclick="continueToWhatsApp()" id="whatsapp-btn" class="w-full bg-gradient-to-r from-primary-dark to-primary text-white py-md rounded font-label text-[16px] flex items-center justify-center gap-sm hover:opacity-90 mt-sm transition-opacity disabled:opacity-50 disabled:cursor-not-allowed" disabled>
+        <span class="material-symbols-outlined fill">chat</span>
+        Continue Order via WhatsApp
+      </button>
+      
+      <p class="font-body text-xs text-on-surface-variant text-center mt-xs">
+        Our concierge team will confirm availability, delivery slot, and share the payment link via WhatsApp (+91 9535455770).
+      </p>
+      
+      <div class="mt-md p-md bg-surface border border-outline-variant rounded flex items-start gap-sm">
+        <span class="material-symbols-outlined text-primary mt-1">verified_user</span>
+        <div>
+          <h4 class="font-label text-label text-on-surface">Authenticity Guaranteed</h4>
+          <p class="font-body text-sm text-on-surface-variant mt-xs">Crafted fresh daily since 1960. No artificial preservatives.</p>
+        </div>
+      </div>
     </div>
+  </div>
 </main>
 
 <!-- Footer -->
-<footer class="bg-zinc-900 border-t border-zinc-800 pxl">
+<footer class="bg-zinc-900 border-t border-zinc-800 mt-xl">
     <div class="max-w-7xl mx-auto px-8 py-16">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
             <div>
@@ -269,5 +202,175 @@
     </div>
 </footer>
 
-</body>
-</html>
+<script>
+// Product list (subset) from products.html
+const products = [
+    { id: 1451, name: 'Milk Bread', price: 50, category: 'bakery', code: '1451' },
+    { id: 1454, name: 'Wheat Bread', price: 60, category: 'bakery', code: '1454' },
+    { id: 1076, name: 'Kala Jamun 1 PC', price: 40, category: 'bengali', code: '1076' },
+    { id: 1127, name: 'Chamcham 1 PC', price: 35, category: 'bengali', code: '1127' },
+    { id: 1013, name: 'Kaju Katli', price: 1200, category: 'kaju', code: '1013' },
+    { id: 1047, name: 'Ghee Mysore Pak', price: 840, category: 'ghee', code: '1047' },
+    { id: 1402, name: 'Pani Puri', price: 50, category: 'chat', code: '1402' },
+    { id: 3419, name: 'Cashew Pakoda', price: 780, category: 'namkeen', code: '3419' },
+    { id: 3518, name: 'Onion Murkh 150GM', price: 60, category: 'packed', code: '3518' }
+];
+
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+function getProductImage(product) {
+    const categoryImages = {
+        'bakery': 'images/shop/bakery.jpg',
+        'bengali': 'images/shop/bengali.jpg',
+        'chat': 'images/shop/chat.jpg',
+        'ghee': 'images/shop/ghee.jpg',
+        'kaju': 'images/shop/kaju.jpg',
+        'namkeen': 'images/shop/namkeen.jpg',
+        'packed': 'images/shop/packed.jpg'
+    };
+    return categoryImages[product.category] || 'images/shop/default.jpg';
+}
+
+function renderCart() {
+    const container = document.getElementById('cart-items-container');
+    const emptyMessage = document.getElementById('empty-cart-message');
+    
+    if (cart.length === 0) {
+        container.innerHTML = '';
+        emptyMessage.classList.remove('hidden');
+        document.getElementById('summary-section').classList.add('hidden');
+        document.getElementById('cart-status').textContent = 'Your cart is empty. Start shopping!';
+        return;
+    }
+    
+    emptyMessage.classList.add('hidden');
+    document.getElementById('summary-section').classList.remove('hidden');
+    document.getElementById('cart-status').textContent = `You have ${cart.length} item(s) in your cart`;
+    container.innerHTML = '';
+    
+    cart.forEach((item, index) => {
+        const product = products.find(p => p.id === item.id);
+        if (!product) return;
+        
+        const itemTotal = item.price * item.quantity;
+        const imageUrl = getProductImage(item);
+        
+        const cartItem = document.createElement('div');
+        cartItem.className = 'flex flex-col sm:flex-row items-start sm:items-center gap-md p-md bg-surface-container-lowest border border-outline-variant rounded hover:shadow-md transition-shadow';
+        cartItem.innerHTML = `
+            <div class="w-full sm:w-32 h-32 bg-surface-container flex-shrink-0 border border-outline-variant rounded overflow-hidden">
+                <img alt="${item.name}" class="w-full h-full object-cover" 
+                     src="${imageUrl}" 
+                     onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Crect fill=%22%23f3f4f6%22 width=%22100%22 height=%22100%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-size=%2214%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22%3ENo Image%3C/text%3E%3C/svg%3E'">
+            </div>
+            <div class="flex-grow flex flex-col gap-xs w-full">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h3 class="font-display text-headline text-on-background">${item.name}</h3>
+                        <p class="font-body text-on-surface-variant text-sm capitalize">Category: ${item.category}</p>
+                    </div>
+                    <span class="font-label text-label text-on-background">₹${item.price}</span>
+                </div>
+                <div class="flex justify-between items-end mt-md">
+                    <div class="flex items-center border border-outline rounded h-10">
+                        <button class="w-10 h-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors" 
+                                onclick="updateQuantity(${index}, -1)" title="Decrease quantity">
+                            <span class="material-symbols-outlined text-[18px]">remove</span>
+                        </button>
+                        <span class="flex-grow text-center font-label text-label text-on-surface border-x border-outline h-full flex items-center justify-center w-16">${item.quantity}</span>
+                        <button class="w-10 h-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors" 
+                                onclick="updateQuantity(${index}, 1)" title="Increase quantity">
+                            <span class="material-symbols-outlined text-[18px]">add</span>
+                        </button>
+                    </div>
+                    <div class="text-right">
+                        <p class="text-xs text-on-surface-variant">Item Total</p>
+                        <p class="text-lg font-bold text-primary">₹${itemTotal}</p>
+                    </div>
+                    <button class="flex items-center gap-xs text-error hover:opacity-80 font-label text-sm group ml-md transition-colors" 
+                            onclick="removeItem(${index})" title="Remove item from cart">
+                        <span class="material-symbols-outlined text-[18px]">delete</span>
+                        <span class="group-hover:underline hidden md:inline">Remove</span>
+                    </button>
+                </div>
+            </div>
+        `;
+        container.appendChild(cartItem);
+    });
+    
+    updateSummary();
+}
+
+function updateQuantity(index, change) {
+    if (cart[index].quantity + change < 1) return;
+    cart[index].quantity += change;
+    localStorage.setItem('cart', JSON.stringify(cart));
+    renderCart();
+}
+
+function removeItem(index) {
+    const itemName = cart[index].name;
+    cart.splice(index, 1);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    showNotification(`${itemName} removed from cart`);
+    renderCart();
+}
+
+function updateSummary() {
+    const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+    const itemCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+    
+    document.getElementById('item-count').textContent = itemCount;
+    document.getElementById('subtotal').textContent = subtotal.toFixed(0);
+    document.getElementById('total-price').textContent = subtotal.toFixed(0);
+    
+    // Enable/disable WhatsApp button
+    document.getElementById('whatsapp-btn').disabled = cart.length === 0;
+}
+
+function showNotification(message) {
+    const notification = document.createElement('div');
+    notification.className = 'fixed bottom-4 right-4 bg-primary text-white px-6 py-3 rounded-lg shadow-lg z-50 animate-fade-in';
+    notification.textContent = message;
+    document.body.appendChild(notification);
+    setTimeout(() => notification.remove(), 3000);
+}
+
+function continueToWhatsApp() {
+    if (cart.length === 0) {
+        alert('Please add items to your cart first!');
+        return;
+    }
+    
+    // Build message
+    let message = '🛍️ *Aramane Sweets Order*\n\n';
+    message += '📝 *Items Ordered:*\n';
+    message += '─'.repeat(30) + '\n';
+    
+    cart.forEach((item, index) => {
+        message += `${index + 1}. ${item.name}\n`;
+        message += `   Qty: ${item.quantity} × ₹${item.price} = ₹${item.price * item.quantity}\n`;
+    });
+    
+    const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+    
+    message += '─'.repeat(30) + '\n';
+    message += `\n💰 *Total Amount:* ₹${subtotal}\n`;
+    message += `📦 *Number of Items:* ${cart.length}\n`;
+    message += `\n✅ Please confirm availability, delivery date, and payment method.\n`;
+    message += `\n📍 Delivery Location: (To be provided)\n`;
+    message += `\n_Thank you for choosing Aramane Sweets - Authentic Heritage Since 1960!_`;
+    
+    // Encode message for WhatsApp
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappURL = `https://wa.me/919535455770?text=${encodedMessage}`;
+    
+    // Open WhatsApp
+    window.open(whatsappURL, '_blank');
+}
+
+// Initialize
+document.addEventListener('DOMContentLoaded', () => {
+    renderCart();
+});
+</script>
