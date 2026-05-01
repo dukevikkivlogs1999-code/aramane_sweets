@@ -226,15 +226,15 @@ let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 function getProductImage(product) {
     const categoryImages = {
-        'bakery': 'https://images.unsplash.com/photo-1587080353051-f1a0b7f2ffe9?w=400&h=400&fit=crop',
-        'bengali': 'https://images.unsplash.com/photo-1585961454529-4f1a5168dd31?w=400&h=400&fit=crop',
-        'chat': 'https://images.unsplash.com/photo-1599599810694-9de9de2053e5?w=400&h=400&fit=crop',
-        'ghee': 'https://images.unsplash.com/photo-1599599810980-c5cbe46a0dac?w=400&h=400&fit=crop',
-        'kaju': 'https://images.unsplash.com/photo-1583422409516-2895a77efded?w=400&h=400&fit=crop',
-        'namkeen': 'https://images.unsplash.com/photo-1585521999206-c3b7c3b91560?w=400&h=400&fit=crop',
-        'packed': 'https://images.unsplash.com/photo-1585941536370-7f2c81f142fd?w=400&h=400&fit=crop'
+        'bakery': 'https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400&h=400&fit=crop',
+        'bengali': 'https://images.unsplash.com/photo-1571115177098-24ec42ed204d?w=400&h=400&fit=crop',
+        'chat': 'https://images.unsplash.com/photo-1606787620884-c0cea4ae6fe1?w=400&h=400&fit=crop',
+        'ghee': 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&h=400&fit=crop',
+        'kaju': 'https://images.unsplash.com/photo-1599599810765-8dcc3a9055e5?w=400&h=400&fit=crop',
+        'namkeen': 'https://images.unsplash.com/photo-1585518419759-3414e7c6e504?w=400&h=400&fit=crop',
+        'packed': 'https://images.unsplash.com/photo-1585518419759-3414e7c6e504?w=400&h=400&fit=crop'
     };
-    return categoryImages[product.category] || 'https://images.unsplash.com/photo-1568901346375-23c9450fc58b?w=400&h=400&fit=crop';
+    return categoryImages[product.category] || 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&h=400&fit=crop';
 }
 
 function renderCart() {
