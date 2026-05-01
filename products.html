@@ -3,193 +3,126 @@
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Aramane Sweets - All Products</title>
-    
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com" rel="preconnect"/>
-    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-    
-    <!-- Tailwind -->
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    
-    <script id="tailwind-config">
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          "colors": {
-            "primary": "#0f766e",
-            "primary-dark": "#0d9488",
-            "primary-light": "#14b8a6",
-            "on-primary": "#ffffff",
-            "background": "#f7f9fb",
-            "on-background": "#191c1e",
-            "surface-container-lowest": "#ffffff",
-            "on-surface": "#191c1e",
-            "on-surface-variant": "#3e4a3d"
-          },
-                    "borderRadius": {
-                        "DEFAULT": "0.125rem",
-                        "lg": "0.25rem",
-                        "xl": "0.5rem",
-                        "full": "0.75rem"
-                    },
-                    "spacing": {
-                        "xl": "80px",
-                        "base": "8px",
-                        "container-max": "1280px",
-                        "md": "24px",
-                        "lg": "48px",
-                        "gutter": "24px"
-                    },
-                    "fontFamily": {
-                        "display": ["Playfair Display"],
-                        "body": ["Inter"]
-                    },
-                    "fontSize": {
-                        "display": ["48px", {"lineHeight": "1.1", "fontWeight": "700"}],
-                        "headline": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
-                        "body": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                        "label": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}]
-                    }
-                }
-            }
+    <title>Aramane Sweets - All Products | 227+ Royal Sweets</title>
+    <meta name="description" content="Browse 227+ authentic Indian sweets at Aramane Sweets. Bengali sweets, Ghee sweets, Kaju specialties, Bakery, Chat items, Namkeen and more.">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: { extend: {
+                colors: { 'teal': {900:'#134e4a',800:'#115e59',700:'#0f766e',600:'#0d9488',500:'#14b8a6'}, 'gold':{DEFAULT:'#d4a853',light:'#e8c97a'}, 'cream':{DEFAULT:'#faf7f2',dark:'#f0ebe3'} },
+                fontFamily: { 'serif':['Playfair Display','serif'], 'sans':['Inter','sans-serif'] }
+            }}
         }
     </script>
-    
     <style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 24px;
-        }
-        @media (max-width: 768px) {
-            .product-grid {
-                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-            }
-        }
+        .palace-gradient { background: linear-gradient(135deg, #134e4a 0%, #0f766e 50%, #115e59 100%); }
+        .gold-shimmer { background: linear-gradient(135deg, #d4a853, #e8c97a, #d4a853); }
+        .product-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:24px; }
+        @media(max-width:640px){ .product-grid { grid-template-columns:repeat(2,1fr); gap:12px; } }
+        .card-hover { transition:all .4s cubic-bezier(.4,0,.2,1); }
+        .card-hover:hover { transform:translateY(-4px); box-shadow:0 16px 32px rgba(19,78,74,.12); }
     </style>
 </head>
-
-<body class="bg-background text-on-background antialiased">
+<body class="bg-cream font-sans text-gray-900 antialiased">
 
 <!-- Navigation -->
-<nav class="bg-surface-container-lowest sticky top-0 z-50 border-b border-gray-200 px-gutter h-20 flex justify-between items-center w-full">
-    <a href="index.html" class="text-2xl font-bold text-primary uppercase tracking-widest font-display">Aramane Sweets</a>
-    
-    <div class="hidden md:flex items-center gap-md">
-        <a href="index.html" class="text-on-surface-variant hover:text-primary">Home</a>
-        <a href="products.html" class="text-primary border-b-2 border-primary font-bold pb-1">Products</a>
-        <a href="gift-collections.html" class="text-on-surface-variant hover:text-primary">Gifts</a>
-        <a href="brand-story.html" class="text-on-surface-variant hover:text-primary">Heritage</a>
-        <a href="store-locator.html" class="text-on-surface-variant hover:text-primary">Locate</a>
-    </div>
-    
-    <div class="flex items-center gap-md">
-        <a href="https://wa.me/9535455770" class="hidden lg:flex items-center px-md py-sm bg-primary text-on-primary font-label rounded hover:opacity-80 transition-opacity">
-            WhatsApp Order
-        </a>
-        <a href="cart.html" class="text-primary hover:opacity-80 relative">
-            <span class="material-symbols-outlined">shopping_cart</span>
-            <span id="cart-count" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center hidden">0</span>
-        </a>
+<nav class="palace-gradient shadow-lg sticky top-0 z-50 border-b border-teal-400/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+            <a href="index.html" class="font-serif text-2xl font-bold text-white tracking-wider hover:text-gold transition-colors">Aramane Sweets</a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="index.html" class="text-white/90 hover:text-gold font-medium transition-colors">Home</a>
+                <a href="products.html" class="text-gold font-semibold border-b-2 border-gold pb-1">Products</a>
+                <a href="gift-collections.html" class="text-white/90 hover:text-gold font-medium transition-colors">Gifts</a>
+                <a href="brand-story.html" class="text-white/90 hover:text-gold font-medium transition-colors">Heritage</a>
+                <a href="store-locator.html" class="text-white/90 hover:text-gold font-medium transition-colors">Locate</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="cart.html" class="text-white hover:text-gold transition-colors relative">
+                    <span class="material-symbols-outlined text-xl">shopping_cart</span>
+                    <span id="cart-count" class="hidden absolute -top-2 -right-2 bg-gold text-teal-900 text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">0</span>
+                </a>
+                <a href="https://wa.me/919535455770" class="gold-shimmer text-teal-900 px-5 py-2 rounded-full text-sm font-bold hover:opacity-90 transition-all hidden md:flex items-center shadow-md">WhatsApp Order</a>
+                <button onclick="document.getElementById('mob-menu').classList.toggle('hidden')" class="md:hidden text-white"><span class="material-symbols-outlined text-2xl">menu</span></button>
+            </div>
+        </div>
+        <div id="mob-menu" class="hidden md:hidden pb-4 border-t border-white/10 mt-2 pt-4 flex flex-col space-y-3">
+            <a href="index.html" class="text-white/90 hover:text-gold px-2">Home</a>
+            <a href="products.html" class="text-gold font-semibold px-2">Products</a>
+            <a href="gift-collections.html" class="text-white/90 hover:text-gold px-2">Gifts</a>
+            <a href="brand-story.html" class="text-white/90 hover:text-gold px-2">Heritage</a>
+            <a href="store-locator.html" class="text-white/90 hover:text-gold px-2">Locate</a>
+            <a href="cart.html" class="text-white/90 hover:text-gold px-2">Cart</a>
+        </div>
     </div>
 </nav>
 
-<!-- Enhanced Products Header with RoyalBengaliSweets Background -->
-<header class="relative py-xl bg-gradient-to-r from-primary-dark/80 via-primary/70 to-[#22c55e]/60 border-b border-gray-200 overflow-hidden">
-  <div class="absolute inset-0 bg-cover bg-center opacity-20"
-       style="background-image: url('images/RoyalBengaliSweets.jpeg'); filter: brightness(1.2) contrast(1.1);">
-  </div>
-  <div class="absolute inset-0 bg-gradient-to-t from-primary-dark/50 via-primary/30 to-transparent"></div>
-  <div class="relative z-10 max-w-container-max mx-auto px-gutter text-center">
-    <h1 class="text-display text-on-primary mb-4 font-display leading-tight">Complete Royal Heritage Catalog</h1>
-    <p class="text-body text-on-primary max-w-2xl mx-auto opacity-95 leading-relaxed">Discover 227+ authentic Indian sweets, each handcrafted with pure ingredients and six decades of royal heritage since 1960.</p>
-  </div>
+<!-- Hero Header -->
+<header class="relative py-16 md:py-20 overflow-hidden">
+    <div class="absolute inset-0"><img src="images/categories/ghee.png" alt="" class="w-full h-full object-cover"><div class="absolute inset-0 bg-gradient-to-r from-teal-900/90 via-teal-800/85 to-teal-900/90"></div></div>
+    <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
+        <span class="inline-block gold-shimmer text-teal-900 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-4">✦ 227+ Products ✦</span>
+        <h1 class="text-3xl md:text-5xl font-serif font-bold text-white mb-4 leading-tight">Royal Heritage Catalog</h1>
+        <p class="text-white/85 text-lg max-w-2xl mx-auto">Authentic Indian sweets handcrafted with pure ingredients and six decades of royal heritage.</p>
+    </div>
 </header>
 
-<!-- Category-Specific Background Sections -->
-<section class="relative py-lg bg-gradient-to-b from-surface via-surface/90 to-primary/5">
-  <div class="absolute inset-0 bg-cover bg-center opacity-10"
-       style="background-image: url('images/GheeSweets.jpeg'); filter: sepia(0.2);">
-  </div>
-  <div class="relative z-10 max-w-container-max mx-auto px-gutter text-center">
-    <p class="text-body text-on-surface-variant mb-md">Experience the perfect blend of tradition and modern presentation</p>
-  </div>
-</section>
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
-<main class="max-w-container-max mx-auto px-gutter py-xl">
-
-<!-- Category Navigation -->
-<div class="mb-xl flex flex-wrap gap-md justify-center">
-    <button onclick="filterCategory('all')" class="category-btn active px-md py-sm bg-primary text-on-primary font-label rounded hover:bg-primary-dark transition-colors" data-category="all">All Products</button>
-    <button onclick="filterCategory('bakery')" class="category-btn px-md py-sm bg-gray-200 text-on-surface font-label rounded hover:bg-primary hover:text-on-primary transition-colors" data-category="bakery">Bakery</button>
-    <button onclick="filterCategory('bengali')" class="category-btn px-md py-sm bg-gray-200 text-on-surface font-label rounded hover:bg-primary hover:text-on-primary transition-colors" data-category="bengali">Bengali</button>
-    <button onclick="filterCategory('chat')" class="category-btn px-md py-sm bg-gray-200 text-on-surface font-label rounded hover:bg-primary hover:text-on-primary transition-colors" data-category="chat">Chat Items</button>
-    <button onclick="filterCategory('ghee')" class="category-btn px-md py-sm bg-gray-200 text-on-surface font-label rounded hover:bg-primary hover:text-on-primary transition-colors" data-category="ghee">Ghee Sweets</button>
-    <button onclick="filterCategory('kaju')" class="category-btn px-md py-sm bg-gray-200 text-on-surface font-label rounded hover:bg-primary hover:text-on-primary transition-colors" data-category="kaju">Kaju</button>
-    <button onclick="filterCategory('namkeen')" class="category-btn px-md py-sm bg-gray-200 text-on-surface font-label rounded hover:bg-primary hover:text-on-primary transition-colors" data-category="namkeen">Namkeen</button>
-    <button onclick="filterCategory('packed')" class="category-btn px-md py-sm bg-gray-200 text-on-surface font-label rounded hover:bg-primary hover:text-on-primary transition-colors" data-category="packed">Packed Items</button>
+<!-- Category Filters -->
+<div class="mb-10 flex flex-wrap gap-3 justify-center">
+    <button onclick="filterCategory('all')" class="category-btn active px-5 py-2.5 bg-teal-700 text-white font-semibold text-sm rounded-full hover:bg-teal-800 transition-colors shadow-sm" data-category="all">All Products</button>
+    <button onclick="filterCategory('bakery')" class="category-btn px-5 py-2.5 bg-white text-gray-700 font-semibold text-sm rounded-full hover:bg-teal-700 hover:text-white transition-colors shadow-sm border border-gray-200" data-category="bakery">🍞 Bakery</button>
+    <button onclick="filterCategory('bengali')" class="category-btn px-5 py-2.5 bg-white text-gray-700 font-semibold text-sm rounded-full hover:bg-teal-700 hover:text-white transition-colors shadow-sm border border-gray-200" data-category="bengali">🍬 Bengali</button>
+    <button onclick="filterCategory('chat')" class="category-btn px-5 py-2.5 bg-white text-gray-700 font-semibold text-sm rounded-full hover:bg-teal-700 hover:text-white transition-colors shadow-sm border border-gray-200" data-category="chat">🥟 Chat</button>
+    <button onclick="filterCategory('ghee')" class="category-btn px-5 py-2.5 bg-white text-gray-700 font-semibold text-sm rounded-full hover:bg-teal-700 hover:text-white transition-colors shadow-sm border border-gray-200" data-category="ghee">🧈 Ghee</button>
+    <button onclick="filterCategory('kaju')" class="category-btn px-5 py-2.5 bg-white text-gray-700 font-semibold text-sm rounded-full hover:bg-teal-700 hover:text-white transition-colors shadow-sm border border-gray-200" data-category="kaju">💎 Kaju</button>
+    <button onclick="filterCategory('namkeen')" class="category-btn px-5 py-2.5 bg-white text-gray-700 font-semibold text-sm rounded-full hover:bg-teal-700 hover:text-white transition-colors shadow-sm border border-gray-200" data-category="namkeen">🥨 Namkeen</button>
+    <button onclick="filterCategory('packed')" class="category-btn px-5 py-2.5 bg-white text-gray-700 font-semibold text-sm rounded-full hover:bg-teal-700 hover:text-white transition-colors shadow-sm border border-gray-200" data-category="packed">📦 Packed</button>
 </div>
+
+<!-- Product Count -->
+<p id="product-count" class="text-center text-gray-500 text-sm mb-6"></p>
 
 <!-- Product Grid -->
-<div id="products-container" class="product-grid">
-    <!-- Products will be loaded here via JavaScript -->
-</div>
+<div id="products-container" class="product-grid"></div>
 
 </main>
 
-<!-- Modal for Product Details -->
-<div id="product-modal" class="hidden fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
-    <div class="bg-white rounded-lg max-w-md w-full max-h-[90vh] overflow-y-auto">
-        <div class="p-6">
-            <button onclick="closeModal()" class="float-right text-gray-500 hover:text-gray-700">
-                <span class="material-symbols-outlined">close</span>
-            </button>
-            <div id="modal-content"></div>
-        </div>
-    </div>
-</div>
-
 <!-- Footer -->
-<footer class="bg-on-surface text-on-primary pt-16 pb-8 mt-xl">
-    <div class="max-w-container-max mx-auto px-md grid grid-cols-1 md:grid-cols-3 gap-12">
-        <div>
-            <div class="text-display text-on-primary mb-sm font-display">Aramane Sweets</div>
-            <p class="text-body text-on-primary/70">Authentic Bengaluru Heritage since 1960.</p>
+<footer class="palace-gradient text-white pt-16 pb-8 mt-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-3 gap-10 text-center md:text-left">
+            <div>
+                <h3 class="font-serif text-2xl font-bold mb-3 text-gold">Aramane Sweets</h3>
+                <p class="text-white/70">Royal heritage in every bite since 1960.</p>
+            </div>
+            <div>
+                <h4 class="font-semibold mb-4 text-gold/90 uppercase tracking-wider text-sm">Quick Links</h4>
+                <ul class="space-y-2 text-white/70">
+                    <li><a href="products.html" class="hover:text-gold transition-colors">Royal Products</a></li>
+                    <li><a href="gift-collections.html" class="hover:text-gold transition-colors">Gift Collections</a></li>
+                    <li><a href="brand-story.html" class="hover:text-gold transition-colors">Heritage Story</a></li>
+                    <li><a href="store-locator.html" class="hover:text-gold transition-colors">Palace Locations</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold mb-4 text-gold/90 uppercase tracking-wider text-sm">Connect With Us</h4>
+                <ul class="space-y-2 text-white/70">
+                    <li><a href="mailto:aramanesweets23@gmail.com" class="hover:text-gold transition-colors">📧 aramanesweets23@gmail.com</a></li>
+                    <li><a href="tel:+919535455770" class="hover:text-gold transition-colors">📞 +91 95354 55770</a></li>
+                    <li><a href="https://wa.me/919535455770" class="hover:text-gold transition-colors">💬 WhatsApp Order</a></li>
+                </ul>
+            </div>
         </div>
-        
-        <div>
-            <h4 class="text-label text-primary mb-sm">Quick Links</h4>
-            <ul class="space-y-sm text-body text-on-primary/70">
-                <li><a href="store-locator.html" class="hover:text-primary">Our Stores</a></li>
-                <li><a href="brand-story.html" class="hover:text-primary">Heritage Story</a></li>
-                <li><a href="gift-collections.html" class="hover:text-primary">Gift Collections</a></li>
-            </ul>
+        <div class="border-t border-white/10 mt-12 pt-8 text-center text-white/50 text-sm">
+            <p>&copy; 1960 Aramane Sweets. Preserving Royal Heritage for Generations.</p>
         </div>
-        
-        <div>
-            <h4 class="text-label text-primary mb-sm">Get in Touch</h4>
-            <ul class="space-y-sm text-body text-on-primary/70">
-                <li><a href="mailto:aramanesweets23@gmail.com" class="hover:text-primary">Email: aramanesweets23@gmail.com</a></li>
-                <li><a href="tel:+919535455770" class="hover:text-primary">Phone: +91 95354 55770</a></li>
-                <li class="mt-md">
-                    <a href="https://wa.me/919535455770" class="inline-flex items-center gap-xs text-primary hover:opacity-80">
-                        <span class="material-symbols-outlined">chat</span>
-                        WhatsApp Order
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-    
-    <div class="max-w-container-max mx-auto px-md mt-16 pt-8 border-t border-on-primary/10 text-center text-body text-on-primary/50">
-        © 1960 Aramane Sweets. Authentic Bengaluru Heritage.
     </div>
 </footer>
 
@@ -439,43 +372,42 @@ let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 function getProductImage(product) {
     const categoryImages = {
-        'bakery': 'https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400&h=400&fit=crop',
-        'bengali': 'https://images.unsplash.com/photo-1571115177098-24ec42ed204d?w=400&h=400&fit=crop',
-        'chat': 'https://images.unsplash.com/photo-1606787620884-c0cea4ae6fe1?w=400&h=400&fit=crop',
-        'ghee': 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&h=400&fit=crop',
-        'kaju': 'https://images.unsplash.com/photo-1599599810765-8dcc3a9055e5?w=400&h=400&fit=crop',
-        'namkeen': 'https://images.unsplash.com/photo-1585518419759-3414e7c6e504?w=400&h=400&fit=crop',
-        'packed': 'https://images.unsplash.com/photo-1585518419759-3414e7c6e504?w=400&h=400&fit=crop'
+        'bakery': 'images/categories/bakery.png',
+        'bengali': 'images/categories/bengali.png',
+        'chat': 'images/categories/chat.png',
+        'ghee': 'images/categories/ghee.png',
+        'kaju': 'images/categories/kaju.png',
+        'namkeen': 'images/categories/namkeen.png',
+        'packed': 'images/categories/packed.png'
     };
-    return categoryImages[product.category] || 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&h=400&fit=crop';
+    return categoryImages[product.category] || 'images/categories/ghee.png';
 }
+
+const categoryLabels = { bakery:'Bakery', bengali:'Bengali', chat:'Chat', ghee:'Ghee & Kova', kaju:'Kaju', namkeen:'Namkeen', packed:'Packed' };
 
 function renderProducts(filter = 'all') {
     const container = document.getElementById('products-container');
     container.innerHTML = '';
-    
     const filtered = filter === 'all' ? products : products.filter(p => p.category === filter);
+    document.getElementById('product-count').textContent = `Showing ${filtered.length} of ${products.length} products`;
     
     filtered.forEach(product => {
         const card = document.createElement('div');
-        card.className = 'bg-surface-container-lowest border border-gray-200 rounded-lg overflow-hidden group hover:shadow-lg transition-shadow cursor-pointer';
+        card.className = 'card-hover bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 group cursor-pointer';
         const imageUrl = getProductImage(product);
+        const shelfInfo = product.shelf_life && product.shelf_life !== '-' ? `<span class="text-xs text-gray-400">Shelf: ${product.shelf_life}</span>` : '';
         card.innerHTML = `
-            <div class="aspect-square relative overflow-hidden border-b border-gray-200 bg-gray-100">
-                <img src="${imageUrl}" alt="${product.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Crect fill=%22%23f3f4f6%22 width=%22100%22 height=%22100%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-size=%2214%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22%3ENo Image%3C/text%3E%3C/svg%3E'">
+            <div class="aspect-square relative overflow-hidden bg-cream-dark">
+                <img src="${imageUrl}" alt="${product.name}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy">
+                <span class="absolute top-3 left-3 bg-teal-700/90 text-white text-xs font-bold px-2.5 py-1 rounded-full backdrop-blur-sm">${categoryLabels[product.category] || product.category}</span>
             </div>
-            <div class="p-4 flex flex-col gap-3">
-                <div class="flex-grow">
-                    <p class="text-xs text-gray-500 mb-1">Code: ${product.code}</p>
-                    <h3 class="text-sm font-display font-bold text-on-surface line-clamp-2">${product.name}</h3>
-                    <p class="text-xs text-gray-500 mt-1 capitalize">${product.category}</p>
-                </div>
-                <div class="flex items-center justify-between border-t border-gray-100 pt-2">
-                    <div>
-                        <p class="text-xs text-gray-500">Price</p>
-                        <p class="text-lg font-bold text-primary">₹${product.price}</p>
-                    </div>
-                    <button onclick="addToCart(${product.id})" class="bg-primary text-white p-2 rounded hover:bg-primary-dark transition-colors" title="Add to cart">
+            <div class="p-4">
+                <p class="text-xs text-gray-400 mb-1">Code: ${product.code}</p>
+                <h3 class="font-serif font-bold text-gray-900 text-sm leading-snug mb-2 line-clamp-2">${product.name}</h3>
+                ${shelfInfo}
+                <div class="flex items-center justify-between mt-3 pt-3 border-t border-gray-100">
+                    <p class="text-lg font-bold text-teal-700">₹${product.price}</p>
+                    <button onclick="event.stopPropagation();addToCart(${product.id})" class="bg-teal-700 text-white p-2 rounded-xl hover:bg-teal-800 transition-colors shadow-sm" title="Add to cart">
                         <span class="material-symbols-outlined text-lg">add_shopping_cart</span>
                     </button>
                 </div>
@@ -488,24 +420,20 @@ function renderProducts(filter = 'all') {
 function filterCategory(category) {
     currentFilter = category;
     document.querySelectorAll('.category-btn').forEach(btn => {
-        btn.classList.remove('bg-primary', 'text-on-primary');
-        btn.classList.add('bg-gray-200', 'text-on-surface');
+        if (btn.dataset.category === category) {
+            btn.className = 'category-btn active px-5 py-2.5 bg-teal-700 text-white font-semibold text-sm rounded-full hover:bg-teal-800 transition-colors shadow-sm';
+        } else {
+            btn.className = 'category-btn px-5 py-2.5 bg-white text-gray-700 font-semibold text-sm rounded-full hover:bg-teal-700 hover:text-white transition-colors shadow-sm border border-gray-200';
+        }
     });
-    event.target.classList.remove('bg-gray-200', 'text-on-surface');
-    event.target.classList.add('bg-primary', 'text-on-primary');
     renderProducts(category);
 }
 
 function addToCart(productId) {
     const product = products.find(p => p.id === productId);
     const existingItem = cart.find(item => item.id === productId);
-    
-    if (existingItem) {
-        existingItem.quantity += 1;
-    } else {
-        cart.push({ ...product, quantity: 1 });
-    }
-    
+    if (existingItem) { existingItem.quantity += 1; }
+    else { cart.push({ ...product, quantity: 1 }); }
     localStorage.setItem('cart', JSON.stringify(cart));
     updateCartCount();
     showNotification(`${product.name} added to cart!`);
@@ -514,31 +442,19 @@ function addToCart(productId) {
 function updateCartCount() {
     const count = cart.reduce((sum, item) => sum + item.quantity, 0);
     const cartBadge = document.getElementById('cart-count');
-    if (count > 0) {
-        cartBadge.textContent = count;
-        cartBadge.classList.remove('hidden');
-    } else {
-        cartBadge.classList.add('hidden');
-    }
+    if (count > 0) { cartBadge.textContent = count; cartBadge.classList.remove('hidden'); }
+    else { cartBadge.classList.add('hidden'); }
 }
 
 function showNotification(message) {
-    const notification = document.createElement('div');
-    notification.className = 'fixed bottom-4 right-4 bg-primary text-white px-6 py-3 rounded-lg shadow-lg z-40';
-    notification.textContent = message;
-    document.body.appendChild(notification);
-    setTimeout(() => notification.remove(), 3000);
+    const n = document.createElement('div');
+    n.className = 'fixed bottom-4 right-4 bg-teal-700 text-white px-6 py-3 rounded-xl shadow-lg z-50 font-medium';
+    n.textContent = message;
+    document.body.appendChild(n);
+    setTimeout(() => n.remove(), 2500);
 }
 
-function closeModal() {
-    document.getElementById('product-modal').classList.add('hidden');
-}
-
-// Initialize
-document.addEventListener('DOMContentLoaded', () => {
-    renderProducts();
-    updateCartCount();
-});
+document.addEventListener('DOMContentLoaded', () => { renderProducts(); updateCartCount(); });
 </script>
 
 </body>

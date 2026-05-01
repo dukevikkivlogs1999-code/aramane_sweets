@@ -4,396 +4,257 @@
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>Your Cart - Aramane Sweets</title>
-    
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-    
-    <!-- Tailwind -->
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    
-    <script id="tailwind-config">
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          "colors": {
-            "primary": "#0f766e",
-            "primary-dark": "#0d9488",
-            "primary-light": "#14b8a6",
-            "on-primary": "#ffffff",
-            "background": "#f7f9fb",
-            "on-background": "#191c1e",
-            "surface-container-lowest": "#ffffff",
-            "surface-container": "#eceef0",
-            "on-surface": "#191c1e",
-            "on-surface-variant": "#3e4a3d",
-            "outline": "#6e7b6c",
-            "outline-variant": "#bdcaba",
-            "error": "#ba1a1a",
-            "on-error": "#ffffff"
-          },
-          "borderRadius": {
-            "DEFAULT": "0.125rem",
-            "lg": "0.25rem",
-            "xl": "0.5rem",
-            "full": "0.75rem"
-          },
-          "spacing": {
-            "xl": "80px",
-            "base": "8px",
-            "container-max": "1280px",
-            "md": "24px",
-            "lg": "48px",
-            "gutter": "24px"
-          },
-          "fontFamily": {
-            "display": ["Playfair Display"],
-            "body": ["Inter"]
-          },
-          "fontSize": {
-            "display": ["48px", {"lineHeight": "1.1", "fontWeight": "700"}],
-            "headline": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
-            "body": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
-            "label": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}]
-          }
+    <meta name="description" content="Review your Aramane Sweets cart and place your order via WhatsApp.">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: { extend: {
+                colors: { 'teal': {900:'#134e4a',800:'#115e59',700:'#0f766e',600:'#0d9488',500:'#14b8a6'}, 'gold':{DEFAULT:'#d4a853',light:'#e8c97a'}, 'cream':{DEFAULT:'#faf7f2',dark:'#f0ebe3'} },
+                fontFamily: { 'serif':['Playfair Display','serif'], 'sans':['Inter','sans-serif'] }
+            }}
         }
-      }
-    }
     </script>
-    
     <style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        .material-symbols-outlined.fill {
-            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
+        .palace-gradient { background: linear-gradient(135deg, #134e4a 0%, #0f766e 50%, #115e59 100%); }
+        .gold-shimmer { background: linear-gradient(135deg, #d4a853, #e8c97a, #d4a853); }
     </style>
 </head>
-
-<body class="bg-background text-on-background font-body text-body antialiased selection:bg-primary selection:text-on-primary">
+<body class="bg-cream font-sans text-gray-900 antialiased">
 
 <!-- Navigation -->
-<nav class="bg-white dark:bg-zinc-950 w-full border-b border-zinc-100 dark:border-zinc-900 sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center w-full">
-        <div class="flex-shrink-0">
-            <a href="index.html" class="text-2xl font-bold text-primary uppercase tracking-widest font-display hover:opacity-80 transition-all">Aramane Sweets</a>
+<nav class="palace-gradient shadow-lg sticky top-0 z-50 border-b border-teal-400/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+            <a href="index.html" class="font-serif text-2xl font-bold text-white tracking-wider hover:text-gold transition-colors">Aramane Sweets</a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="index.html" class="text-white/90 hover:text-gold font-medium transition-colors">Home</a>
+                <a href="products.html" class="text-white/90 hover:text-gold font-medium transition-colors">Products</a>
+                <a href="gift-collections.html" class="text-white/90 hover:text-gold font-medium transition-colors">Gifts</a>
+                <a href="brand-story.html" class="text-white/90 hover:text-gold font-medium transition-colors">Heritage</a>
+                <a href="store-locator.html" class="text-white/90 hover:text-gold font-medium transition-colors">Locate</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="products.html" class="text-white hover:text-gold transition-colors flex items-center gap-1">
+                    <span class="material-symbols-outlined text-lg">arrow_back</span>
+                    <span class="hidden md:inline text-sm font-medium">Continue Shopping</span>
+                </a>
+                <button onclick="document.getElementById('mob-menu').classList.toggle('hidden')" class="md:hidden text-white"><span class="material-symbols-outlined text-2xl">menu</span></button>
+            </div>
         </div>
-        
-        <div class="hidden md:flex space-x-8 items-center">
-            <a href="index.html" class="text-zinc-600 dark:text-zinc-400 hover:text-primary">Home</a>
-            <a href="products.html" class="text-zinc-600 dark:text-zinc-400 hover:text-primary">Products</a>
-            <a href="gift-collections.html" class="text-zinc-600 dark:text-zinc-400 hover:text-primary">Gifts</a>
-            <a href="brand-story.html" class="text-zinc-600 dark:text-zinc-400 hover:text-primary">Heritage</a>
-            <a href="store-locator.html" class="text-zinc-600 dark:text-zinc-400 hover:text-primary">Locate</a>
-        </div>
-        
-        <div class="flex items-center gap-md">
-            <a href="products.html" class="text-primary hover:opacity-80 flex items-center gap-1">
-                <span class="material-symbols-outlined">arrow_back</span>
-                <span class="hidden md:inline text-sm">Continue Shopping</span>
-            </a>
+        <div id="mob-menu" class="hidden md:hidden pb-4 border-t border-white/10 mt-2 pt-4 flex flex-col space-y-3">
+            <a href="index.html" class="text-white/90 hover:text-gold px-2">Home</a>
+            <a href="products.html" class="text-white/90 hover:text-gold px-2">Products</a>
+            <a href="gift-collections.html" class="text-white/90 hover:text-gold px-2">Gifts</a>
+            <a href="brand-story.html" class="text-white/90 hover:text-gold px-2">Heritage</a>
+            <a href="store-locator.html" class="text-white/90 hover:text-gold px-2">Locate</a>
         </div>
     </div>
 </nav>
 
-<!-- Enhanced Main Content with Cart Background -->
-<main class="relative max-w-[1280px] mx-auto px-gutter py-xl grid grid-cols-1 md:grid-cols-12 gap-xl">
-  <div class="absolute inset-0 bg-cover bg-center opacity-10"
-       style="background-image: url('images/IndianSnacks.jpeg'); filter: brightness(0.9) contrast(1.1);">
-  </div>
-  <div class="absolute inset-0 bg-gradient-to-b from-transparent via-surface/50 to-surface"></div>
-  
-  <div class="relative z-10 md:col-span-8 flex flex-col gap-lg">
-    <header class="border-b border-outline-variant pb-md flex justify-between items-start">
-      <div>
-        <h1 class="font-display text-display text-on-background">Your Shopping Cart</h1>
-        <p class="font-body text-on-surface-variant mt-sm" id="cart-status">Loading your cart...</p>
-      </div>
-      <button onclick="clearCart()" id="clear-btn" class="hidden text-error hover:opacity-80 font-label text-sm transition-colors flex items-center gap-1">
-        <span class="material-symbols-outlined text-lg">delete_sweep</span>
-        <span class="hidden md:inline">Clear Cart</span>
-      </button>
-    </header>
+<!-- Main Cart Content -->
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid grid-cols-1 lg:grid-cols-12 gap-10">
+    <div class="lg:col-span-8 flex flex-col gap-6">
+        <header class="border-b border-gray-200 pb-4 flex justify-between items-start">
+            <div>
+                <h1 class="font-serif text-3xl md:text-4xl font-bold text-teal-900">Your Shopping Cart</h1>
+                <p class="text-gray-500 mt-1" id="cart-status">Loading your cart...</p>
+            </div>
+            <button onclick="clearCart()" id="clear-btn" class="hidden text-red-500 hover:text-red-700 font-semibold text-sm flex items-center gap-1 transition-colors">
+                <span class="material-symbols-outlined text-lg">delete_sweep</span>
+                <span class="hidden md:inline">Clear Cart</span>
+            </button>
+        </header>
 
-    <!-- Cart Items Container -->
-    <div class="flex flex-col gap-md" id="cart-items-container">
-        <!-- Items will be loaded here via JavaScript -->
+        <!-- Cart Items -->
+        <div class="flex flex-col gap-4" id="cart-items-container"></div>
+
+        <!-- Empty Cart -->
+        <div id="empty-cart-message" class="hidden flex flex-col items-center justify-center py-20 text-center">
+            <span class="material-symbols-outlined text-7xl text-gray-300 mb-4">shopping_cart</span>
+            <h2 class="font-serif text-2xl font-bold text-teal-900 mb-2">Your Cart is Empty</h2>
+            <p class="text-gray-500 mb-8 max-w-md">Select your favorite sweets from our exclusive collection and they'll appear here!</p>
+            <a href="products.html" class="gold-shimmer text-teal-900 px-8 py-3 rounded-full font-bold hover:opacity-90 transition-all shadow-md inline-flex items-center gap-2">
+                <span class="material-symbols-outlined text-lg">shopping_bag</span> Browse Products
+            </a>
+        </div>
     </div>
 
-    <!-- Empty Cart Message -->
-    <div id="empty-cart-message" class="hidden flex flex-col items-center justify-center py-16 px-6 text-center">
-        <span class="material-symbols-outlined text-6xl text-gray-300 mb-4">shopping_cart</span>
-        <h2 class="font-display text-headline text-on-background mb-2">Your Cart is Empty</h2>
-        <p class="text-on-surface-variant mb-6 max-w-md">Select your favorite sweets from our exclusive collection and they'll appear here!</p>
-        <a href="products.html" class="bg-primary text-white px-md py-sm rounded font-label hover:bg-primary-dark transition-colors inline-flex items-center gap-2">
-            <span class="material-symbols-outlined text-lg">shopping_bag</span>
-            Browse Products
-        </a>
+    <!-- Order Summary -->
+    <div class="lg:col-span-4 h-fit sticky top-24" id="summary-section">
+        <div class="bg-white border border-gray-200 p-8 flex flex-col gap-6 rounded-2xl shadow-sm">
+            <h2 class="font-serif text-2xl font-bold text-teal-900 border-b border-gray-200 pb-4">Order Summary</h2>
+            <div class="flex flex-col gap-3 text-gray-600">
+                <div class="flex justify-between"><span>Subtotal (<span id="item-count">0</span> items)</span><span class="font-bold text-gray-900">₹<span id="subtotal">0</span></span></div>
+                <div class="flex justify-between"><span>Delivery</span><span class="font-semibold text-gray-600">Calculated next</span></div>
+                <div class="flex justify-between text-teal-700"><span>Taxes</span><span class="font-semibold">Included</span></div>
+            </div>
+            <div class="border-t border-gray-200 pt-4 flex justify-between items-end">
+                <span class="font-serif text-xl font-bold text-teal-900">Total</span>
+                <span class="font-serif text-3xl font-bold text-teal-900">₹<span id="total-price">0</span></span>
+            </div>
+            <button onclick="continueToWhatsApp()" id="whatsapp-btn" class="w-full palace-gradient text-white py-4 rounded-xl font-bold text-base flex items-center justify-center gap-2 hover:opacity-90 transition-opacity disabled:opacity-40 disabled:cursor-not-allowed shadow-md" disabled>
+                <span class="material-symbols-outlined">chat</span> Continue Order via WhatsApp
+            </button>
+            <p class="text-xs text-gray-400 text-center">Our team will confirm availability and share payment link via WhatsApp (+91 9535455770).</p>
+            <div class="p-4 bg-cream rounded-xl flex items-start gap-3 border border-gold/20">
+                <span class="material-symbols-outlined text-gold mt-0.5">verified_user</span>
+                <div>
+                    <h4 class="font-bold text-sm text-teal-900">Authenticity Guaranteed</h4>
+                    <p class="text-xs text-gray-500 mt-1">Crafted fresh daily since 1960. No artificial preservatives.</p>
+                </div>
+            </div>
+        </div>
     </div>
-    
-  </div>
-  
-  <!-- Order Summary Section -->
-  <div class="md:col-span-4 h-fit sticky top-20" id="summary-section">
-    <div class="bg-surface-container-lowest border border-outline-variant p-lg flex flex-col gap-lg rounded">
-      <h2 class="font-display text-headline text-on-background border-b border-outline-variant pb-sm">Order Summary</h2>
-      
-      <div class="flex flex-col gap-sm font-body text-on-surface-variant">
-        <div class="flex justify-between items-center">
-          <span>Subtotal (<span id="item-count">0</span> items)</span>
-          <span class="font-label text-label text-on-surface">₹<span id="subtotal">0</span></span>
-        </div>
-        <div class="flex justify-between items-center">
-          <span>Delivery (Bengaluru)</span>
-          <span class="font-label text-label text-on-surface">Calculated next</span>
-        </div>
-        <div class="flex justify-between items-center text-primary">
-          <span>Taxes</span>
-          <span class="font-label text-label">Included</span>
-        </div>
-      </div>
-      
-      <div class="border-t border-outline-variant pt-md flex justify-between items-end">
-        <span class="font-display text-headline text-on-surface">Total</span>
-        <span class="font-display text-[32px] font-bold text-on-surface">₹<span id="total-price">0</span></span>
-      </div>
-      
-      <button onclick="continueToWhatsApp()" id="whatsapp-btn" class="w-full bg-gradient-to-r from-primary-dark to-primary text-white py-md rounded font-label text-[16px] flex items-center justify-center gap-sm hover:opacity-90 mt-sm transition-opacity disabled:opacity-50 disabled:cursor-not-allowed" disabled>
-        <span class="material-symbols-outlined fill">chat</span>
-        Continue Order via WhatsApp
-      </button>
-      
-      <p class="font-body text-xs text-on-surface-variant text-center mt-xs">
-        Our concierge team will confirm availability, delivery slot, and share the payment link via WhatsApp (+91 9535455770).
-      </p>
-      
-      <div class="mt-md p-md bg-surface border border-outline-variant rounded flex items-start gap-sm">
-        <span class="material-symbols-outlined text-primary mt-1">verified_user</span>
-        <div>
-          <h4 class="font-label text-label text-on-surface">Authenticity Guaranteed</h4>
-          <p class="font-body text-sm text-on-surface-variant mt-xs">Crafted fresh daily since 1960. No artificial preservatives.</p>
-        </div>
-      </div>
-    </div>
-  </div>
 </main>
 
 <!-- Footer -->
-<footer class="bg-zinc-900 border-t border-zinc-800 mt-xl">
-    <div class="max-w-7xl mx-auto px-8 py-16">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<footer class="palace-gradient text-white pt-16 pb-8 mt-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-3 gap-10 text-center md:text-left">
             <div>
-                <span class="text-lg font-bold font-display text-white mb-4 block">Aramane Sweets</span>
-                <p class="text-zinc-500 normal-case tracking-normal">© 1960 Aramane Sweets. Authentic Bengaluru Heritage.</p>
+                <h3 class="font-serif text-2xl font-bold mb-3 text-gold">Aramane Sweets</h3>
+                <p class="text-white/70">Royal heritage in every bite since 1960.</p>
             </div>
-            <div class="flex flex-col gap-3">
-                <h4 class="text-white font-bold mb-2">Locations</h4>
-                <a href="store-locator.html#christ-college" class="text-zinc-500 hover:text-white hover:text-primary transition-colors duration-200">Christ College</a>
-                <a href="store-locator.html#chitradurga" class="text-zinc-500 hover:text-white hover:text-primary transition-colors duration-200">Chitradurga</a>
-                <a href="store-locator.html#muddanpalya" class="text-zinc-500 hover:text-white hover:text-primary transition-colors duration-200">Muddanpalya</a>
-                <a href="store-locator.html#davanagere" class="text-zinc-500 hover:text-white hover:text-primary transition-colors duration-200">Davanagere</a>
-                <a href="store-locator.html#hospet" class="text-zinc-500 hover:text-white hover:text-primary transition-colors duration-200">Hospet</a>
+            <div>
+                <h4 class="font-semibold mb-4 text-gold/90 uppercase tracking-wider text-sm">Quick Links</h4>
+                <ul class="space-y-2 text-white/70">
+                    <li><a href="products.html" class="hover:text-gold transition-colors">Royal Products</a></li>
+                    <li><a href="gift-collections.html" class="hover:text-gold transition-colors">Gift Collections</a></li>
+                    <li><a href="brand-story.html" class="hover:text-gold transition-colors">Heritage Story</a></li>
+                    <li><a href="store-locator.html" class="hover:text-gold transition-colors">Palace Locations</a></li>
+                </ul>
             </div>
-            <div class="flex flex-col gap-3">
-                <h4 class="text-white font-bold mb-2">Contact</h4>
-                <a href="mailto:aramanesweets23@gmail.com" class="text-zinc-500 hover:text-white hover:text-primary transition-colors duration-200">📧 aramanesweets23@gmail.com</a>
-                <a href="tel:+919535455770" class="text-zinc-500 hover:text-white hover:text-primary transition-colors duration-200">📞 +91 95354 55770</a>
-                <a href="https://wa.me/919535455770" class="text-zinc-500 hover:text-white hover:text-primary transition-colors duration-200">💬 WhatsApp</a>
-                <h4 class="text-white font-bold mb-2">Support</h4>
-                <a href="https://wa.me/9535455770" class="text-zinc-500 hover:text-white hover:text-primary transition-colors duration-200">Contact: 9535455770</a>
+            <div>
+                <h4 class="font-semibold mb-4 text-gold/90 uppercase tracking-wider text-sm">Connect With Us</h4>
+                <ul class="space-y-2 text-white/70">
+                    <li><a href="mailto:aramanesweets23@gmail.com" class="hover:text-gold transition-colors">📧 aramanesweets23@gmail.com</a></li>
+                    <li><a href="tel:+919535455770" class="hover:text-gold transition-colors">📞 +91 95354 55770</a></li>
+                    <li><a href="https://wa.me/919535455770" class="hover:text-gold transition-colors">💬 WhatsApp Order</a></li>
+                </ul>
             </div>
+        </div>
+        <div class="border-t border-white/10 mt-12 pt-8 text-center text-white/50 text-sm">
+            <p>&copy; 1960 Aramane Sweets. Preserving Royal Heritage for Generations.</p>
         </div>
     </div>
 </footer>
 
 <script>
-// Product list (subset) from products.html
-const products = [
-    { id: 1451, name: 'Milk Bread', price: 50, category: 'bakery', code: '1451' },
-    { id: 1454, name: 'Wheat Bread', price: 60, category: 'bakery', code: '1454' },
-    { id: 1076, name: 'Kala Jamun 1 PC', price: 40, category: 'bengali', code: '1076' },
-    { id: 1127, name: 'Chamcham 1 PC', price: 35, category: 'bengali', code: '1127' },
-    { id: 1013, name: 'Kaju Katli', price: 1200, category: 'kaju', code: '1013' },
-    { id: 1047, name: 'Ghee Mysore Pak', price: 840, category: 'ghee', code: '1047' },
-    { id: 1402, name: 'Pani Puri', price: 50, category: 'chat', code: '1402' },
-    { id: 3419, name: 'Cashew Pakoda', price: 780, category: 'namkeen', code: '3419' },
-    { id: 3518, name: 'Onion Murkh 150GM', price: 60, category: 'packed', code: '3518' }
-];
-
+// Cart uses localStorage data directly — no separate product lookup needed (fixes the 9-product bug)
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-function getProductImage(product) {
-    const categoryImages = {
-        'bakery': 'https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400&h=400&fit=crop',
-        'bengali': 'https://images.unsplash.com/photo-1571115177098-24ec42ed204d?w=400&h=400&fit=crop',
-        'chat': 'https://images.unsplash.com/photo-1606787620884-c0cea4ae6fe1?w=400&h=400&fit=crop',
-        'ghee': 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&h=400&fit=crop',
-        'kaju': 'https://images.unsplash.com/photo-1599599810765-8dcc3a9055e5?w=400&h=400&fit=crop',
-        'namkeen': 'https://images.unsplash.com/photo-1585518419759-3414e7c6e504?w=400&h=400&fit=crop',
-        'packed': 'https://images.unsplash.com/photo-1585518419759-3414e7c6e504?w=400&h=400&fit=crop'
-    };
-    return categoryImages[product.category] || 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&h=400&fit=crop';
+function getProductImage(item) {
+    const imgs = { bakery:'images/categories/bakery.png', bengali:'images/categories/bengali.png', chat:'images/categories/chat.png', ghee:'images/categories/ghee.png', kaju:'images/categories/kaju.png', namkeen:'images/categories/namkeen.png', packed:'images/categories/packed.png' };
+    return imgs[item.category] || 'images/categories/ghee.png';
 }
 
 function renderCart() {
     const container = document.getElementById('cart-items-container');
-    const emptyMessage = document.getElementById('empty-cart-message');
-    
+    const emptyMsg = document.getElementById('empty-cart-message');
     if (cart.length === 0) {
         container.innerHTML = '';
-        emptyMessage.classList.remove('hidden');
+        emptyMsg.classList.remove('hidden');
         document.getElementById('summary-section').classList.add('hidden');
         document.getElementById('cart-status').textContent = 'Your cart is empty. Start shopping!';
+        document.getElementById('clear-btn').classList.add('hidden');
         return;
     }
-    
-    emptyMessage.classList.add('hidden');
+    emptyMsg.classList.add('hidden');
     document.getElementById('summary-section').classList.remove('hidden');
     document.getElementById('cart-status').textContent = `You have ${cart.length} item(s) in your cart`;
+    document.getElementById('clear-btn').classList.remove('hidden');
     container.innerHTML = '';
-    
+
     cart.forEach((item, index) => {
-        const product = products.find(p => p.id === item.id);
-        if (!product) return;
-        
-        const itemTotal = item.price * item.quantity;
-        const imageUrl = getProductImage(item);
-        
-        const cartItem = document.createElement('div');
-        cartItem.className = 'flex flex-col sm:flex-row items-start sm:items-center gap-md p-md bg-surface-container-lowest border border-outline-variant rounded hover:shadow-md transition-shadow';
-        cartItem.innerHTML = `
-            <div class="w-full sm:w-32 h-32 bg-surface-container flex-shrink-0 border border-outline-variant rounded overflow-hidden">
-                <img alt="${item.name}" class="w-full h-full object-cover" 
-                     src="${imageUrl}" 
-                     onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Crect fill=%22%23f3f4f6%22 width=%22100%22 height=%22100%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-size=%2214%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22%3ENo Image%3C/text%3E%3C/svg%3E'">
+        const total = item.price * item.quantity;
+        const el = document.createElement('div');
+        el.className = 'flex flex-col sm:flex-row items-start sm:items-center gap-4 p-4 bg-white border border-gray-200 rounded-2xl hover:shadow-md transition-shadow';
+        el.innerHTML = `
+            <div class="w-full sm:w-28 h-28 flex-shrink-0 rounded-xl overflow-hidden bg-cream-dark border border-gray-100">
+                <img alt="${item.name}" class="w-full h-full object-cover" src="${getProductImage(item)}">
             </div>
-            <div class="flex-grow flex flex-col gap-xs w-full">
+            <div class="flex-grow flex flex-col gap-1 w-full">
                 <div class="flex justify-between items-start">
                     <div>
-                        <h3 class="font-display text-headline text-on-background">${item.name}</h3>
-                        <p class="font-body text-on-surface-variant text-sm capitalize">Category: ${item.category}</p>
+                        <h3 class="font-serif text-lg font-bold text-teal-900">${item.name}</h3>
+                        <p class="text-sm text-gray-400 capitalize">${item.category}</p>
                     </div>
-                    <span class="font-label text-label text-on-background">₹${item.price}</span>
+                    <span class="font-bold text-gray-700">₹${item.price}</span>
                 </div>
-                <div class="flex justify-between items-end mt-md">
-                    <div class="flex items-center border border-outline rounded h-10">
-                        <button class="w-10 h-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors" 
-                                onclick="updateQuantity(${index}, -1)" title="Decrease quantity">
-                            <span class="material-symbols-outlined text-[18px]">remove</span>
-                        </button>
-                        <span class="flex-grow text-center font-label text-label text-on-surface border-x border-outline h-full flex items-center justify-center w-16">${item.quantity}</span>
-                        <button class="w-10 h-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors" 
-                                onclick="updateQuantity(${index}, 1)" title="Increase quantity">
-                            <span class="material-symbols-outlined text-[18px]">add</span>
-                        </button>
+                <div class="flex justify-between items-end mt-3">
+                    <div class="flex items-center border border-gray-200 rounded-xl h-10 overflow-hidden">
+                        <button class="w-10 h-full flex items-center justify-center text-gray-500 hover:bg-cream transition-colors" onclick="updateQuantity(${index},-1)"><span class="material-symbols-outlined text-lg">remove</span></button>
+                        <span class="w-12 text-center font-bold text-gray-900 border-x border-gray-200 h-full flex items-center justify-center">${item.quantity}</span>
+                        <button class="w-10 h-full flex items-center justify-center text-gray-500 hover:bg-cream transition-colors" onclick="updateQuantity(${index},1)"><span class="material-symbols-outlined text-lg">add</span></button>
                     </div>
                     <div class="text-right">
-                        <p class="text-xs text-on-surface-variant">Item Total</p>
-                        <p class="text-lg font-bold text-primary">₹${itemTotal}</p>
+                        <p class="text-xs text-gray-400">Item Total</p>
+                        <p class="text-lg font-bold text-teal-700">₹${total}</p>
                     </div>
-                    <button class="flex items-center gap-xs text-error hover:opacity-80 font-label text-sm group ml-md transition-colors" 
-                            onclick="removeItem(${index})" title="Remove item from cart">
-                        <span class="material-symbols-outlined text-[18px]">delete</span>
-                        <span class="group-hover:underline hidden md:inline">Remove</span>
-                    </button>
+                    <button class="text-red-400 hover:text-red-600 ml-3 transition-colors" onclick="removeItem(${index})" title="Remove"><span class="material-symbols-outlined">delete</span></button>
                 </div>
-            </div>
-        `;
-        container.appendChild(cartItem);
+            </div>`;
+        container.appendChild(el);
     });
-    
     updateSummary();
 }
 
-function updateQuantity(index, change) {
-    if (cart[index].quantity + change < 1) return;
-    cart[index].quantity += change;
+function updateQuantity(i, change) {
+    if (cart[i].quantity + change < 1) return;
+    cart[i].quantity += change;
     localStorage.setItem('cart', JSON.stringify(cart));
     renderCart();
 }
 
-function removeItem(index) {
-    const itemName = cart[index].name;
-    cart.splice(index, 1);
+function removeItem(i) {
+    const name = cart[i].name;
+    cart.splice(i, 1);
     localStorage.setItem('cart', JSON.stringify(cart));
-    showNotification(`${itemName} removed from cart`);
+    showNotification(`${name} removed`);
     renderCart();
 }
 
 function clearCart() {
-    if (confirm('Are you sure you want to clear your entire cart?')) {
+    if (confirm('Clear your entire cart?')) {
         cart = [];
         localStorage.removeItem('cart');
-        showNotification('Cart cleared successfully');
+        showNotification('Cart cleared');
         renderCart();
     }
 }
 
 function updateSummary() {
-    const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-    const itemCount = cart.reduce((sum, item) => sum + item.quantity, 0);
-    
-    document.getElementById('item-count').textContent = itemCount;
-    document.getElementById('subtotal').textContent = subtotal.toFixed(0);
-    document.getElementById('total-price').textContent = subtotal.toFixed(0);
-    
-    // Enable/disable WhatsApp button
+    const subtotal = cart.reduce((s, i) => s + i.price * i.quantity, 0);
+    const count = cart.reduce((s, i) => s + i.quantity, 0);
+    document.getElementById('item-count').textContent = count;
+    document.getElementById('subtotal').textContent = subtotal;
+    document.getElementById('total-price').textContent = subtotal;
     document.getElementById('whatsapp-btn').disabled = cart.length === 0;
-    
-    // Show/hide clear button
-    const clearBtn = document.getElementById('clear-btn');
-    if (cart.length > 0) {
-        clearBtn.classList.remove('hidden');
-    } else {
-        clearBtn.classList.add('hidden');
-    }
 }
 
-function showNotification(message) {
-    const notification = document.createElement('div');
-    notification.className = 'fixed bottom-4 right-4 bg-primary text-white px-6 py-3 rounded-lg shadow-lg z-50 animate-fade-in';
-    notification.textContent = message;
-    document.body.appendChild(notification);
-    setTimeout(() => notification.remove(), 3000);
+function showNotification(msg) {
+    const n = document.createElement('div');
+    n.className = 'fixed bottom-4 right-4 bg-teal-700 text-white px-6 py-3 rounded-xl shadow-lg z-50 font-medium';
+    n.textContent = msg;
+    document.body.appendChild(n);
+    setTimeout(() => n.remove(), 2500);
 }
 
 function continueToWhatsApp() {
-    if (cart.length === 0) {
-        alert('Please add items to your cart first!');
-        return;
-    }
-    
-    // Build message
-    let message = '🛍️ *Aramane Sweets Order*\n\n';
-    message += '📝 *Items Ordered:*\n';
-    message += '─'.repeat(30) + '\n';
-    
-    cart.forEach((item, index) => {
-        message += `${index + 1}. ${item.name}\n`;
-        message += `   Qty: ${item.quantity} × ₹${item.price} = ₹${item.price * item.quantity}\n`;
-    });
-    
-    const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-    
-    message += '─'.repeat(30) + '\n';
-    message += `\n💰 *Total Amount:* ₹${subtotal}\n`;
-    message += `📦 *Number of Items:* ${cart.length}\n`;
-    message += `\n✅ Please confirm availability, delivery date, and payment method.\n`;
-    message += `\n📍 Delivery Location: (To be provided)\n`;
-    message += `\n_Thank you for choosing Aramane Sweets - Authentic Heritage Since 1960!_`;
-    
-    // Encode message for WhatsApp
-    const encodedMessage = encodeURIComponent(message);
-    const whatsappURL = `https://wa.me/919535455770?text=${encodedMessage}`;
-    
-    // Open WhatsApp
-    window.open(whatsappURL, '_blank');
+    if (!cart.length) { alert('Add items first!'); return; }
+    let msg = '🛍️ *Aramane Sweets Order*\n\n📝 *Items Ordered:*\n' + '─'.repeat(30) + '\n';
+    cart.forEach((item, i) => { msg += `${i+1}. ${item.name}\n   Qty: ${item.quantity} × ₹${item.price} = ₹${item.price*item.quantity}\n`; });
+    const total = cart.reduce((s,i) => s + i.price*i.quantity, 0);
+    msg += '─'.repeat(30) + `\n\n💰 *Total:* ₹${total}\n📦 *Items:* ${cart.length}\n\n✅ Please confirm availability, delivery date, and payment.\n📍 Delivery Location: (To be provided)\n\n_Thank you for choosing Aramane Sweets!_`;
+    window.open(`https://wa.me/919535455770?text=${encodeURIComponent(msg)}`, '_blank');
 }
 
-// Initialize
-document.addEventListener('DOMContentLoaded', () => {
-    renderCart();
-});
+document.addEventListener('DOMContentLoaded', () => { renderCart(); });
 </script>
+</body>
+</html>
