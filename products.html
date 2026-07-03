@@ -4,7 +4,7 @@
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>Aramane Sweets - All Products | Since 2023</title>
-    <meta name="description" content="Browse authentic Indian sweets at Aramane Sweets. Ghee sweets, Kaju specialties, Bengali sweets, Oil Khara, Bakery, Chat items, and more.">
+    <meta name="description" content="Browse authentic Indian sweets at Aramane Sweets. Ghee sweets, Kaju specialties, Bengali sweets, Khara, Bakery, Chat items, and more.">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -80,7 +80,7 @@
     <button onclick="filterCategory('ghee')" class="category-btn px-5 py-2.5 bg-white text-gray-700 font-semibold text-sm rounded-full hover:bg-teal-700 hover:text-white transition-colors shadow-sm border border-gray-200" data-category="ghee">🧈 Ghee</button>
     <button onclick="filterCategory('kaju')" class="category-btn px-5 py-2.5 bg-white text-gray-700 font-semibold text-sm rounded-full hover:bg-teal-700 hover:text-white transition-colors shadow-sm border border-gray-200" data-category="kaju">💎 Kaju</button>
     <button onclick="filterCategory('bengali')" class="category-btn px-5 py-2.5 bg-white text-gray-700 font-semibold text-sm rounded-full hover:bg-teal-700 hover:text-white transition-colors shadow-sm border border-gray-200" data-category="bengali">🍬 Bengali</button>
-    <button onclick="filterCategory('namkeen')" class="category-btn px-5 py-2.5 bg-white text-gray-700 font-semibold text-sm rounded-full hover:bg-teal-700 hover:text-white transition-colors shadow-sm border border-gray-200" data-category="namkeen">🥨 Oil Khara</button>
+    <button onclick="filterCategory('namkeen')" class="category-btn px-5 py-2.5 bg-white text-gray-700 font-semibold text-sm rounded-full hover:bg-teal-700 hover:text-white transition-colors shadow-sm border border-gray-200" data-category="namkeen">🥨 Khara</button>
     <button onclick="filterCategory('bakery')" class="category-btn px-5 py-2.5 bg-white text-gray-700 font-semibold text-sm rounded-full hover:bg-teal-700 hover:text-white transition-colors shadow-sm border border-gray-200" data-category="bakery">🍞 Bakery</button>
     <button onclick="filterCategory('chat')" class="category-btn px-5 py-2.5 bg-white text-gray-700 font-semibold text-sm rounded-full hover:bg-teal-700 hover:text-white transition-colors shadow-sm border border-gray-200" data-category="chat">🥟 Chat</button>
     <button onclick="filterCategory('packed')" class="category-btn px-5 py-2.5 bg-white text-gray-700 font-semibold text-sm rounded-full hover:bg-teal-700 hover:text-white transition-colors shadow-sm border border-gray-200" data-category="packed">📦 Packed</button>
@@ -236,7 +236,7 @@ const products = [
     { id: 1846, name: 'Bhasundi 100ML', price: 65, category: 'bengali', shelf_life: '-', code: '1846' },
     { id: 1078, name: 'Malpua 1PC', price: 35, category: 'bengali', shelf_life: '-', code: '1078' },
     
-    // OIL KHARA (NAMKEEN)
+    // KHARA (NAMKEEN)
     { id: 3419, name: 'Cashew Pakoda', price: 780, category: 'namkeen', shelf_life: '7 Days', code: '3419' },
     { id: 3421, name: 'Onion Pakoda', price: 400, category: 'namkeen', shelf_life: '4 Days', code: '3421' },
     { id: 3439, name: 'Onion Murkh', price: 400, category: 'namkeen', shelf_life: '15 Days', code: '3439' },
@@ -383,7 +383,7 @@ function getProductImage(product) {
     return categoryImages[product.category] || 'images/categories/ghee.png';
 }
 
-const categoryLabels = { bakery:'Bakery', bengali:'Bengali', chat:'Chat', ghee:'Ghee & Kova', kaju:'Kaju', namkeen:'Oil Khara', packed:'Packed' };
+const categoryLabels = { bakery:'Bakery', bengali:'Bengali', chat:'Chat', ghee:'Ghee & Kova', kaju:'Kaju', namkeen:'Khara', packed:'Packed' };
 
 function renderProducts(filter = 'all') {
     const container = document.getElementById('products-container');
